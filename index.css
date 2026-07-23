@@ -596,6 +596,18 @@ body, html {
   }
 }
 
+/* Industry Standard Perfect Center Alignment for Navigation Pill Links */
+header nav a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  height: 32px !important;
+  box-sizing: border-box !important;
+  vertical-align: middle !important;
+}
+
+
 
 
 
