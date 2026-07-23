@@ -480,3 +480,120 @@ header.header-scrolled #mobile-menu-btn {
   background-color: rgba(248, 250, 252, 0.45) !important;
 }
 
+/* ========================================================================== */
+/* INDUSTRY-STANDARD MOBILE RESPONSIVENESS & TYPOGRAPHY ENHANCEMENTS          */
+/* ========================================================================== */
+
+/* Base font scaling */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Enhanced Mobile Typography Legibility Rules */
+p, span, li, td, th, label {
+  letter-spacing: 0.01em;
+}
+
+/* Upgrade utility text sizes to industry standards */
+.text-xs {
+  font-size: 0.8125rem !important; /* 13px */
+  line-height: 1.5 !important;
+}
+
+.text-sm {
+  font-size: 0.9375rem !important; /* 15px */
+  line-height: 1.6 !important;
+}
+
+.text-base {
+  font-size: 1.0625rem !important; /* 17px */
+  line-height: 1.75 !important;
+}
+
+.text-lg {
+  font-size: 1.25rem !important; /* 20px */
+  line-height: 1.65 !important;
+}
+
+.text-xl {
+  font-size: 1.4375rem !important; /* 23px */
+  line-height: 1.5 !important;
+}
+
+.text-2xl {
+  font-size: 1.75rem !important; /* 28px */
+  line-height: 1.4 !important;
+}
+
+/* Heading scaling for mobile screens */
+h1 {
+  font-size: clamp(2.25rem, 5vw + 1rem, 4rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+}
+
+h2 {
+  font-size: clamp(1.85rem, 3.5vw + 1rem, 3.25rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.015em !important;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2vw + 1rem, 2.25rem) !important;
+  line-height: 1.3 !important;
+}
+
+/* Mobile Touch Target Standards (Minimum 44px for WCAG & Mobile UX) */
+button, 
+a.px-6, 
+a.px-4, 
+input[type="text"], 
+input[type="email"], 
+textarea,
+select {
+  min-height: 44px;
+}
+
+/* Responsive Table Scroll Wrapping */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+/* Prevent horizontal body overflow on small viewports */
+body, html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Mobile Padding & Spacing Touchups */
+@media (max-width: 768px) {
+  .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  
+  .py-16, .py-20, .py-24 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Mobile modal adjustments */
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 1.5rem !important;
+    padding: 1.25rem !important;
+  }
+}
+
+
