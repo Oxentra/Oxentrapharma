@@ -607,6 +607,24 @@ header nav a {
   vertical-align: middle !important;
 }
 
+/* Equal Mobile Padding for Logo & Side Bar Toggle (Mobile View Only) */
+@media (max-width: 768px) {
+  header {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  header a[href="index.html"],
+  header a.flex.items-center {
+    padding-left: 0.5rem !important;
+  }
+  
+  header #mobile-menu-btn {
+    padding-right: 0.5rem !important;
+  }
+}
+
+
 
 
 
