@@ -596,24 +596,31 @@ body, html {
   }
 }
 
-/* Mobile View Only: Why Choose Oxentra contents animate to the right side over 2 seconds */
+/* Mobile View Only: Why Choose Oxentra icons animate to the right side every 2 seconds */
 @media (max-width: 768px) {
-  #why-us .max-w-7xl {
-    animation: slideToRightMobile 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    will-change: transform, opacity;
+  #why-us .rounded-full {
+    animation: iconSlideRightMobile 2s ease-in-out infinite;
+    will-change: transform;
   }
 
-  @keyframes slideToRightMobile {
-    0% {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    100% {
-      opacity: 1;
+  /* Staggered wave animation for icons every 2 seconds */
+  #why-us div:nth-child(1) .rounded-full { animation-delay: 0s; }
+  #why-us div:nth-child(2) .rounded-full { animation-delay: 0.25s; }
+  #why-us div:nth-child(3) .rounded-full { animation-delay: 0.5s; }
+  #why-us div:nth-child(4) .rounded-full { animation-delay: 0.75s; }
+  #why-us div:nth-child(5) .rounded-full { animation-delay: 1s; }
+  #why-us div:nth-child(6) .rounded-full { animation-delay: 1.25s; }
+
+  @keyframes iconSlideRightMobile {
+    0%, 100% {
       transform: translateX(0);
+    }
+    40% {
+      transform: translateX(18px);
     }
   }
 }
+
 
 
 
