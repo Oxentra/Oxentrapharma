@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Best Practices -->
+  <title>Oxentra Pharma - Formulations Crafted with Precision, Backed by Science</title>
+  <meta name="description" content="Oxentra Pharma Pvt. Ltd. is a global pharmaceutical company producing precision-engineered formulations across Gastroenterology, Neurology, Dermatology, Orthopedics, and Allergy care.">
+  <meta name="keywords" content="Oxentra Pharma, pharmaceutical formulations, Glideplus, Nervox Plus, Lxentra, Pxentra DSR, medicine manufacturing">
+  <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Oxentra Pharma - Precision Formulations">
+  <meta property="og:description" content="Formulations crafted with precision, backed by science, and driven by care. Explore our quality-tested therapeutic catalog.">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#005B82',
+              orange: '#F07D00',
+              dark: '#002B3E',
+              lightBlue: '#0284c7',
+              gray: '#475569'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Custom Premium Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=5">
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+  <!-- ========================================== -->
+  <!-- NAVIGATION BAR                             -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
+      
+      <!-- Official Logo Image -->
+      <a href="#" class="flex items-center group">
+        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 170px; margin: -68px -55px;">
+      </a>
+
+      <!-- Desktop Links & Search -->
+      <div class="hidden lg:flex items-center gap-4">
+        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-500/10 backdrop-blur-md border border-slate-300/30 p-1.5 rounded-full shadow-sm">
+          <a href="#" class="bg-white text-[#0f58a2] px-4 py-1.5 rounded-full shadow-sm font-bold transition-all">Home</a>
+          <a href="about.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all">About Us</a>
+          <a href="products.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all flex items-center gap-1">
+            Products
+            <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <a href="careers.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all">Careers</a>
+          <a href="contact.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all">Contact Us</a>
+        </nav>
+
+        <!-- Desktop Search Bar -->
+        <div class="relative flex items-center w-40 xl:w-48">
+          <span class="absolute left-3 text-slate-400 pointer-events-none">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </span>
+          <input type="text" placeholder="Search..." class="nav-search-input w-full pl-8 pr-3 py-1.5 rounded-full text-xs font-semibold bg-slate-500/10 border border-slate-300/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#005B82] focus:bg-white focus:text-slate-700 transition-all duration-300">
+        </div>
+      </div>
+
+      <!-- Desktop Contact CTA -->
+      <div class="hidden lg:block">
+        <a href="contact.html" class="px-5 py-2.5 bg-[#f97316] text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-md flex items-center gap-2 text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.384 17.791c-1.205-1.205-3.159-1.205-4.364 0l-1.613 1.613c-.24.24-.601.294-.901.129-2.316-1.272-4.215-3.171-5.486-5.486-.165-.3-.111-.661.129-.901l1.613-1.613c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451c-1.205-1.205-3.159-1.205-4.364 0l-1.391 1.391c-2.408 2.408-2.613 6.136-.549 9.387 2.062 3.248 5.486 6.672 8.734 8.734 3.251 2.064 6.979 1.859 9.387-.549l1.391-1.391c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451z"/></svg>
+          Contact Us
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#0f58a2] hover:text-[#f97316] transition-colors" aria-label="Toggle navigation menu">
+        <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu List -->
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 flex-col px-8 py-6 gap-4 shadow-lg">
+      <!-- Search Input for Mobile -->
+      <div class="relative flex items-center w-full mb-2">
+        <span class="absolute left-3 text-slate-400 pointer-events-none">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </span>
+        <input type="text" placeholder="Search products..." class="nav-search-input w-full pl-10 pr-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#005B82] focus:bg-white transition-all">
+      </div>
+      <a href="#" class="text-[#f97316] font-semibold py-1 border-b border-slate-50">Home</a>
+      <a href="about.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">About Us</a>
+      <a href="products.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Products</a>
+      <a href="careers.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Careers</a>
+      <a href="contact.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Contact Us</a>
+      <a href="contact.html" class="mt-2 text-center py-3 bg-[#f97316] text-white font-semibold rounded-xl hover:bg-orange-600 transition-all">Contact Us</a>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- ========================================== -->
+    <!-- 1. SCROLL-DRIVEN HERO SECTION (APPLE-STYLE) -->
+    <!-- ========================================== -->
+    <section id="hero" class="relative w-full h-[400vh] bg-slate-950">
+      <!-- Sticky container that stays fixed while scrolling -->
+      <div class="hero-sticky-viewport sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
+        
+        <!-- Canvas Image Sequence Layer -->
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full object-cover z-0"></canvas>
+        
+        <!-- Dark Ambient Gradient Overlay -->
+        <div class="hero-dark-overlay absolute inset-0 bg-slate-950/45 z-10 pointer-events-none"></div>
+
+        <!-- Sticky Content Container -->
+        <div class="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 h-full flex items-center justify-center">
+          
+          <!-- TEXT FRAME 1: Crafted with Precision (Large headline that zooms & fades) -->
+          <div class="hero-text-frame hero-frame-1 absolute inset-x-6 md:inset-x-12 flex flex-col items-center justify-center text-center">
+            <span class="hero-eyebrow text-xs md:text-sm font-extrabold tracking-[0.3em] text-brand-orange uppercase mb-4 block">
+              Precision Engineering
+            </span>
+            <h1 class="text-4xl md:text-7xl font-black text-white leading-tight tracking-tight max-w-4xl font-display">
+              Formulations Crafted with Precision
+            </h1>
+            <p class="text-slate-400 mt-6 text-sm md:text-lg max-w-2xl font-medium tracking-wide">
+              Advanced drug delivery systems designed for high therapeutic performance.
+            </p>
+          </div>
+
+          <!-- TEXT FRAME 2: Backed by Science (Large glowing header) -->
+          <div class="hero-text-frame hero-frame-2 absolute inset-x-6 md:inset-x-12 flex flex-col items-center justify-center text-center opacity-0 pointer-events-none translate-y-12">
+            <span class="hero-eyebrow text-xs md:text-sm font-extrabold tracking-[0.3em] text-cyan-400 uppercase mb-4 block">
+              Scientific Rigor
+            </span>
+            <h2 class="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-cyan-300 leading-tight tracking-tight max-w-4xl font-display hero-glow-text">
+              Backed by Pure Science
+            </h2>
+            <p class="text-slate-400 mt-6 text-sm md:text-lg max-w-2xl font-medium tracking-wide">
+              Clinically verified ingredients, manufactured in state-of-the-art facilities.
+            </p>
+          </div>
+
+          <!-- TEXT FRAME 3: See All Products Clock CTA -->
+          <div class="hero-text-frame hero-frame-3 absolute inset-x-6 md:inset-x-12 flex flex-col items-center justify-center opacity-0 pointer-events-none translate-y-12 max-w-3xl mx-auto">
+            <span class="hero-eyebrow text-xs md:text-sm font-extrabold tracking-[0.3em] text-brand-orange uppercase mb-4 block">
+              Discover Our Range
+            </span>
+            <h2 class="text-3xl md:text-6xl font-black text-white leading-tight tracking-tight mb-8 font-display">
+              Formulations Built for Global Care
+            </h2>
+            
+            <!-- Simple Premium See All Products CTA Button -->
+            <div class="hero-cta-container flex justify-center">
+              <a href="#products" id="hero-products-cta" class="pointer-events-auto px-8 py-3.5 bg-brand-orange hover:bg-orange-600 text-white font-extrabold text-sm md:text-base rounded-full flex items-center gap-2.5 transition-all duration-300 shadow-lg shadow-orange-500/10 hover:shadow-orange-500/25 border border-orange-400/20 group hover:-translate-y-0.5 select-none">
+                See All Products
+                <svg class="w-4.5 h-4.5 text-white transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. GLOBAL PERFORMANCE METRICS             -->
+    <!-- ========================================== -->
+    <section id="metrics-section" class="py-12 bg-transparent relative z-10">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1: Manufacturing Sites -->
+          <div class="bg-white rounded-[1.75rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-7 flex items-center justify-between hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+            <div class="space-y-3">
+              <p class="text-sm font-medium text-slate-500 font-sans tracking-tight">Manufacturing Sites</p>
+              <p class="text-4xl font-bold text-slate-900 font-display counter-value" data-target="2" data-suffix="+">0</p>
+            </div>
+            <div class="text-[#005B82] flex-shrink-0 ml-4">
+              <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <!-- Conveyor track -->
+                <rect x="6" y="44" width="34" height="6" rx="3" />
+                <!-- Rollers inside -->
+                <circle cx="11" cy="47" r="1.5" fill="currentColor"/>
+                <circle cx="18" cy="47" r="1.5" fill="currentColor"/>
+                <circle cx="25" cy="47" r="1.5" fill="currentColor"/>
+                <circle cx="32" cy="47" r="1.5" fill="currentColor"/>
+                <!-- Bottles -->
+                <path d="M12 28h4v4h-4z" stroke-linejoin="round"/>
+                <path d="M9 32h10v8H9z" stroke-linejoin="round"/>
+                <circle cx="14" cy="36" r="1" fill="currentColor"/>
+                <path d="M22 28h4v4h-4z" stroke-linejoin="round"/>
+                <path d="M19 32h10v8H19z" stroke-linejoin="round"/>
+                <circle cx="24" cy="36" r="1" fill="currentColor"/>
+                <!-- Robotic Arm -->
+                <path d="M48 48h6" stroke-width="2" stroke-linecap="round"/>
+                <path d="M51 48V16" stroke-width="2" stroke-linecap="round"/>
+                <path d="M51 16H36" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="51" cy="16" r="3" fill="currentColor"/>
+                <circle cx="36" cy="16" r="3" fill="currentColor"/>
+                <path d="M36 16v10" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M32 26h8M34 26v4M38 26v4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 2: Dosage Forms -->
+          <div class="bg-white rounded-[1.75rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-7 flex items-center justify-between hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+            <div class="space-y-3">
+              <p class="text-sm font-medium text-slate-500 font-sans tracking-tight">Dosage Forms</p>
+              <p class="text-4xl font-bold text-slate-900 font-display counter-value" data-target="10" data-suffix="+">0</p>
+            </div>
+            <div class="text-[#005B82] flex-shrink-0 ml-4">
+              <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <!-- Dropper Bottle -->
+                <path d="M38 30h16v20H38z" stroke-linejoin="round"/>
+                <path d="M43 25h6v5h-6z" stroke-linejoin="round"/>
+                <path d="M41 18c0-3 2-6 5-6s5 3 5 6v7H41v-7z" stroke-linejoin="round"/>
+                <!-- Dropper Tool leaning -->
+                <path d="M29 13l4 4-2.5 2.5-4-4L29 13z" fill="currentColor"/>
+                <path d="M26 19l8 8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M22 23l8 8" stroke-width="2" stroke-linecap="round"/>
+                <path d="M19 26l3 3-4 4c-.5.5-1.2.5-1.7 0l-.6-.6c-.5-.5-.5-1.2 0-1.7l3.3-3.3" stroke-linejoin="round"/>
+                <!-- Drop -->
+                <path d="M12 40c0-2.5 3-5 3-5s3 2.5 3 5-1.3 3.5-3 3.5-3-1-3-3.5z" fill="currentColor"/>
+                <!-- Smaller syrup bottle -->
+                <path d="M22 38h12v12H22z" stroke-linejoin="round"/>
+                <path d="M25 34h6v4h-6z" stroke-linejoin="round"/>
+                <circle cx="28" cy="44" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 3: Products -->
+          <div class="bg-white rounded-[1.75rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-7 flex items-center justify-between hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+            <div class="space-y-3">
+              <p class="text-sm font-medium text-slate-500 font-sans tracking-tight">Products</p>
+              <p class="text-4xl font-bold text-slate-900 font-display counter-value" data-target="9" data-suffix="+">0</p>
+            </div>
+            <div class="text-[#005B82] flex-shrink-0 ml-4">
+              <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <!-- Tall Jar / Bottle -->
+                <path d="M34 26h16v24H34z" stroke-linejoin="round"/>
+                <path d="M36 21h12v5H36z" stroke-linejoin="round"/>
+                <line x1="38" y1="31" x2="48" y2="31" />
+                <line x1="38" y1="36" x2="48" y2="36" />
+                <rect x="38" y="40" width="10" height="6" rx="1" stroke-dasharray="2 1"/>
+                <!-- Front smaller bottle -->
+                <path d="M18 36h14v14H18z" stroke-linejoin="round"/>
+                <path d="M21 31h8v5H21z" stroke-linejoin="round"/>
+                <circle cx="25" cy="43" r="2.5" fill="currentColor"/>
+                <!-- Floating Pills -->
+                <g transform="translate(24, 12) rotate(-35)">
+                  <rect x="0" y="0" width="12" height="6" rx="3" stroke-width="1.5"/>
+                  <path d="M6 0v6" stroke-width="1.5"/>
+                </g>
+                <g transform="translate(42, 10) rotate(20)">
+                  <rect x="0" y="0" width="10" height="5" rx="2.5" stroke-width="1.5"/>
+                  <path d="M5 0v5" stroke-width="1.5"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 4: Markets -->
+          <div class="bg-white rounded-[1.75rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] p-7 flex items-center justify-between hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+            <div class="space-y-3">
+              <p class="text-sm font-medium text-slate-500 font-sans tracking-tight">Markets</p>
+              <p class="text-4xl font-bold text-slate-900 font-display counter-value" data-target="14" data-suffix="">0</p>
+            </div>
+            <div class="text-[#005B82] flex-shrink-0 ml-4">
+              <svg class="w-14 h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <!-- Store top roof canopy -->
+                <path d="M10 24h44v4H10z" stroke-linejoin="round"/>
+                <!-- Store building -->
+                <path d="M12 28h40v22H12z" stroke-linejoin="round"/>
+                <!-- Door on left -->
+                <path d="M18 36h12v14H18z" stroke-linejoin="round"/>
+                <!-- Window on right -->
+                <path d="M34 32h14v10H34z" stroke-linejoin="round"/>
+                <!-- Window divider -->
+                <line x1="41" y1="32" x2="41" y2="42" />
+                <!-- Door details: Medical Cross -->
+                <path d="M24 40v6M21 43h6" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Pill above roof -->
+                <g transform="translate(24, 10) rotate(-20)">
+                  <rect x="0" y="0" width="16" height="8" rx="4" stroke-width="1.5"/>
+                  <path d="M8 0v8" stroke-width="1.5"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. OUR PURPOSE (CIPLA LAYOUT)              -->
+    <!-- ========================================== -->
+    <!-- ========================================== -->
+    <!-- 3. OUR PURPOSE (LIGHT MINIMALIST THEME)    -->
+    <!-- ========================================== -->
+    <section id="about" class="py-12 bg-slate-50/20 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto bg-white/40 backdrop-blur-md rounded-3xl border border-slate-100/50 shadow-sm overflow-hidden flex flex-col lg:flex-row items-stretch reveal">
+        
+        <!-- Left: Image Panel -->
+        <div class="lg:w-5/12 w-full relative min-h-[250px] lg:min-h-auto overflow-hidden">
+          <img id="purpose-panel-img" src="hero-globe-care.jpg" alt="Towards A Sustainable Future" 
+               class="absolute inset-0 w-full h-full object-cover transition-all duration-700 tab-content-active">
+        </div>
+
+        <!-- Right: Content & Tabs Card -->
+        <div class="lg:w-7/12 w-full p-6 flex flex-col justify-between bg-slate-50/20 select-none">
+          <div class="space-y-3">
+            <span class="text-[#f97316] font-bold tracking-wider uppercase text-xs block">Our Purpose</span>
+            <h3 id="purpose-panel-title" class="text-2xl md:text-3xl font-extrabold text-[#002b3e] font-display transition-all duration-300 tab-content-active">Towards A Sustainable Future</h3>
+            <p id="purpose-panel-text" class="text-slate-600 text-xs md:text-sm leading-relaxed transition-all duration-300 tab-content-active">
+              In alignment with our purpose of 'Caring for life', we at Oxentra Pharma have relentlessly worked to enrich the lives of the communities we touch and nurture life on the planet through active environmental stewardship.
+            </p>
+          </div>
+
+          <!-- Tabs buttons list (more compact spacer and padding) -->
+          <div class="space-y-2 mt-5">
+            
+            <!-- Tab 1: Our Purpose -->
+            <button data-tab="purpose" class="purpose-tab-btn w-full text-left p-2.5 flex items-center gap-3 transition-all duration-300 rounded-xl text-[#002b3e] hover:bg-slate-100/50 font-semibold">
+              <div class="w-8 h-8 rounded-full border border-blue-600/20 flex items-center justify-center text-blue-600 bg-transparent tab-icon-container transition-all">
+                <svg class="tab-icon-svg w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.12 18.88A3 3 0 0016 17v-3a3 3 0 00-3-3H9a3 3 0 00-3 3v3c0 .7.24 1.35.66 1.88M12 7a3 3 0 100-6 3 3 0 000 6zM18 13.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM11 13.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                </svg>
+              </div>
+              <span class="text-xs md:text-sm tracking-wide">Our Purpose</span>
+            </button>
+
+            <!-- Tab 2: Illness To Wellness -->
+            <button data-tab="wellness" class="purpose-tab-btn w-full text-left p-2.5 flex items-center gap-3 transition-all duration-300 rounded-xl text-[#002b3e] hover:bg-slate-100/50 font-semibold">
+              <div class="w-8 h-8 rounded-full border border-blue-600/20 flex items-center justify-center text-blue-600 bg-transparent tab-icon-container transition-all">
+                <svg class="tab-icon-svg w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <span class="text-xs md:text-sm tracking-wide">Illness To Wellness</span>
+            </button>
+
+            <!-- Tab 3: Our People. Our Pride. -->
+            <button data-tab="people" class="purpose-tab-btn w-full text-left p-2.5 flex items-center gap-3 transition-all duration-300 rounded-xl text-[#002b3e] hover:bg-slate-100/50 font-semibold">
+              <div class="w-8 h-8 rounded-full border border-blue-600/20 flex items-center justify-center text-blue-600 bg-transparent tab-icon-container transition-all">
+                <svg class="tab-icon-svg w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <span class="text-xs md:text-sm tracking-wide">Our People. Our Pride.</span>
+            </button>
+
+            <!-- Tab 4: BREATHE. Think Oxentra -->
+            <button data-tab="thinkOxentra" class="purpose-tab-btn w-full text-left p-2.5 flex items-center gap-3 transition-all duration-300 rounded-xl text-[#002b3e] hover:bg-slate-100/50 font-semibold">
+              <div class="w-8 h-8 rounded-full border border-blue-600/20 flex items-center justify-center text-blue-600 bg-transparent tab-icon-container transition-all">
+                <svg class="tab-icon-svg w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <span class="text-xs md:text-sm tracking-wide">BREATHE. Think Oxentra</span>
+            </button>
+
+            <!-- Tab 5: Towards A Sustainable Future (Active by Default) -->
+            <button data-tab="sustainability" class="purpose-tab-btn w-full text-left p-2.5 flex items-center gap-3 transition-all duration-300 rounded-xl bg-white shadow-md text-[#002b3e] font-bold">
+              <div class="w-8 h-8 rounded-full border border-blue-600/30 bg-blue-50/50 flex items-center justify-center text-blue-600 tab-icon-container transition-all">
+                <svg class="tab-icon-svg w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                </svg>
+              </div>
+              <span class="text-xs md:text-sm tracking-wide">Towards A Sustainable Future</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>    <!-- ========================================== -->
+    <!-- ========================================== -->
+    <!-- 4. OUR PRODUCTS SHOWCASE SLIDER            -->
+    <!-- ========================================== -->
+    <section id="products" class="py-20 bg-transparent px-6 md:px-12 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-6">
+        
+        <!-- Left Side: Title, Subtitle, and Custom Navigation -->
+        <div class="w-full lg:w-[22%] space-y-6 flex-shrink-0 text-left">
+          <div class="space-y-3">
+            <span class="text-xs font-black uppercase tracking-widest text-[#ff7e00] block">Our Products</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-[#002b3e] font-display leading-tight">
+              A Portfolio That Makes a Difference
+            </h2>
+            <div class="w-10 h-1 bg-[#ff7e00] mt-4"></div>
+            <p class="text-slate-500 text-sm leading-relaxed max-w-md">
+              Every formulation is crafted with precision, backed by science, and driven by care.
+            </p>
+          </div>
+          
+          <!-- Custom navigation buttons -->
+          <div class="flex items-center gap-3 pt-4">
+            <button id="portfolio-prev-btn" class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-all shadow-sm focus:outline-none" aria-label="Previous">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button id="portfolio-next-btn" class="w-12 h-12 rounded-full bg-[#f97316] flex items-center justify-center hover:bg-orange-600 text-white transition-all shadow-md focus:outline-none" aria-label="Next">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Side: Product Carousel -->
+        <div class="w-full lg:w-[78%] relative overflow-hidden">
+          
+          <!-- Carousel Container -->
+          <div id="portfolio-slider-container" class="portfolio-slider flex gap-6 overflow-x-auto pb-8 pt-4 scrollbar-hide snap-x scroll-smooth">
+            
+            <!-- Card 1: GLIDEPLUS -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card glideplus-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/Medicine_bottle_on_podium_2K_202607180207.jpeg" alt="GLIDEPLUS" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base font-black text-black tracking-wide font-display mt-2">GLIDEPLUS™</h4>
+                  <p class="text-xs font-semibold text-slate-500">For Chronic Constipation Relief</p>
+                </div>
+              </div>
+              <a href="glideplus.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 2: PXENTRA DSR -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card pxentradsr-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/PXENTRA_DSR_capsules_box_showcase_202607180207.jpeg" alt="PXENTRA DSR" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base tracking-wide mt-2">
+                    <span class="text-black font-black font-display">PXENTRA</span>
+                    <span class="bg-blue-600 text-white px-1.5 py-0.5 rounded text-[9px] font-bold font-display ml-0.5 align-middle">DSR™</span>
+                  </h4>
+                  <p class="text-xs font-semibold text-slate-500">Acid Control & GI Protection</p>
+                </div>
+              </div>
+              <a href="pxentradsr.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 3: NERVOX PLUS -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card nervoxplus-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/Nervox_Plus_capsules_box_showcase_202607180206.jpeg" alt="NERVOX PLUS" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base tracking-wide mt-2">
+                    <span class="text-black font-black font-display">NERVOX</span>
+                    <span class="bg-emerald-600 text-white px-1.5 py-0.5 rounded text-[9px] font-bold font-display ml-0.5 align-middle">PLUS™</span>
+                  </h4>
+                  <p class="text-xs font-semibold text-slate-500">Nerve Health & Metabolic Support</p>
+                </div>
+              </div>
+              <a href="nervoxplus.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 4: LXENTRA -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card lxentra-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/LXENTRA_cream_box_showcase_2K_202607180207.jpeg" alt="LXENTRA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base font-black text-black tracking-wide font-display mt-2">LXENTRA™</h4>
+                  <p class="text-xs font-semibold text-slate-500">Healthy Skin, Lasting Care</p>
+                </div>
+              </div>
+              <a href="lxentra.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 5: OXENTIB MR -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card oxentibmr-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/OXENTIB_MR_tablets_box_showcase_202607180206.jpeg" alt="OXENTIB MR" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base tracking-wide mt-2">
+                    <span class="text-black font-black font-display">OXENTIB</span>
+                    <span class="bg-[#ef4444] text-white px-1.5 py-0.5 rounded text-[9px] font-bold font-display ml-0.5 align-middle">MR™</span>
+                  </h4>
+                  <p class="text-xs font-semibold text-slate-500">Effective Pain Management</p>
+                </div>
+              </div>
+              <a href="oxentibmr.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 6: CALCINTRA -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card calcintra-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/CALCINTRA_tablets_box_showcase_2K_202607180207.jpeg" alt="CALCINTRA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base font-black text-black tracking-wide font-display mt-2">CALCINTRA™</h4>
+                  <p class="text-xs font-semibold text-slate-500">Bone Strength & Nutritional Support</p>
+                </div>
+              </div>
+              <a href="calcintra.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 7: OXRIZINE LC -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card oxrizinelc-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/Oxrizine_LC_tablets_box_showcase_202607180206.jpeg" alt="OXRIZINE LC" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base tracking-wide mt-2">
+                    <span class="text-black font-black font-display">OXRIZINE</span>
+                    <span class="bg-orange-500 text-white px-1.5 py-0.5 rounded text-[9px] font-bold font-display ml-0.5 align-middle">LC™</span>
+                  </h4>
+                  <p class="text-xs font-semibold text-slate-500">All-Day & All-Night Allergy Relief</p>
+                </div>
+              </div>
+              <a href="oxrizinelc.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 8: HEAVE ENEMA -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card heaveenema-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/HEAVE_Enema_box_showcase_2K_202607180207.jpeg" alt="HEAVE ENEMA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base font-black text-black tracking-wide font-display mt-2">HEAVE™ ENEMA</h4>
+                  <p class="text-xs font-semibold text-slate-500">Rapid Bowel Evacuation</p>
+                </div>
+              </div>
+              <a href="heaveenema.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            <!-- Card 9: HEAVE S ENEMA -->
+            <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card heavesenema-theme">
+              <div class="space-y-4 flex flex-col items-center w-full">
+                <div class="h-32 flex items-center justify-center">
+                  <img src="images/product_img/HEAVE-S_Enema_box_showcase_2K_202607180207.jpeg" alt="HEAVE S ENEMA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                </div>
+                <div class="text-center space-y-1">
+                  <h4 class="text-base tracking-wide mt-2">
+                    <span class="text-black font-black font-display">HEAVE</span>
+                    <span class="bg-rose-500 text-white px-1.5 py-0.5 rounded text-[9px] font-bold font-display ml-0.5 align-middle">S™</span>
+                  </h4>
+                  <p class="text-xs font-semibold text-slate-500">Gentle Colon Emptying</p>
+                </div>
+              </div>
+              <a href="heavesenema.html" class="open-details-btn mt-6">View Product <span>→</span></a>
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    <!-- ========================================== -->
+    <!-- ========================================== -->
+    <!-- 5. PORTFOLIO & PARTNERS WRAPPER            -->
+    <!-- ========================================== -->
+    <div id="portfolio-partners-wrapper">
+
+      <!-- ========================================== -->
+      <!-- 5. OUR PORTFOLIO (CATEGORIES GRID)         -->
+      <!-- ========================================== -->
+      <section id="portfolio" class="relative py-20 bg-transparent overflow-hidden px-6 md:px-12 border-b border-slate-100/50">
+        
+        <!-- Section Header (Left Aligned) -->
+        <div class="max-w-7xl mx-auto flex flex-col items-start mb-12 relative z-10">
+          <span class="text-xs font-black text-[#ff7e00] uppercase tracking-widest block">Our Portfolio</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 font-display mt-2 leading-tight">
+            Therapies That<br><span class="text-[#00529b]">Transform Lives</span>
+          </h2>
+          <div class="w-10 h-1 bg-[#ff7e00] mt-4"></div>
+          <p class="text-sm text-slate-500 mt-4 max-w-xl leading-relaxed">
+            Our diversified portfolio addresses key therapeutic areas with science-driven solutions and a patient-first approach.
+          </p>
+        </div>
+
+        <!-- 3-Column Stacked Grid Layout -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
+          
+          <!-- Column 1: Gastroenterology & Orthopaedics -->
+          <div class="flex flex-col gap-6">
+            
+            <!-- Card 1: Gastroenterology -->
+            <a href="products.html#gastro" class="relative block rounded-[24px] overflow-hidden group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 w-full aspect-[545/300] select-none">
+              <!-- Background Image -->
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out scale-100 group-hover:scale-105"
+                   style="background-image: url('images/gastro_specialty.png?v=7');"></div>
+            </a>
+
+            <!-- Card 2: Orthopaedics -->
+            <a href="products.html#ortho" class="relative block rounded-[24px] overflow-hidden group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 w-full aspect-[545/300] select-none">
+              <!-- Background Image -->
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out scale-100 group-hover:scale-105"
+                   style="background-image: url('images/orthopedics_specialty.png?v=7');"></div>
+            </a>
+
+          </div>
+
+          <!-- Column 2: Dermatology & Allergy Care -->
+          <div class="flex flex-col gap-6">
+            
+            <!-- Card 3: Dermatology -->
+            <a href="products.html#dermatology" class="relative block rounded-[24px] overflow-hidden group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 w-full aspect-[545/300] select-none">
+              <!-- Background Image -->
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out scale-100 group-hover:scale-105"
+                   style="background-image: url('images/derm_specialty.png?v=7');"></div>
+            </a>
+
+            <!-- Card 4: Allergy Care -->
+            <a href="products.html#respiratory" class="relative block rounded-[24px] overflow-hidden group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 w-full aspect-[545/300] select-none">
+              <!-- Background Image -->
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out scale-100 group-hover:scale-105"
+                   style="background-image: url('images/respiratory_specialty.png?v=7');"></div>
+            </a>
+
+          </div>
+
+          <!-- Column 3: Neurology & Vitamins -->
+          <div class="flex flex-col gap-6">
+            
+            <!-- Card 5: Neurology -->
+            <a href="products.html#neuro" class="relative block rounded-[24px] overflow-hidden group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 w-full aspect-[545/300] select-none">
+              <!-- Background Image -->
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out scale-100 group-hover:scale-105"
+                   style="background-image: url('images/neurology_specialty.png?v=7');"></div>
+            </a>
+
+            <!-- Card 6: Pain Management -->
+            <a href="products.html#pain" class="relative block rounded-[24px] overflow-hidden group shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-500 w-full aspect-[545/300] select-none">
+              <!-- Background Image -->
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out scale-100 group-hover:scale-105"
+                   style="background-image: url('images/pain_specialty.png?v=7');"></div>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+    <!-- ========================================== -->
+    <!-- 6. WHY CHOOSE OXENTRA?                     -->
+    <!-- ========================================== -->
+    <section id="why-us" class="relative py-20 px-6 md:px-12 border-b border-slate-100/50 overflow-hidden bg-transparent">
+      <!-- Section Header -->
+      <div class="max-w-7xl mx-auto text-center mb-12 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 font-display">
+          Why Choose <span class="text-[#00529b]">Oxentra</span>
+        </h2>
+        <p class="text-xs font-semibold text-slate-500 mt-2">
+          Your trusted partner for quality healthcare solutions.
+        </p>
+      </div>
+
+      <!-- 6 Columns Responsive Grid Layout (Horizontally Scrollable on Mobile, Grid on Desktop) -->
+      <div class="max-w-7xl mx-auto flex overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory scrollbar-hide gap-4 pb-6 sm:pb-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-8 mt-16 relative z-10">
+        
+        <!-- Column 1: Quality Products -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left px-2 sm:px-4 lg:px-6 group min-w-[140px] w-[46%] sm:min-w-0 snap-center flex-shrink-0 lg:gap-4">
+          <div class="w-14 h-14 sm:w-20 sm:h-20 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg relative group-hover:scale-105 transition-all duration-300 lg:flex-shrink-0">
+            <!-- Top Orange Arc Border -->
+            <div class="absolute -top-[1.5px] -left-[1.5px] -right-[1.5px] -bottom-[1.5px] rounded-full border-t-[3px] border-[#ff7e00] pointer-events-none"></div>
+            <!-- SVG Icon -->
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#00529b" stroke-width="2" />
+              <path d="m9 11.5 2 2 4.5-4.5" stroke="#ff7e00" stroke-width="2.25" />
+            </svg>
+          </div>
+          <div class="flex flex-col items-center lg:items-start mt-3 sm:mt-5 lg:mt-0">
+            <h4 class="text-xs sm:text-sm lg:text-sm font-extrabold text-[#00529b] lg:mt-0 font-display tracking-tight">Quality Products</h4>
+            <p class="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-slate-500 mt-1 sm:mt-2 lg:mt-1 leading-relaxed max-w-[150px] lg:max-w-none whitespace-normal lg:whitespace-nowrap">
+              High quality & effective solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 2: Timely Delivery -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left px-2 sm:px-4 lg:px-6 group min-w-[140px] w-[46%] sm:min-w-0 snap-center flex-shrink-0 lg:gap-4">
+          <div class="w-14 h-14 sm:w-20 sm:h-20 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg relative group-hover:scale-105 transition-all duration-300 lg:flex-shrink-0">
+            <!-- Top Orange Arc Border -->
+            <div class="absolute -top-[1.5px] -left-[1.5px] -right-[1.5px] -bottom-[1.5px] rounded-full border-t-[3px] border-[#ff7e00] pointer-events-none"></div>
+            <!-- SVG Icon -->
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="13" r="8" stroke="#00529b" stroke-width="2" />
+              <path d="M12 9v4l2.5 1.5" stroke="#ff7e00" stroke-width="2" />
+              <path d="M12 9v4l2.5 1.5" stroke="#ff7e00" stroke-width="2" />
+              <path d="M10 2h4M12 2v3M19 5l-1.5 1.5" stroke="#00529b" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="flex flex-col items-center lg:items-start mt-3 sm:mt-5 lg:mt-0">
+            <h4 class="text-xs sm:text-sm lg:text-sm font-extrabold text-[#00529b] lg:mt-0 font-display tracking-tight">Timely Delivery</h4>
+            <p class="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-slate-500 mt-1 sm:mt-2 lg:mt-1 leading-relaxed max-w-[150px] lg:max-w-none whitespace-normal lg:whitespace-nowrap">
+              On-time delivery, every time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 3: Wide Product Range -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left px-2 sm:px-4 lg:px-6 group min-w-[140px] w-[46%] sm:min-w-0 snap-center flex-shrink-0 lg:gap-4">
+          <div class="w-14 h-14 sm:w-20 sm:h-20 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg relative group-hover:scale-105 transition-all duration-300 lg:flex-shrink-0">
+            <!-- Top Orange Arc Border -->
+            <div class="absolute -top-[1.5px] -left-[1.5px] -right-[1.5px] -bottom-[1.5px] rounded-full border-t-[3px] border-[#ff7e00] pointer-events-none"></div>
+            <!-- SVG Icon -->
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="8" width="8" height="11" rx="1.5" stroke="#00529b" stroke-width="2" />
+              <path d="M7 5h4v3H7z" stroke="#00529b" stroke-width="1.5" />
+              <rect x="12" y="14" width="7" height="4" rx="2" transform="rotate(-30 12 14)" stroke="#ff7e00" stroke-width="1.75" />
+              <circle cx="17" cy="18" r="2.5" stroke="#ff7e00" stroke-width="1.75" />
+            </svg>
+          </div>
+          <div class="flex flex-col items-center lg:items-start mt-3 sm:mt-5 lg:mt-0">
+            <h4 class="text-xs sm:text-sm lg:text-sm font-extrabold text-[#00529b] lg:mt-0 font-display tracking-tight">Wide Product Range</h4>
+            <p class="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-slate-500 mt-1 sm:mt-2 lg:mt-1 leading-relaxed max-w-[150px] lg:max-w-none whitespace-normal lg:whitespace-nowrap">
+              Diverse portfolio for all needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 4: Huge Warehouse -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left px-2 sm:px-4 lg:px-6 group min-w-[140px] w-[46%] sm:min-w-0 snap-center flex-shrink-0 lg:gap-4">
+          <div class="w-14 h-14 sm:w-20 sm:h-20 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg relative group-hover:scale-105 transition-all duration-300 lg:flex-shrink-0">
+            <!-- Top Orange Arc Border -->
+            <div class="absolute -top-[1.5px] -left-[1.5px] -right-[1.5px] -bottom-[1.5px] rounded-full border-t-[3px] border-[#ff7e00] pointer-events-none"></div>
+            <!-- SVG Icon -->
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18" stroke="#00529b" stroke-width="2" />
+              <path d="M5 21V8l7-4 7 4v13" stroke="#00529b" stroke-width="2" />
+              <rect x="9" y="13" width="6" height="8" rx="1" stroke="#ff7e00" stroke-width="2" />
+              <path d="M9 17h6" stroke="#ff7e00" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="flex flex-col items-center lg:items-start mt-3 sm:mt-5 lg:mt-0">
+            <h4 class="text-xs sm:text-sm lg:text-sm font-extrabold text-[#00529b] lg:mt-0 font-display tracking-tight">Huge Warehouse</h4>
+            <p class="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-slate-500 mt-1 sm:mt-2 lg:mt-1 leading-relaxed max-w-[150px] lg:max-w-none whitespace-normal lg:whitespace-nowrap">
+              Spacious storage & safe handling.
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 5: Experienced Team -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left px-2 sm:px-4 lg:px-6 group min-w-[140px] w-[46%] sm:min-w-0 snap-center flex-shrink-0 lg:gap-4">
+          <div class="w-14 h-14 sm:w-20 sm:h-20 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg relative group-hover:scale-105 transition-all duration-300 lg:flex-shrink-0">
+            <!-- Top Orange Arc Border -->
+            <div class="absolute -top-[1.5px] -left-[1.5px] -right-[1.5px] -bottom-[1.5px] rounded-full border-t-[3px] border-[#ff7e00] pointer-events-none"></div>
+            <!-- SVG Icon -->
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#00529b" stroke-width="2" />
+              <circle cx="9" cy="7" r="4" stroke="#00529b" stroke-width="2" />
+              <path d="M22 21v-1.5a3.5 3.5 0 0 0-2.5-3.3" stroke="#ff7e00" stroke-width="1.75" />
+              <circle cx="18" cy="8" r="3" stroke="#ff7e00" stroke-width="1.75" />
+            </svg>
+          </div>
+          <div class="flex flex-col items-center lg:items-start mt-3 sm:mt-5 lg:mt-0">
+            <h4 class="text-xs sm:text-sm lg:text-sm font-extrabold text-[#00529b] lg:mt-0 font-display tracking-tight">Experienced Team</h4>
+            <p class="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-slate-500 mt-1 sm:mt-2 lg:mt-1 leading-relaxed max-w-[150px] lg:max-w-none whitespace-normal lg:whitespace-nowrap">
+              Skilled professionals & teams.
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 6: Client Satisfaction -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left px-2 sm:px-4 lg:px-6 group min-w-[140px] w-[46%] sm:min-w-0 snap-center flex-shrink-0 lg:gap-4">
+          <div class="w-14 h-14 sm:w-20 sm:h-20 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center shadow-lg relative group-hover:scale-105 transition-all duration-300 lg:flex-shrink-0">
+            <!-- Top Orange Arc Border -->
+            <div class="absolute -top-[1.5px] -left-[1.5px] -right-[1.5px] -bottom-[1.5px] rounded-full border-t-[3px] border-[#ff7e00] pointer-events-none"></div>
+            <!-- SVG Icon -->
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.8 4.6a5.5 5.5 0 0 0-7.7 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.7 7.7l1.1 1.1L12 21l7.7-7.7 1.1-1.1a5.5 5.5 0 0 0 0-7.6z" stroke="#00529b" stroke-width="2" />
+              <path d="m8.5 12 2.5 2.5 5-5" stroke="#ff7e00" stroke-width="2.25" />
+            </svg>
+          </div>
+          <div class="flex flex-col items-center lg:items-start mt-3 sm:mt-5 lg:mt-0">
+            <h4 class="text-xs sm:text-sm lg:text-sm font-extrabold text-[#00529b] lg:mt-0 font-display tracking-tight">Client Satisfaction</h4>
+            <p class="text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-slate-500 mt-1 sm:mt-2 lg:mt-1 leading-relaxed max-w-[150px] lg:max-w-none whitespace-normal lg:whitespace-nowrap">
+              Building trust with care.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 7. OUR MANUFACTURING PARTNERS              -->
+    <!-- ========================================== -->
+    <section id="partners" class="py-20 bg-transparent overflow-hidden relative">
+      <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-[#0f58a2] inline-block relative pb-3 font-display">
+          Our Manufacturing Partners
+          <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-brand-orange rounded-full"></span>
+        </h2>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 mt-8">
+        <!-- Partner 1: Life Vision Healthcare -->
+        <div class="flex items-center justify-center p-6 bg-white/70 backdrop-blur-md border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 w-full sm:w-64 h-28 group">
+          <img src="images/manfacture_logo/lifevision.png" alt="Life Vision Healthcare" class="max-h-20 max-w-full object-contain filter hover:scale-105 transition-transform duration-300">
+        </div>
+        <!-- Partner 2: Pharma Synth -->
+        <div class="flex items-center justify-center p-6 bg-white/70 backdrop-blur-md border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 w-full sm:w-64 h-28 group">
+          <img src="images/manfacture_logo/pharma_synth.png" alt="Pharma Synth" class="max-h-20 max-w-full object-contain filter hover:scale-105 transition-transform duration-300">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- ========================================== -->
+  <!-- 8. FOOTER HUB SECTION                      -->
+  <!-- ========================================== -->
+  <footer id="contact" class="bg-[#0b1a30]/85 backdrop-blur-md text-slate-300 pt-16 pb-8 px-6 md:px-12 border-t border-slate-900/40 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+      
+      <!-- Column 1: Branding & Intro -->
+      <div class="space-y-4 overflow-hidden">
+        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality, affordable and innovative healthcare solutions across the globe.
+        </p>
+        <!-- Social Icons -->
+        <div class="flex gap-3 pt-2">
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163c-.272-1.018-1.077-1.823-2.095-2.095C19.52 3.8 12 3.8 12 3.8s-7.52 0-9.403.268C1.578 4.34 0.773 5.145.5 6.163.228 8.043.228 12 .228 12s0 3.957.272 5.837c.273 1.018 1.078 1.823 2.096 2.095C4.48 20.2 12 20.2 12 20.2s7.52 0 9.403-.268c1.018-.272 1.823-1.077 2.095-2.095.272-1.88.272-5.837.272-5.837s0-3.957-.272-5.837zm-13.88 9.356V8.48l6.39 3.52-6.39 3.519z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Quick Links</h4>
+        <ul class="space-y-2.5 text-xs md:text-sm text-slate-400">
+          <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Products -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Products</h4>
+        <ul class="space-y-2.5 text-xs md:text-sm text-slate-400">
+          <li><a href="products.html#gastro" class="hover:text-white transition-colors">Gastroenterology</a></li>
+          <li><a href="products.html#dermatology" class="hover:text-white transition-colors">Dermatology</a></li>
+          <li><a href="products.html#neuro" class="hover:text-white transition-colors">Neurology</a></li>
+          <li><a href="products.html#ortho" class="hover:text-white transition-colors">Orthopedics</a></li>
+          <li><a href="products.html#respiratory" class="hover:text-white transition-colors">Allergy Care</a></li>
+          <li><a href="products.html#pain" class="hover:text-white transition-colors">Pain Management</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact Us -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Contact Us</h4>
+        <div class="space-y-3.5 text-xs md:text-sm text-slate-400">
+          <div class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span class="leading-relaxed">+91 1920 7000 923<br>+91 1920 7000 924</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v-10a2 2 0 002 2z"/></svg>
+            <a href="mailto:info@oxentrapharma.com" class="hover:text-white transition-colors">info@oxentrapharma.com</a>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="leading-relaxed">
+              LR Towers, Ernakulam,<br>Kerala, India - 682025
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 5: Our Location -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Our Location</h4>
+        <div class="rounded-xl overflow-hidden shadow-lg border border-slate-800/80 bg-slate-900 h-28 md:h-32">
+          <iframe 
+            src="https://maps.google.com/maps?q=LR%20Towers%2C%20Palarivattom%2C%20Ernakulam%2C%20Kerala%20682025&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyright row -->
+    <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© 2026 Oxentra Pharma Pvt. Ltd. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span>|</span>
+        <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- PRODUCT DETAILS INTERACTIVE MODAL          -->
+  <!-- ========================================== -->
+  <div id="product-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
+      <div class="p-6 border-b border-slate-100 flex justify-between items-start">
+        <div class="space-y-1">
+          <span id="modal-tag" class="inline-block px-2.5 py-1 bg-blue-50 text-brand-blue text-xs font-bold rounded-full uppercase tracking-wider">Category</span>
+          <h3 id="modal-title" class="text-3xl font-extrabold text-slate-900 mt-1">Product Title</h3>
+          <p id="modal-subtitle" class="text-xs text-slate-400 font-mono leading-relaxed mt-1">Product Subtitle</p>
+        </div>
+        <button id="close-modal-btn" class="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-50 transition-colors" aria-label="Close">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-6 flex-grow text-sm text-slate-600">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-2xl">
+          <div>
+            <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-3">🧪 Active Composition</h4>
+            <ul id="modal-composition" class="space-y-1.5"></ul>
+          </div>
+          <div class="flex flex-col justify-between">
+            <div>
+              <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-2">📦 Product Format</h4>
+              <p id="modal-form" class="font-semibold text-slate-700"></p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/50">
+              <p id="modal-slogan" class="italic text-brand-blue font-bold text-xs"></p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-3">📋 Clinical Indications</h4>
+          <ul id="modal-indications" class="grid grid-cols-1 md:grid-cols-2 gap-2.5"></ul>
+        </div>
+
+        <div>
+          <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-3">🌟 Clinical Features & Advantages</h4>
+          <ul id="modal-features" class="space-y-2"></ul>
+        </div>
+      </div>
+
+      <div class="p-6 border-t border-slate-100 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-400 leading-relaxed text-center sm:text-left">Need specific sample quantities or regulatory documents?</p>
+        <a href="#contact" onclick="document.getElementById('product-modal').classList.add('hidden'); document.body.classList.remove('modal-open');"
+           class="px-6 py-3 bg-brand-orange hover:bg-orange-600 text-white font-bold rounded-xl text-center shadow-md transition-all whitespace-nowrap w-full sm:w-auto">
+          Request Samples
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="main.js?v=3" defer></script>
+  <script src="hero-animation.js" defer></script>
+</body>
+</html>

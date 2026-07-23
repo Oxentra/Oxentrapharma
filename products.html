@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Best Practices -->
+  <title>Our Products - Oxentra Pharma</title>
+  <meta name="description" content="Explore the diverse and high-quality formulation catalogue of Oxentra Pharma Pvt. Ltd. crafted with precision and backed by scientific testing.">
+  <meta name="keywords" content="Oxentra Pharma, pharmaceutical formulations, Glideplus, Nervox Plus, Lxentra, Pxentra DSR, medicine catalogue">
+  <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Our Products - Oxentra Pharma">
+  <meta property="og:description" content="Formulations crafted with precision, backed by science, and driven by care. Explore our quality-tested therapeutic catalog.">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#005B82',
+              orange: '#F07D00',
+              dark: '#002B3E',
+              lightBlue: '#0284c7',
+              gray: '#475569'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Premium Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=2">
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+  <!-- ========================================== -->
+  <!-- NAVIGATION BAR                             -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
+      
+      <!-- Official Logo Image -->
+      <a href="index.html" class="flex items-center group">
+        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 170px; margin: -68px -55px;">
+      </a>
+
+      <!-- Desktop Links & Search -->
+      <div class="hidden lg:flex items-center gap-4">
+        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-500/10 backdrop-blur-md border border-slate-300/30 p-1.5 rounded-full shadow-sm">
+          <a href="index.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all">Home</a>
+          <a href="about.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all">About Us</a>
+          <a href="products.html" class="bg-white text-[#0f58a2] px-4 py-1.5 rounded-full shadow-sm font-bold transition-all flex items-center gap-1">
+            Products
+            <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <a href="careers.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all">Careers</a>
+          <a href="contact.html" class="text-slate-200 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-full transition-all">Contact Us</a>
+        </nav>
+
+        <!-- Desktop Search Bar -->
+        <div class="relative flex items-center w-40 xl:w-48">
+          <span class="absolute left-3 text-slate-400 pointer-events-none">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </span>
+          <input type="text" placeholder="Search..." class="nav-search-input w-full pl-8 pr-3 py-1.5 rounded-full text-xs font-semibold bg-slate-500/10 border border-slate-300/20 text-white placeholder-slate-400 focus:outline-none focus:border-[#005B82] focus:bg-white focus:text-slate-700 transition-all duration-300">
+        </div>
+      </div>
+
+      <!-- Desktop Contact CTA -->
+      <div class="hidden lg:block">
+        <a href="contact.html" class="px-5 py-2.5 bg-[#f97316] text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-md flex items-center gap-2 text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.384 17.791c-1.205-1.205-3.159-1.205-4.364 0l-1.613 1.613c-.24.24-.601.294-.901.129-2.316-1.272-4.215-3.171-5.486-5.486-.165-.3-.111-.661.129-.901l1.613-1.613c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451c-1.205-1.205-3.159-1.205-4.364 0l-1.391 1.391c-2.408 2.408-2.613 6.136-.549 9.387 2.062 3.248 5.486 6.672 8.734 8.734 3.251 2.064 6.979 1.859 9.387-.549l1.391-1.391c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451z"/></svg>
+          Contact Us
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#0f58a2] hover:text-[#f97316] transition-colors" aria-label="Toggle navigation menu">
+        <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu List -->
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 flex-col px-8 py-6 gap-4 shadow-lg">
+      <!-- Search Input for Mobile -->
+      <div class="relative flex items-center w-full mb-2">
+        <span class="absolute left-3 text-slate-400 pointer-events-none">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </span>
+        <input type="text" placeholder="Search products..." class="nav-search-input w-full pl-10 pr-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#005B82] focus:bg-white transition-all">
+      </div>
+      <a href="index.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">Home</a>
+      <a href="about.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">About Us</a>
+      <a href="products.html" class="text-[#f97316] font-semibold py-1 border-b border-slate-50">Products</a>
+      <a href="careers.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Careers</a>
+      <a href="contact.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Contact Us</a>
+      <a href="contact.html" class="mt-2 text-center py-3 bg-[#f97316] text-white font-semibold rounded-xl hover:bg-orange-600 transition-all">Contact Us</a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-24">
+
+    <!-- ========================================== -->
+    <!-- HERO HEADER SECTION                        -->
+    <!-- ========================================== -->
+    <section class="relative bg-gradient-to-br from-[#002B3E] via-[#00425C] to-[#005B82] py-16 md:py-24 overflow-hidden">
+      <!-- Glow decoration -->
+      <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-orange/20 rounded-full filter blur-[100px] pointer-events-none"></div>
+      <div class="absolute bottom-0 right-0 w-80 h-80 bg-sky-500/10 rounded-full filter blur-[80px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center text-white">
+        <span class="inline-block text-xs md:text-sm font-extrabold uppercase tracking-[0.25em] text-[#ff7e00] mb-4">
+          Our Formulation Catalogue
+        </span>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto font-display">
+          Precision Formulations
+        </h1>
+        <p class="text-slate-300 mt-5 text-base md:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
+          A high-performance therapeutic portfolio designed for patient compliance, scientific reliability, and standard clinical efficacy.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PRODUCTS GRID SECTION (4 Columns Grid)     -->
+    <!-- ========================================== -->
+    <section class="py-16 md:py-24 bg-transparent px-6 md:px-12">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Category Filters Capsule Bar -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5 bg-slate-500/10 backdrop-blur-md border border-slate-300/30 p-1.5 rounded-full max-w-fit mx-auto mb-16 shadow-sm">
+          <button data-filter="all" class="filter-btn bg-[#5b51e8] text-white px-4 py-1.5 rounded-full shadow-sm font-bold text-xs transition-all">All Products</button>
+          <button data-filter="gastro" class="filter-btn text-slate-700 hover:text-[#0f58a2] hover:bg-white/40 px-3 py-1.5 rounded-full text-xs transition-all font-semibold">Gastroenterology</button>
+          <button data-filter="dermatology" class="filter-btn text-slate-700 hover:text-[#0f58a2] hover:bg-white/40 px-3 py-1.5 rounded-full text-xs transition-all font-semibold">Dermatology</button>
+          <button data-filter="neuro" class="filter-btn text-slate-700 hover:text-[#0f58a2] hover:bg-white/40 px-3 py-1.5 rounded-full text-xs transition-all font-semibold">Neurology</button>
+          <button data-filter="ortho" class="filter-btn text-slate-700 hover:text-[#0f58a2] hover:bg-white/40 px-3 py-1.5 rounded-full text-xs transition-all font-semibold">Orthopedics</button>
+          <button data-filter="respiratory" class="filter-btn text-slate-700 hover:text-[#0f58a2] hover:bg-white/40 px-3 py-1.5 rounded-full text-xs transition-all font-semibold">Allergy Care</button>
+          <button data-filter="pain" class="filter-btn text-slate-700 hover:text-[#0f58a2] hover:bg-white/40 px-3 py-1.5 rounded-full text-xs transition-all font-semibold">Pain Management</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: GLIDEPLUS -->
+          <div data-categories="gastro" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card glideplus-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/Medicine_bottle_on_podium_2K_202607180207.jpeg" alt="GLIDEPLUS" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">GLIDEPLUS™</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Gastroenterology</p>
+                <p class="text-xs font-semibold text-slate-600 leading-relaxed">For Chronic Constipation Relief</p>
+              </div>
+            </div>
+            <a href="glideplus.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 2: PXENTRA DSR -->
+          <div data-categories="gastro" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card pxentradsr-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/PXENTRA_DSR_capsules_box_showcase_202607180207.jpeg" alt="PXENTRA DSR" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">PXENTRA DSR™</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Gastroenterology</p>
+                <p class="text-xs font-semibold text-slate-600 leading-relaxed">Acid Control & GI Protection</p>
+              </div>
+            </div>
+            <a href="pxentradsr.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 3: NERVOX PLUS -->
+          <div data-categories="neuro" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card nervoxplus-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/Nervox_Plus_capsules_box_showcase_202607180206.jpeg" alt="NERVOX PLUS" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">NERVOX PLUS™</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Neurology & Metabolic</p>
+                <p class="text-xs font-semibold text-slate-600 leading-relaxed">Nerve Health & Support</p>
+              </div>
+            </div>
+            <a href="nervoxplus.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 4: LXENTRA -->
+          <div data-categories="dermatology" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card lxentra-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/LXENTRA_cream_box_showcase_2K_202607180207.jpeg" alt="LXENTRA" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">LXENTRA™</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Dermatology</p>
+                <p class="text-xs font-semibold text-slate-600 leading-relaxed">Healthy Skin, Lasting Care</p>
+              </div>
+            </div>
+            <a href="lxentra.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 5: OXENTIB MR -->
+          <div data-categories="ortho pain" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card oxentibmr-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/OXENTIB_MR_tablets_box_showcase_202607180206.jpeg" alt="OXENTIB MR" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">OXENTIB MR™</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Orthopedics & Rheumatology</p>
+                <p class="text-xs font-semibold text-slate-600 leading-relaxed">Effective Pain Management</p>
+              </div>
+            </div>
+            <a href="oxentibmr.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 6: CALCINTRA -->
+          <div data-categories="ortho" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card calcintra-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/CALCINTRA_tablets_box_showcase_2K_202607180207.jpeg" alt="CALCINTRA" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">CALCINTRA™</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Orthopedics / Bone Health</p>
+                <p class="text-xs font-semibold text-slate-600 leading-relaxed">Bone Strength & Support</p>
+              </div>
+            </div>
+            <a href="calcintra.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 7: OXRIZINE LC -->
+          <div data-categories="respiratory" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card oxrizinelc-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/Oxrizine_LC_tablets_box_showcase_202607180206.jpeg" alt="OXRIZINE LC" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">OXRIZINE LC™</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">Allergy & Respiratory</p>
+                <p class="text-xs font-semibold text-slate-600 leading-relaxed">Allergy Relief Support</p>
+              </div>
+            </div>
+            <a href="oxrizinelc.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 8: HEAVE ENEMA -->
+          <div data-categories="gastro" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card heaveenema-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/HEAVE_Enema_box_showcase_2K_202607180207.jpeg" alt="HEAVE ENEMA" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">HEAVE™ ENEMA</h4>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest font-mono">Gastroenterology</p>
+                <p class="text-sm font-medium text-slate-600 leading-relaxed">Rapid Bowel Evacuation</p>
+              </div>
+            </div>
+            <a href="heaveenema.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+          <!-- Card 9: HEAVE S ENEMA -->
+          <div data-categories="gastro" class="bg-white rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] p-6 flex flex-col justify-between items-center hover:shadow-lg transition-all duration-300 group product-card heavesenema-theme w-full max-w-sm mx-auto">
+            <div class="space-y-4 flex flex-col items-center w-full">
+              <div class="h-44 flex items-center justify-center bg-slate-50/50 rounded-2xl w-full p-4 overflow-hidden flex-shrink-0">
+                <img src="images/product_img/HEAVE-S_Enema_box_showcase_2K_202607180207.jpeg" alt="HEAVE S ENEMA" class="h-32 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+              </div>
+              <div class="text-center space-y-1.5">
+                <h4 class="text-lg font-black text-black tracking-wide font-display mt-2">HEAVE S™ ENEMA</h4>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest font-mono">Gastroenterology</p>
+                <p class="text-sm font-medium text-slate-600 leading-relaxed">Gentle Colon Emptying</p>
+              </div>
+            </div>
+            <a href="heavesenema.html" class="open-details-btn mt-6 flex items-center gap-1.5">
+              View Product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Have Questions Banner -->
+        <div class="bg-[#0b1a30]/90 backdrop-blur-md rounded-[2.5rem] p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-20 max-w-7xl mx-auto border border-slate-800/40 shadow-xl">
+          <div class="flex items-center gap-5 text-left w-full md:w-auto">
+            <div class="w-14 h-14 rounded-2xl bg-slate-800/80 flex items-center justify-center text-[#ff7e00] flex-shrink-0 shadow-inner">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-3.75 0-7.5-3.75-7.5-7.5M3 3h3.375a1.125 1.125 0 011.124.988l.688 4.416a1.125 1.125 0 01-.63 1.13l-2.24 1.344a13.447 13.447 0 005.656 5.656l1.344-2.24a1.125 1.125 0 011.13-.63l4.416.688a1.125 1.125 0 01.988 1.124V21a1.125 1.125 0 01-1.125 1.125H3.75A3.75 3.75 0 010 18.25V6.75A3.75 3.75 0 013.75 3z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-white font-extrabold text-lg tracking-wide">Have questions about our products?</h4>
+              <p class="text-slate-400 text-xs mt-1 leading-relaxed">Our team of experts is here to help you find the right solution.</p>
+            </div>
+          </div>
+          <a href="contact.html" class="px-7 py-4 bg-[#ff7e00] hover:bg-orange-600 text-white font-black rounded-2xl text-xs uppercase tracking-wider shadow-lg hover:shadow-orange-500/20 transition-all flex items-center gap-2 w-full md:w-auto justify-center">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 8. FOOTER HUB SECTION                      -->
+  <!-- ========================================== -->
+  <footer class="bg-[#0b1a30]/85 backdrop-blur-md text-slate-300 pt-16 pb-8 px-6 md:px-12 border-t border-slate-900/40 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+      
+      <!-- Column 1: Branding & Intro -->
+      <div class="space-y-4 overflow-hidden">
+        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality, affordable and innovative healthcare solutions across the globe.
+        </p>
+        <!-- Social Icons -->
+        <div class="flex gap-3 pt-2">
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163c-.272-1.018-1.077-1.823-2.095-2.095C19.52 3.8 12 3.8 12 3.8s-7.52 0-9.403.268C1.578 4.34 0.773 5.145.5 6.163.228 8.043.228 12 .228 12s0 3.957.272 5.837c.273 1.018 1.078 1.823 2.096 2.095C4.48 20.2 12 20.2 12 20.2s7.52 0 9.403-.268c1.018-.272 1.823-1.077 2.095-2.095.272-1.88.272-5.837.272-5.837s0-3.957-.272-5.837zm-13.88 9.356V8.48l6.39 3.52-6.39 3.519z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Quick Links</h4>
+        <ul class="space-y-2.5 text-xs md:text-sm text-slate-400">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Products -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Products</h4>
+        <ul class="space-y-2.5 text-xs md:text-sm text-slate-400">
+          <li><a href="products.html#gastro" class="hover:text-white transition-colors">Gastroenterology</a></li>
+          <li><a href="products.html#dermatology" class="hover:text-white transition-colors">Dermatology</a></li>
+          <li><a href="products.html#neuro" class="hover:text-white transition-colors">Neurology</a></li>
+          <li><a href="products.html#ortho" class="hover:text-white transition-colors">Orthopedics</a></li>
+          <li><a href="products.html#respiratory" class="hover:text-white transition-colors">Allergy Care</a></li>
+          <li><a href="products.html#pain" class="hover:text-white transition-colors">Pain Management</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact Us -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Contact Us</h4>
+        <div class="space-y-3.5 text-xs md:text-sm text-slate-400">
+          <div class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span class="leading-relaxed">+91 1920 7000 923<br>+91 1920 7000 924</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v-10a2 2 0 002 2z"/></svg>
+            <a href="mailto:info@oxentrapharma.com" class="hover:text-white transition-colors">info@oxentrapharma.com</a>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="leading-relaxed">
+              LR Towers, Ernakulam,<br>Kerala, India - 682025
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 5: Our Location -->
+      <div class="space-y-4">
+        <h4 class="text-white font-extrabold text-sm tracking-wide">Our Location</h4>
+        <div class="rounded-xl overflow-hidden shadow-lg border border-slate-800/80 bg-slate-900 h-28 md:h-32">
+          <iframe 
+            src="https://maps.google.com/maps?q=LR%20Towers%2C%20Palarivattom%2C%20Ernakulam%2C%20Kerala%20682025&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyright row -->
+    <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© 2026 Oxentra Pharma Pvt. Ltd. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span>|</span>
+        <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- PRODUCT DETAILS INTERACTIVE MODAL          -->
+  <!-- ========================================== -->
+  <div id="product-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
+      <div class="p-6 border-b border-slate-100 flex justify-between items-start">
+        <div class="space-y-1">
+          <span id="modal-tag" class="inline-block px-2.5 py-1 bg-blue-50 text-brand-blue text-xs font-bold rounded-full uppercase tracking-wider">Category</span>
+          <h3 id="modal-title" class="text-3xl font-extrabold text-slate-900 mt-1">Product Title</h3>
+          <p id="modal-subtitle" class="text-xs text-slate-400 font-mono leading-relaxed mt-1">Product Subtitle</p>
+        </div>
+        <button id="close-modal-btn" class="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-50 transition-colors" aria-label="Close">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-6 flex-grow text-sm text-slate-600">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 rounded-2xl">
+          <div>
+            <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-3">🧪 Active Composition</h4>
+            <ul id="modal-composition" class="space-y-1.5"></ul>
+          </div>
+          <div class="flex flex-col justify-between">
+            <div>
+              <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-2">📦 Product Format</h4>
+              <p id="modal-form" class="font-semibold text-slate-700"></p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/50">
+              <p id="modal-slogan" class="italic text-brand-blue font-bold text-xs"></p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-3">📋 Clinical Indications</h4>
+          <ul id="modal-indications" class="grid grid-cols-1 md:grid-cols-2 gap-2.5"></ul>
+        </div>
+
+        <div>
+          <h4 class="font-extrabold text-slate-900 uppercase tracking-wide text-xs mb-3">🌟 Clinical Features & Advantages</h4>
+          <ul id="modal-features" class="space-y-2"></ul>
+        </div>
+      </div>
+
+      <div class="p-6 border-t border-slate-100 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-400 leading-relaxed text-center sm:text-left">Need specific sample quantities or regulatory documents?</p>
+        <a href="contact.html" onclick="document.getElementById('product-modal').classList.add('hidden'); document.body.classList.remove('modal-open');"
+           class="px-6 py-3 bg-brand-orange hover:bg-orange-600 text-white font-bold rounded-xl text-center shadow-md transition-all whitespace-nowrap w-full sm:w-auto">
+          Request Samples
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="main.js?v=3" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const productCards = document.querySelectorAll('.product-card');
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active styles from all buttons
+          filterButtons.forEach(b => {
+            b.classList.remove('bg-[#5b51e8]', 'text-white', 'shadow-sm', 'font-bold');
+            b.classList.add('text-slate-700', 'hover:bg-white/40', 'hover:text-[#0f58a2]');
+          });
+
+          // Add active styles to clicked button
+          btn.classList.remove('text-slate-700', 'hover:bg-white/40', 'hover:text-[#0f58a2]');
+          btn.classList.add('bg-[#5b51e8]', 'text-white', 'shadow-sm', 'font-bold');
+
+          const filter = btn.getAttribute('data-filter');
+
+          productCards.forEach(card => {
+            const categories = card.getAttribute('data-categories').split(' ');
+            if (filter === 'all' || categories.includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Handle URL hash-based category filtering on load
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        const targetBtn = document.querySelector(`.filter-btn[data-filter="${hash}"]`);
+        if (targetBtn) {
+          targetBtn.click();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

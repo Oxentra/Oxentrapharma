@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --color-brand-blue: #005B82;
+  --color-brand-orange: #F07D00;
+  --color-brand-dark: #002B3E;
+  --color-brand-light-blue: #0284c7;
+  
+  --font-primary: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(248, 250, 252, 0.35), rgba(248, 250, 252, 0.35)), url('images/pharma_smoke_bg.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Glassmorphism effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Custom scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Float Animation */
+.float-element {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Product Slider scroll behavior */
+.product-slider {
+  scroll-behavior: smooth;
+}
+
+/* Leaflet Map custom styles */
+.leaflet-popup-content-wrapper {
+  background: var(--color-brand-dark) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  font-family: var(--font-primary) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--color-brand-dark) !important;
+}
+
+/* Custom CSS Drawn Medicine Box Mockups */
+.box-mockup {
+  position: relative;
+  width: 140px;
+  height: 95px;
+  transform-style: preserve-3d;
+  transform: perspective(600px) rotateY(-18deg) rotateX(8deg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .box-mockup {
+  transform: perspective(600px) rotateY(-8deg) rotateX(4deg) translateY(-14px) scale(1.08);
+}
+
+/* Front Face */
+.box-face-front {
+  position: absolute;
+  width: 140px;
+  height: 95px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  z-index: 2;
+}
+
+/* Side Face */
+.box-face-side {
+  position: absolute;
+  width: 25px;
+  height: 95px;
+  background: #f1f5f9;
+  left: 139px;
+  top: 0;
+  transform-origin: left;
+  transform: rotateY(90deg);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 3px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Top Face */
+.box-face-top {
+  position: absolute;
+  width: 140px;
+  height: 25px;
+  background: #f8fafc;
+  left: 0;
+  top: -25px;
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Brand Colors for Box Mockups */
+.box-brand-strip {
+  height: 6px;
+  width: 100%;
+  border-radius: 1px;
+}
+
+/* Product Specific Color Highlights */
+.glideplus-theme { --theme-color: #ec4899; }
+.oxentibmr-theme { --theme-color: #ef4444; }
+.nervoxplus-theme { --theme-color: #10b981; }
+.calcintra-theme { --theme-color: #8b5cf6; }
+.pxentradsr-theme { --theme-color: #3b82f6; }
+.lxentra-theme { --theme-color: #14b8a6; }
+.oxrizinelc-theme { --theme-color: #f97316; }
+.heaveenema-theme { --theme-color: #06b6d4; }
+.heavesenema-theme { --theme-color: #f43f5e; }
+
+.product-card {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #f1f5f9;
+  border-radius: 2rem;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+  border-color: #f1f5f9;
+}
+
+.open-details-btn {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 9999px;
+  background-color: white;
+  color: #475569;
+  font-weight: 800;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.product-card:hover .open-details-btn {
+  background-color: #0f58a2 !important;
+  border-color: #0f58a2 !important;
+  color: white !important;
+  box-shadow: 0 8px 20px -4px rgba(15, 88, 162, 0.4);
+}
+
+/* Custom slider buttons */
+.slider-arrow-btn {
+  transition: all 0.3s ease;
+}
+.slider-arrow-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Portfolio Matrix Colors (Image 5 Replica) */
+.portfolio-card-gastro {
+  background: linear-gradient(135deg, #c5a880 0%, #b29369 100%);
+  color: #fff;
+}
+.portfolio-card-derm {
+  background: #4A1A24;
+  color: #fff;
+}
+.portfolio-card-neuro {
+  background: #112233;
+  color: #fff;
+}
+.portfolio-card-bone {
+  background: #A06550;
+  color: #fff;
+}
+.portfolio-card-pain {
+  background: #6D7784;
+  color: #fff;
+}
+.portfolio-card-allergy {
+  background: #2E3D4D;
+  color: #fff;
+}
+
+/* Cipla Purpose Section Tab arrow selector styling */
+.cipla-tab {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cipla-tab-active {
+  background-color: white !important;
+  color: #0f58a2 !important;
+  position: relative;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .cipla-tab-active::before {
+    content: '';
+    position: absolute;
+    left: -28px; /* Sticks out past the container padding */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+    z-index: 30;
+  }
+}
+
+/* Clinical Brochure Section styles */
+.brochure-tab-btn {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brochure-tab-active {
+  background-color: var(--color-brand-blue);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 91, 130, 0.15);
+}
+
+.brochure-fade-in {
+  animation: brochureFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes brochureFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================== */
+/* APPLE-STYLE SCROLL-DRIVEN HERO SECTION     */
+/* ========================================== */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 400vh; /* Extended scrolling depth for 270 frames */
+  background-color: #020617; /* Slate 950 */
+}
+
+.hero-sticky-viewport {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(2, 6, 23, 0.45);
+  z-index: 10;
+  pointer-events: none;
+  transition: background-color 0.4s ease;
+}
+
+.hero-text-frame {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 20;
+  will-change: transform, opacity;
+}
+
+.hero-eyebrow {
+  letter-spacing: 0.25em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-glow-text {
+  text-shadow: 0 0 40px rgba(6, 182, 212, 0.15), 0 0 80px rgba(6, 182, 212, 0.05);
+}
+
+/* Ensure glass header navigation behaves well above the hero section */
+header.glass-panel {
+  z-index: 100;
+}
+
+/* Interactive Clock CTA Styles */
+.hero-clock-container {
+  will-change: transform, opacity;
+  z-index: 30;
+}
+
+#hero-clock-cta {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#hero-clock-cta:hover {
+  transform: scale(1.05);
+}
+
+#hero-clock-cta:active {
+  transform: scale(0.98);
+}
+
+/* Pulse glow animation for the inner circle */
+.clock-inner-glow {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.1);
+  animation: clockGlowPulse 3s ease-in-out infinite;
+}
+
+@keyframes clockGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.25), inset 0 0 15px rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.3);
+  }
+}
+
+/* Glass Header Scrolled Styles */
+header {
+  transition: all 0.3s ease-in-out !important;
+}
+
+header.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+/* Logo transition on scrolled header */
+header.header-scrolled img {
+  transform: scale(0.85) !important;
+}
+
+/* Nav container & links styling on scrolled header */
+header.header-scrolled nav {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+  border-color: rgba(203, 213, 225, 0.4) !important;
+}
+
+header.header-scrolled nav a:not(.bg-white) {
+  color: #334155 !important; /* slate-700 */
+}
+
+header.header-scrolled nav a:not(.bg-white):hover {
+  color: #0f58a2 !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Search input styling on scrolled header */
+header.header-scrolled .nav-search-input {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+  border-color: rgba(203, 213, 225, 0.4) !important;
+  color: #334155 !important;
+}
+
+header.header-scrolled .nav-search-input::placeholder {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+header.header-scrolled .nav-search-input:focus {
+  background-color: #ffffff !important;
+  border-color: #005B82 !important;
+  color: #0f2441 !important;
+}
+
+/* Mobile menu button transition */
+header.header-scrolled #mobile-menu-btn {
+  color: #0f58a2 !important;
+}
+
+/* Mobile Menu container placement adjustment */
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Background styling for Portfolio-Partners wrapper section to create a single continuous canvas */
+#portfolio-partners-wrapper {
+  background-image: none !important;
+}
+
+#portfolio, #why-us, #partners {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Alternating section shades for homepage background continuity */
+#metrics-section {
+  background-color: transparent !important;
+}
+#about {
+  background-color: rgba(248, 250, 252, 0.45) !important;
+}
+#products {
+  background-color: transparent !important;
+}
+#portfolio {
+  background-color: rgba(248, 250, 252, 0.45) !important;
+}
+#why-us {
+  background-color: transparent !important;
+}
+#partners {
+  background-color: rgba(248, 250, 252, 0.45) !important;
+}
+
