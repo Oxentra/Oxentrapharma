@@ -366,6 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initBrochureLibrary();
   initImageLazyLoading();
+  initWhyUsMobileCarousel();
 });
 
 // Mobile Menu Toggle
@@ -1003,3 +1004,61 @@ function initImageLazyLoading() {
     }
   });
 }
+
+// Auto-slide Why Choose Oxentra icons every 2 seconds on mobile view only
+function initWhyUsMobileCarousel() {
+  const whyUsSection = document.querySelector("#why-us");
+  if (!whyUsSection) return;
+
+  const scrollContainer = whyUsSection.querySelector(".flex.overflow-x-auto");
+  if (!scrollContainer) return;
+
+  let autoScrollInterval = null;
+
+  function startAutoScroll() {
+    if (window.innerWidth > 768) return; // Mobile view only
+
+    if (!autoScrollInterval) {
+      autoScrollInterval = setInterval(() => {
+        if (window.innerWidth > 768) return;
+
+        const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        const step = 160; // Smooth slide step for icons
+
+        if (scrollContainer.scrollLeft >= maxScrollLeft - 10) {
+          // Smoothly loop back to start once all icons are displayed
+          scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          // Slide right to show next set of icons
+          scrollContainer.scrollBy({ left: step, behavior: "smooth" });
+        }
+      }, 2000); // Every 2 seconds
+    }
+  }
+
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+  }
+
+  // Start auto scroll on mobile load
+  if (window.innerWidth <= 768) {
+    startAutoScroll();
+  }
+
+  // Handle screen resize (Pause on Desktop, Start on Mobile)
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 768) {
+      startAutoScroll();
+    } else {
+      stopAutoScroll();
+      scrollContainer.scrollLeft = 0; // Keep desktop layout standard
+    }
+  });
+
+  // Pause on user touch interaction
+  scrollContainer.addEventListener("touchstart", stopAutoScroll, { passive: true });
+}
+
