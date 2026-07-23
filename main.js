@@ -365,6 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLeafletMap();
   initContactForm();
   initBrochureLibrary();
+  initImageLazyLoading();
 });
 
 // Mobile Menu Toggle
@@ -990,4 +991,15 @@ function initSearchBar() {
       });
     });
   }
+}
+
+// Automatic Lazy Loading for Images
+function initImageLazyLoading() {
+  const images = document.querySelectorAll("img:not([loading])");
+  images.forEach(img => {
+    // Skip logo and hero images for immediate LCP rendering
+    if (!img.src.includes("logo") && !img.closest("#hero")) {
+      img.setAttribute("loading", "lazy");
+    }
+  });
 }
