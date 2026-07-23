@@ -1,4 +1,4 @@
-// Product Data from Brochure
+// Product Data from Brochure (Oxentra v1.0.1)
 const products = {
   glideplus: {
     id: "glideplus",
