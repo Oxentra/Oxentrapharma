@@ -487,60 +487,59 @@ header.glass-panel {
   }
 }
 
-/* Glass Header Scrolled Styles */
+/* Glass Header Global & Consistent Compact Styles (Matches Image 2) */
 header {
   transition: all 0.3s ease-in-out !important;
-}
-
-header.header-scrolled {
-  background-color: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.7) !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Logo transition on scrolled header */
-header.header-scrolled img {
-  transform: scale(0.85) !important;
+header > div {
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
 }
 
-/* Nav container & links styling on scrolled header */
-header.header-scrolled nav {
-  background-color: rgba(241, 245, 249, 0.8) !important;
-  border-color: rgba(203, 213, 225, 0.4) !important;
+header img {
+  height: 140px !important;
+  margin: -55px -45px !important;
+  transform: scale(0.9) !important;
+  transition: transform 0.3s ease !important;
 }
 
-header.header-scrolled nav a:not(.bg-white) {
-  color: #334155 !important; /* slate-700 */
+header nav {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+  border-color: rgba(203, 213, 225, 0.6) !important;
 }
 
-header.header-scrolled nav a:not(.bg-white):hover {
-  color: #0f58a2 !important;
-  background-color: rgba(255, 255, 255, 0.6) !important;
-}
-
-/* Search input styling on scrolled header */
-header.header-scrolled .nav-search-input {
-  background-color: rgba(241, 245, 249, 0.8) !important;
-  border-color: rgba(203, 213, 225, 0.4) !important;
+header nav a:not(.bg-white) {
   color: #334155 !important;
 }
 
-header.header-scrolled .nav-search-input::placeholder {
-  color: #94a3b8 !important; /* slate-400 */
+header nav a:not(.bg-white):hover {
+  color: #0f58a2 !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
 }
 
-header.header-scrolled .nav-search-input:focus {
+header .nav-search-input {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+  border-color: rgba(203, 213, 225, 0.6) !important;
+  color: #334155 !important;
+}
+
+header .nav-search-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+header .nav-search-input:focus {
   background-color: #ffffff !important;
   border-color: #005B82 !important;
   color: #0f2441 !important;
 }
 
-/* Mobile menu button transition */
-header.header-scrolled #mobile-menu-btn {
+header #mobile-menu-btn {
   color: #0f58a2 !important;
 }
 
