@@ -735,6 +735,39 @@ header nav a {
   }
 }
 
+/* ==========================================================================
+   Click / Active State Transformations: Turn Blue Elements White on Click
+   ========================================================================== */
+
+/* Active blue navigation links & pill buttons default text legibility */
+header nav a.bg-\[\#0f58a2\],
+header nav a[class*="bg-[#0f58a2]"],
+.bg-\[\#0f58a2\] {
+  color: #ffffff !important;
+}
+
+/* While clicking (:active state), make blue backgrounds turn white with blue text */
+header nav a:active,
+header nav a.bg-\[\#0f58a2\]:active,
+header nav a[class*="bg-[#0f58a2]"]:active,
+.bg-\[\#0f58a2\]:active,
+a.bg-\[\#0f58a2\]:active,
+button.bg-\[\#0f58a2\]:active,
+.bg-brand-blue:active {
+  background-color: #ffffff !important;
+  color: #0f58a2 !important;
+  border: 1px solid #0f58a2 !important;
+  box-shadow: 0 2px 8px rgba(15, 88, 162, 0.15) !important;
+}
+
+/* Ensure SVG icon inside active/clicked link turns blue when background turns white */
+header nav a:active svg,
+header nav a.bg-\[\#0f58a2\]:active svg,
+header nav a[class*="bg-[#0f58a2]"]:active svg {
+  stroke: #0f58a2 !important;
+}
+
+
 
 
 
