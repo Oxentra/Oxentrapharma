@@ -25,7 +25,7 @@
             brand: {
               navy: '#0F172A',
               slate: '#64748B',
-              border: '#E7EBF0',
+              border: '#E8EDF2',
               bgLight: '#FAFBFC',
               blue: '#005E8A',
               cyan: '#3AA9D8'
@@ -48,82 +48,81 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="index.css?v=12">
 
-  <!-- Apple & Roche Editorial Handcrafted Design System -->
+  <!-- Swiss Grid Editorial & Apple Product Reveal Styles -->
   <style>
     :root {
       --bg-main: #FAFBFC;
       --card-bg: #FFFFFF;
       --text-primary: #0F172A;
       --text-secondary: #64748B;
-      --border-line: #E7EBF0;
+      --border-hairline: #E8EDF2;
       --brand-accent: #3AA9D8;
     }
 
     body {
       background-color: var(--bg-main) !important;
       font-family: 'Inter', 'SF Pro Display', 'Manrope', system-ui, sans-serif !important;
-      color: var(--text-primary) !important;
+      color: var(--text-[#0F172A]) !important;
       overflow-x: hidden;
     }
 
-    /* Handcrafted Minimal Card */
-    .editorial-card {
+    /* Enterprise Swiss Card */
+    .swiss-card {
       background: #FFFFFF;
-      border: 1px solid var(--border-line);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.04);
-      transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid var(--border-hairline);
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05);
+      transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .editorial-card:hover {
+    .swiss-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 45px rgba(15, 23, 42, 0.07);
     }
 
-    /* Navigation Bar Isolation */
+    /* Header Preservation */
     header {
       background-color: rgba(255, 255, 255, 0.92) !important;
       backdrop-filter: blur(20px) !important;
       -webkit-backdrop-filter: blur(20px) !important;
-      border-bottom: 1px solid var(--border-line) !important;
+      border-bottom: 1px solid var(--border-hairline) !important;
     }
     header img {
       transform: scale(0.85) !important;
     }
 
-    /* Pedestal Radial Shadow & Soft Light */
-    .pedestal-container {
+    /* Pedestal Radial Shadow & Bottle Overlap Reveal */
+    .pedestal-reveal {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .pedestal-light {
+    .radial-lighting {
       position: absolute;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(58, 169, 216, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(58, 169, 216, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
       border-radius: 50%;
       pointer-events: none;
     }
     .pedestal-disc {
       position: absolute;
-      bottom: -10px;
-      width: 380px;
-      height: 70px;
+      bottom: -30px;
+      width: 440px;
+      height: 80px;
       background: #FFFFFF;
       border-radius: 50%;
-      border: 1px solid var(--border-line);
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), inset 0 2px 6px rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--border-hairline);
+      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.06), inset 0 2px 8px rgba(255, 255, 255, 0.9);
       z-index: 1;
     }
-    .hero-bottle-img {
+    .hero-bottle-overlap {
       position: relative;
       z-index: 10;
-      animation: floatSlow 6s ease-in-out infinite;
+      animation: floatAppleScale 6s ease-in-out infinite;
     }
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+    @keyframes floatAppleScale {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-8px) scale(1.01); }
     }
   </style>
 </head>
@@ -132,8 +131,8 @@
   <!-- ========================================== -->
   <!-- NAVIGATION BAR (Preserving Original Header) -->
   <!-- ========================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E7EBF0] transition-all duration-300">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E8EDF2] transition-all duration-300">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
       
       <!-- Official Logo Image -->
       <a href="index.html" class="flex items-center group">
@@ -142,7 +141,7 @@
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-4">
-        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-100/90 border border-[#E7EBF0] p-1.5 rounded-full shadow-sm">
+        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-100/90 border border-[#E8EDF2] p-1.5 rounded-full shadow-sm">
           <a href="index.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">Home</a>
           <a href="about.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">About Us</a>
           <a href="products.html" class="bg-[#005E8A] text-white px-4 py-1.5 rounded-full shadow-sm font-bold transition-all flex items-center gap-1">
@@ -169,7 +168,7 @@
     </div>
 
     <!-- Mobile Menu List -->
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-[#E7EBF0] flex-col px-8 py-6 gap-4 shadow-lg">
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-[#E8EDF2] flex-col px-8 py-6 gap-4 shadow-lg">
       <a href="index.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">Home</a>
       <a href="about.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">About Us</a>
       <a href="products.html" class="text-[#005E8A] font-semibold py-1 border-b border-slate-50">Products</a>
@@ -184,93 +183,88 @@
   <main class="flex-grow pt-28">
     
     <!-- ---------------------------------------- -->
-    <!-- TOP SECTION: LUXURY EDITORIAL GRID       -->
+    <!-- HERO SECTION (Split Screen: Left 45%, Right 55%) -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-[40px] md:py-[80px]">
+    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[40px] md:py-[80px]">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- LEFT COLUMN: Specifications & Badges -->
-        <div class="lg:col-span-7 space-y-6">
+        <!-- LEFT 45% -->
+        <div class="lg:col-span-5 space-y-6">
           
-          <!-- Small Category Label -->
-          <div class="space-y-2">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-[#0F172A] block">DERMATOLOGY CARE</span>
-            <div class="w-8 h-[2px] bg-[#3AA9D8]"></div>
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#0F172A] block">DERMATOLOGY CARE</span>
+            <div class="w-6 h-[2px] bg-[#3AA9D8]"></div>
           </div>
 
-          <!-- Large Product Name (60-72px) -->
-          <h1 class="text-5xl md:text-[68px] font-bold tracking-tight text-[#0F172A] leading-[1.05]">
+          <h1 class="text-5xl md:text-[64px] font-bold tracking-tight text-[#0F172A] leading-[1.05]">
             LXENTRA<span class="text-[#3AA9D8]">™</span>
           </h1>
 
-          <!-- Scientific Headline -->
-          <h2 class="text-2xl md:text-[28px] font-semibold text-[#0F172A]">
-            Targeted Dermatophyte Infection Treatment
+          <h2 class="text-xl md:text-[22px] font-medium text-[#005E8A] leading-snug">
+            Luliconazole Cream IP 1% w/w (20 gm)
           </h2>
 
-          <!-- Small Product Description (Max 3 lines) -->
-          <p class="text-base md:text-[17px] text-[#64748B] leading-relaxed max-w-xl font-normal">
-            Luliconazole Cream IP 1% w/w engineered for high-affinity skin penetration, rapid symptom relief, and once-daily dosing.
+          <p class="text-base text-[#64748B] leading-relaxed font-normal">
+            Targeted topical antifungal therapy delivering superior skin penetration, rapid symptom relief, and high cure rates.
           </p>
 
-          <!-- Four Premium Certification Badges -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-            <div class="bg-white border border-[#E7EBF0] rounded-xl px-3 py-2.5 text-center shadow-xs">
-              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">WHO-GMP</span>
-              <span class="text-[10px] text-[#64748B] uppercase tracking-widest block mt-0.5">CERTIFIED</span>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
+            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
+              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">WHO-GMP</span>
             </div>
-            <div class="bg-white border border-[#E7EBF0] rounded-xl px-3 py-2.5 text-center shadow-xs">
-              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">ISO 9001</span>
-              <span class="text-[10px] text-[#64748B] uppercase tracking-widest block mt-0.5">CERTIFIED</span>
+            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
+              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">ISO 9001</span>
             </div>
-            <div class="bg-white border border-[#E7EBF0] rounded-xl px-3 py-2.5 text-center shadow-xs">
-              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">QUALITY</span>
-              <span class="text-[10px] text-[#64748B] uppercase tracking-widest block mt-0.5">ASSURED</span>
+            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
+              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">QUALITY</span>
             </div>
-            <div class="bg-white border border-[#E7EBF0] rounded-xl px-3 py-2.5 text-center shadow-xs">
-              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">SCHEDULE H</span>
-              <span class="text-[10px] text-[#64748B] uppercase tracking-widest block mt-0.5">PRESCRIPTION</span>
+            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
+              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">SCHEDULE H</span>
             </div>
           </div>
 
-          <!-- Technical Specification List -->
-          <div class="pt-4 divide-y divide-[#E7EBF0]">
+          <div class="pt-3 divide-y divide-[#E8EDF2]">
             
-            <div class="py-3 flex items-center justify-between text-sm">
-              <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">DOSAGE FORM</span>
+            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
+              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">DOSAGE FORM</span>
               <span class="font-medium text-[#0F172A]">Topical Cream</span>
             </div>
 
-            <div class="py-3 flex items-center justify-between text-sm">
-              <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">PACK SIZE</span>
+            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
+              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">PACK SIZE</span>
               <span class="font-medium text-[#0F172A]">20 gm Tube</span>
             </div>
 
-            <div class="py-3 flex items-center justify-between text-sm">
-              <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">STORAGE</span>
-              <span class="font-medium text-[#0F172A]">Store below 25°C. Keep tube tightly closed.</span>
+            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
+              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">STORAGE</span>
+              <span class="font-medium text-[#0F172A]">Store below 25°C. Keep tube closed.</span>
             </div>
 
-            <div class="py-3 flex items-center justify-between text-sm">
-              <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">SHELF LIFE</span>
-              <span class="font-medium text-[#0F172A]">24 Months from the date of manufacture</span>
+            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
+              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">SHELF LIFE</span>
+              <span class="font-medium text-[#0F172A]">24 Months</span>
             </div>
 
-            <div class="py-3 flex items-center justify-between text-sm">
-              <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">PRESCRIPTION</span>
+            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
+              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">PRESCRIPTION</span>
               <span class="font-medium text-[#0F172A]">Schedule H Prescription Medicine</span>
+            </div>
+
+            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
+              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">MANUFACTURER</span>
+              <span class="font-medium text-[#005E8A]">Oxentra Pharma Pvt. Ltd.</span>
             </div>
 
           </div>
 
         </div>
 
-        <!-- RIGHT SIDE: Product Hero Reveal on White Circular Pedestal -->
-        <div class="lg:col-span-5 flex items-center justify-center py-6">
-          <div class="pedestal-container w-full max-w-[440px] aspect-square">
-            <div class="pedestal-light"></div>
-            <div class="hero-bottle-img">
-              <img src="images/product_img/LXENTRA_cream_box_showcase_2K_202607180207.jpeg" alt="LXENTRA™ Box" class="h-80 md:h-[400px] w-auto object-contain drop-shadow-2xl">
+        <!-- RIGHT 55% (Bottle Overlap Reveal) -->
+        <div class="lg:col-span-7 flex items-center justify-center relative py-6">
+          <div class="pedestal-reveal w-full max-w-[560px] aspect-square">
+            <div class="radial-lighting"></div>
+            <div class="hero-bottle-overlap">
+              <img src="images/product_img/LXENTRA_cream_box_showcase_2K_202607180207.jpeg" alt="LXENTRA™ Box" class="h-[520px] lg:h-[720px] w-auto object-contain drop-shadow-2xl">
             </div>
             <div class="pedestal-disc"></div>
           </div>
@@ -280,39 +274,36 @@
     </section>
 
     <!-- ---------------------------------------- -->
-    <!-- SECOND SECTION: SPLIT LAYOUT             -->
+    <!-- SECTION TWO: TWO-COLUMN LAYOUT           -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-[40px]">
-      <div class="editorial-card p-8 md:p-12">
+    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[40px]">
+      <div class="swiss-card p-8 md:p-12">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
-          <!-- Left: Composition Table -->
-          <div class="lg:col-span-5 space-y-6">
+          <!-- LEFT: Composition Table -->
+          <div class="lg:col-span-6 space-y-6">
             <div>
               <h3 class="text-xl font-bold uppercase tracking-wider text-[#0F172A]">COMPOSITION</h3>
               <p class="text-xs text-[#64748B] mt-1">Formulation Breakdown</p>
             </div>
 
-            <div class="divide-y divide-[#E7EBF0]">
+            <div class="divide-y divide-[#E8EDF2]">
               <div class="py-3.5 flex items-center justify-between text-sm">
-                <span class="font-semibold text-[#0F172A]">Luliconazole IP</span>
+                <span class="font-medium text-[#0F172A]">Luliconazole IP</span>
                 <span class="font-bold text-[#0F172A]">1.0% w/w</span>
               </div>
               <div class="py-3.5 flex items-center justify-between text-sm">
-                <span class="font-semibold text-[#0F172A]">Benzyl Alcohol IP</span>
+                <span class="font-medium text-[#0F172A]">Benzyl Alcohol IP</span>
                 <span class="font-bold text-[#0F172A]">1.0% w/w</span>
               </div>
               <div class="py-3.5 flex items-center justify-between text-sm">
-                <span class="font-semibold text-[#0F172A]">Cream Base</span>
+                <span class="font-medium text-[#0F172A]">Cream Base</span>
                 <span class="font-bold text-[#0F172A]">q.s.</span>
               </div>
             </div>
           </div>
 
-          <!-- Divider -->
-          <div class="hidden lg:block w-[1px] bg-[#E7EBF0]"></div>
-
-          <!-- Right: Key Benefits -->
+          <!-- RIGHT: Key Benefits (01, 02, 03, 04 Blocks) -->
           <div class="lg:col-span-6 space-y-6">
             <div>
               <h3 class="text-xl font-bold uppercase tracking-wider text-[#0F172A]">KEY BENEFITS</h3>
@@ -321,36 +312,32 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-2">
               
-              <div class="flex gap-3 items-start">
-                <div class="w-[3px] h-10 bg-[#3AA9D8] flex-shrink-0 mt-0.5"></div>
-                <div class="space-y-1">
-                  <h4 class="text-sm font-bold text-[#0F172A]">Superior Skin Penetration</h4>
-                  <p class="text-xs text-[#64748B] leading-relaxed">Penetrates deeply into stratum corneum reservoirs.</p>
-                </div>
+              <div class="space-y-1.5">
+                <span class="text-2xl font-bold text-[#3AA9D8] font-mono">01</span>
+                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
+                <h4 class="text-sm font-bold text-[#0F172A]">Superior Skin Penetration</h4>
+                <p class="text-xs text-[#64748B] leading-relaxed">Penetrates deeply into stratum corneum reservoirs.</p>
               </div>
 
-              <div class="flex gap-3 items-start">
-                <div class="w-[3px] h-10 bg-[#3AA9D8] flex-shrink-0 mt-0.5"></div>
-                <div class="space-y-1">
-                  <h4 class="text-sm font-bold text-[#0F172A]">Rapid Symptom Relief</h4>
-                  <p class="text-xs text-[#64748B] leading-relaxed">Quickly calms itching, burning, and skin scaling.</p>
-                </div>
+              <div class="space-y-1.5">
+                <span class="text-2xl font-bold text-[#3AA9D8] font-mono">02</span>
+                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
+                <h4 class="text-sm font-bold text-[#0F172A]">Rapid Symptom Relief</h4>
+                <p class="text-xs text-[#64748B] leading-relaxed">Quickly calms itching, burning, and skin scaling.</p>
               </div>
 
-              <div class="flex gap-3 items-start">
-                <div class="w-[3px] h-10 bg-[#3AA9D8] flex-shrink-0 mt-0.5"></div>
-                <div class="space-y-1">
-                  <h4 class="text-sm font-bold text-[#0F172A]">Once-Daily Dosing</h4>
-                  <p class="text-xs text-[#64748B] leading-relaxed">Convenient regimen enhancing patient treatment adherence.</p>
-                </div>
+              <div class="space-y-1.5">
+                <span class="text-2xl font-bold text-[#3AA9D8] font-mono">03</span>
+                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
+                <h4 class="text-sm font-bold text-[#0F172A]">Once-Daily Dosing</h4>
+                <p class="text-xs text-[#64748B] leading-relaxed">Convenient regimen enhancing patient treatment adherence.</p>
               </div>
 
-              <div class="flex gap-3 items-start">
-                <div class="w-[3px] h-10 bg-[#3AA9D8] flex-shrink-0 mt-0.5"></div>
-                <div class="space-y-1">
-                  <h4 class="text-sm font-bold text-[#0F172A]">High Cure Rates</h4>
-                  <p class="text-xs text-[#64748B] leading-relaxed">Definitive fungal eradication across Tinea infections.</p>
-                </div>
+              <div class="space-y-1.5">
+                <span class="text-2xl font-bold text-[#3AA9D8] font-mono">04</span>
+                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
+                <h4 class="text-sm font-bold text-[#0F172A]">High Cure Rates</h4>
+                <p class="text-xs text-[#64748B] leading-relaxed">Definitive fungal eradication across Tinea infections.</p>
               </div>
 
             </div>
@@ -361,29 +348,23 @@
     </section>
 
     <!-- ---------------------------------------- -->
-    <!-- THIRD SECTION: THREE MINIMAL CARDS      -->
+    <!-- SECTION THREE: THREE EQUAL CARDS        -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-[30px]">
+    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[20px]">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Card 1: Dosage -->
-        <div class="editorial-card p-8 space-y-3">
-          <div>
-            <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">DOSAGE</h3>
-            <div class="w-6 h-[2px] bg-[#3AA9D8] mt-1.5"></div>
-          </div>
-          <p class="text-sm text-[#0F172A] leading-relaxed font-normal">
+        <div class="swiss-card p-8 space-y-3">
+          <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">DOSAGE</h3>
+          <div class="w-6 h-[2px] bg-[#3AA9D8]"></div>
+          <p class="text-sm text-[#0F172A] leading-relaxed">
             Apply a thin layer to affected skin area once daily, or as directed by Physician.
           </p>
         </div>
 
-        <!-- Card 2: Storage -->
-        <div class="editorial-card p-8 space-y-3">
-          <div>
-            <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">STORAGE</h3>
-            <div class="w-6 h-[2px] bg-[#3AA9D8] mt-1.5"></div>
-          </div>
-          <p class="text-sm text-[#0F172A] leading-relaxed font-normal">
+        <div class="swiss-card p-8 space-y-3">
+          <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">STORAGE</h3>
+          <div class="w-6 h-[2px] bg-[#3AA9D8]"></div>
+          <p class="text-sm text-[#0F172A] leading-relaxed">
             Store below 25°C.
           </p>
           <p class="text-sm font-semibold text-[#0F172A]">
@@ -391,12 +372,9 @@
           </p>
         </div>
 
-        <!-- Card 3: Prescription -->
-        <div class="editorial-card p-8 space-y-3">
-          <div>
-            <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">PRESCRIPTION</h3>
-            <div class="w-6 h-[2px] bg-[#3AA9D8] mt-1.5"></div>
-          </div>
+        <div class="swiss-card p-8 space-y-3">
+          <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">PRESCRIPTION</h3>
+          <div class="w-6 h-[2px] bg-[#3AA9D8]"></div>
           <p class="text-sm text-[#64748B] leading-relaxed">
             Schedule H Prescription Medicine. To be sold by retail on the prescription of a Registered Medical Practitioner only.
           </p>
@@ -406,18 +384,56 @@
     </section>
 
     <!-- ---------------------------------------- -->
-    <!-- BOTTOM SECTION: MEDICAL NOTICE           -->
+    <!-- SECTION FOUR: ABOUT PRODUCT             -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-[30px]">
-      <div class="editorial-card p-6 md:p-8">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div class="w-[4px] h-10 bg-[#3AA9D8] flex-shrink-0"></div>
-          <div class="space-y-1">
-            <span class="text-xs font-bold uppercase tracking-widest text-[#0F172A] block">IMPORTANT</span>
-            <p class="text-sm text-[#64748B]">
-              This medicine should be used only under medical supervision. Read the label carefully before use.
-            </p>
+    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[40px]">
+      <div class="swiss-card p-8 md:p-12 space-y-8">
+        
+        <div>
+          <h3 class="text-2xl md:text-[32px] font-bold text-[#0F172A] tracking-tight">About LXENTRA™</h3>
+          <p class="text-base text-[#64748B] max-w-3xl mt-2 leading-relaxed">
+            LXENTRA™ (Luliconazole Cream 1% w/w) is a modern imidazole antifungal engineered for rapid once-daily eradication of superficial dermatophyte skin infections.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-4 border-t border-[#E8EDF2]">
+          
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">Deep Reservoir</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">High lipid solubility binds in stratum corneum layers.</p>
           </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">Rapid Relief</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">Calms cutaneous inflammation and itching from first dose.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">Once-Daily Regimen</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">Sustained fungicidal activity with minimal application effort.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">High Cure Rates</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">Proven clinical efficacy across Tinea infections.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- BOTTOM NOTICE: MINIMAL INFORMATION STRIP -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[20px]">
+      <div class="bg-white border border-[#E8EDF2] rounded-xl p-6 shadow-xs">
+        <div class="flex items-center gap-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#0F172A]">IMPORTANT</span>
+          <div class="w-[1px] h-4 bg-[#E8EDF2]"></div>
+          <p class="text-xs text-[#64748B]">
+            This medicine should be used only under medical supervision. Read the label carefully before use.
+          </p>
         </div>
       </div>
     </section>
@@ -428,7 +444,7 @@
   <!-- FOOTER (Preserving Original Footer)        -->
   <!-- ========================================== -->
   <footer class="bg-[#0b1a30]/85 backdrop-blur-md text-slate-300 pt-16 pb-8 px-6 md:px-12 border-t border-slate-900/40 relative">
-    <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+    <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
       
       <div class="space-y-4 overflow-hidden">
         <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
@@ -481,7 +497,7 @@
 
     </div>
 
-    <div class="max-w-[1400px] mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div class="max-w-[1440px] mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <p>© 2026 Oxentra Pharma Pvt. Ltd. All rights reserved.</p>
     </div>
   </footer>
