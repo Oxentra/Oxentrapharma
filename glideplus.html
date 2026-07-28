@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Best Practices -->
-  <title>GLIDEPLUS™ - Liquid Paraffin, Milk of Magnesia & Sodium Picosulfate Suspension | Oxentra Pharma</title>
-  <meta name="description" content="Explore GLIDEPLUS™ by Oxentra Pharma Pvt. Ltd. - Liquid Paraffin, Milk of Magnesia & Sodium Picosulfate Suspension. Enterprise pharmaceutical product detail.">
-  <meta name="keywords" content="Oxentra Pharma, GLIDEPLUS™, Liquid Paraffin, Milk of Magnesia, Sodium Picosulfate, Gastro Care">
+  <title>GLIDEPLUS™ - Oral Suspension 200 ml | Oxentra Pharma</title>
+  <meta name="description" content="Explore GLIDEPLUS™ by Oxentra Pharma Pvt. Ltd. - Liquid Paraffin, Milk of Magnesia & Sodium Picosulfate Suspension for Chronic Constipation Relief.">
+  <meta name="keywords" content="Oxentra Pharma, GLIDEPLUS™, Liquid Paraffin, Milk of Magnesia, Sodium Picosulfate, Gastro Care, Oral Suspension">
   <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
   
   <!-- Open Graph / Meta -->
-  <meta property="og:title" content="GLIDEPLUS™ - Enterprise Pharmaceutical Product Detail">
-  <meta property="og:description" content="Triple-Action Constipation Relief engineered for gentle, predictable, and comfortable bowel clearance.">
+  <meta property="og:title" content="GLIDEPLUS™ - Triple-Action Constipation Relief">
+  <meta property="og:description" content="Advanced oral suspension formulated with Liquid Paraffin, Milk of Magnesia and Sodium Picosulfate for effective, predictable and comfortable relief.">
   <meta property="og:type" content="website">
   
   <!-- Tailwind CSS CDN -->
@@ -25,7 +25,7 @@
             brand: {
               navy: '#0F172A',
               slate: '#64748B',
-              border: '#E8EDF2',
+              border: '#E7EBF0',
               bgLight: '#FAFBFC',
               pink: '#D91B5C',
               blue: '#005E8A',
@@ -49,34 +49,22 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="index.css?v=12">
 
-  <!-- Swiss Grid Editorial & Apple Product Reveal Styles -->
+  <!-- Exact Visual Mockup Styling System -->
   <style>
     :root {
       --bg-main: #FAFBFC;
       --card-bg: #FFFFFF;
       --text-primary: #0F172A;
       --text-secondary: #64748B;
-      --border-hairline: #E8EDF2;
-      --accent-pink: #D91B5C;
+      --border-line: #E7EBF0;
+      --brand-accent: #D91B5C;
     }
 
     body {
       background-color: var(--bg-main) !important;
       font-family: 'Inter', 'SF Pro Display', 'Manrope', system-ui, sans-serif !important;
-      color: var(--text-[#0F172A]) !important;
+      color: var(--text-primary) !important;
       overflow-x: hidden;
-    }
-
-    /* Enterprise Swiss Card */
-    .swiss-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-hairline);
-      border-radius: 24px;
-      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05);
-      transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .swiss-card:hover {
-      transform: translateY(-4px);
     }
 
     /* Header Preservation */
@@ -84,46 +72,42 @@
       background-color: rgba(255, 255, 255, 0.92) !important;
       backdrop-filter: blur(20px) !important;
       -webkit-backdrop-filter: blur(20px) !important;
-      border-bottom: 1px solid var(--border-hairline) !important;
+      border-bottom: 1px solid var(--border-line) !important;
     }
     header img {
       transform: scale(0.85) !important;
     }
 
-    /* Pedestal Radial Shadow & Bottle Overlap Reveal */
-    .pedestal-reveal {
+    /* Hero Circle & Pedestal reveal */
+    .hero-circle-backdrop {
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(235, 243, 250, 0.9) 0%, rgba(248, 250, 252, 0.4) 70%);
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .radial-lighting {
+    .pedestal-3d-disc {
       position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0, 94, 138, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .pedestal-disc {
-      position: absolute;
-      bottom: -30px;
-      width: 440px;
-      height: 80px;
+      bottom: 20px;
+      width: 380px;
+      height: 65px;
       background: #FFFFFF;
       border-radius: 50%;
-      border: 1px solid var(--border-hairline);
-      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.06), inset 0 2px 8px rgba(255, 255, 255, 0.9);
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08), inset 0 2px 6px rgba(255, 255, 255, 0.9);
       z-index: 1;
     }
-    .hero-bottle-overlap {
+    .hero-product-img {
       position: relative;
       z-index: 10;
-      animation: floatAppleScale 6s ease-in-out infinite;
+      animation: floatSlow 6s ease-in-out infinite;
     }
-    @keyframes floatAppleScale {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-8px) scale(1.01); }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
     }
   </style>
 </head>
@@ -132,8 +116,8 @@
   <!-- ========================================== -->
   <!-- NAVIGATION BAR (Preserving Original Header) -->
   <!-- ========================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E8EDF2] transition-all duration-300">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#E7EBF0] transition-all duration-300">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
       
       <!-- Official Logo Image -->
       <a href="index.html" class="flex items-center group">
@@ -142,7 +126,7 @@
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-4">
-        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-100/90 border border-[#E8EDF2] p-1.5 rounded-full shadow-sm">
+        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-100/90 border border-[#E7EBF0] p-1.5 rounded-full shadow-sm">
           <a href="index.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">Home</a>
           <a href="about.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">About Us</a>
           <a href="products.html" class="bg-[#005E8A] text-white px-4 py-1.5 rounded-full shadow-sm font-bold transition-all flex items-center gap-1">
@@ -169,7 +153,7 @@
     </div>
 
     <!-- Mobile Menu List -->
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-[#E8EDF2] flex-col px-8 py-6 gap-4 shadow-lg">
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-[#E7EBF0] flex-col px-8 py-6 gap-4 shadow-lg">
       <a href="index.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">Home</a>
       <a href="about.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">About Us</a>
       <a href="products.html" class="text-[#005E8A] font-semibold py-1 border-b border-slate-50">Products</a>
@@ -184,102 +168,99 @@
   <main class="flex-grow pt-28">
     
     <!-- ---------------------------------------- -->
-    <!-- HERO SECTION (Split Screen: Left 45%, Right 55%) -->
+    <!-- TOP SECTION: EXACT MOCKUP HERO LAYOUT    -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[40px] md:py-[80px]">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-[40px] md:py-[60px]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <!-- LEFT 45% (5 Columns) -->
-        <div class="lg:col-span-5 space-y-6">
+        <!-- LEFT COLUMN: Category, Title, Badges, Tech Spec Box -->
+        <div class="lg:col-span-6 space-y-5">
           
-          <!-- Category Label -->
-          <div class="space-y-1">
-            <span class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#0F172A] block">GASTRO CARE</span>
-            <div class="w-6 h-[2px] bg-[#D91B5C]"></div>
+          <!-- Category Label & Line -->
+          <div class="space-y-1.5">
+            <span class="text-xs font-bold uppercase tracking-[0.18em] text-[#0F172A] block">GASTRO CARE</span>
+            <div class="w-8 h-[2px] bg-[#D91B5C]"></div>
           </div>
 
-          <!-- Product Title (64px) -->
-          <h1 class="text-5xl md:text-[64px] font-bold tracking-tight text-[#0F172A] leading-[1.05]">
+          <!-- Product Title -->
+          <h1 class="text-5xl md:text-[62px] font-bold tracking-tight text-[#0F172A] leading-[1.05]">
             GLIDE<span class="text-[#D91B5C]">PLUS™</span>
           </h1>
 
-          <!-- Scientific Name -->
-          <h2 class="text-xl md:text-[22px] font-medium text-[#005E8A] leading-snug">
-            Liquid Paraffin, Milk of Magnesia & Sodium Picosulfate Suspension
-          </h2>
+          <!-- Scientific Name & Line -->
+          <div>
+            <h2 class="text-2xl md:text-[26px] font-semibold text-[#0F172A]">
+              Triple-Action Constipation Relief
+            </h2>
+            <div class="w-8 h-[2px] bg-[#D91B5C] my-3"></div>
+          </div>
 
-          <!-- Small Description (Max 3 lines) -->
-          <p class="text-base text-[#64748B] leading-relaxed font-normal">
-            Advanced oral suspension formulated with Liquid Paraffin, Milk of Magnesia, and Sodium Picosulfate for effective, predictable, and comfortable relief.
+          <!-- Product Description -->
+          <p class="text-sm md:text-base text-[#64748B] leading-relaxed max-w-xl">
+            Advanced oral suspension formulated with Liquid Paraffin, Milk of Magnesia and Sodium Picosulfate for effective, predictable and comfortable relief.
           </p>
 
-          <!-- Outlined Certification Badges -->
+          <!-- 4 Certification Badges -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
-            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
-              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">WHO-GMP</span>
+            <div class="bg-white border border-[#E2E8F0] rounded-lg p-2.5 text-center">
+              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">WHO-GMP</span>
+              <span class="text-[9px] font-medium text-[#64748B] uppercase tracking-widest block mt-0.5">CERTIFIED</span>
             </div>
-            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
-              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">ISO 9001</span>
+            <div class="bg-white border border-[#E2E8F0] rounded-lg p-2.5 text-center">
+              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">ISO 9001</span>
+              <span class="text-[9px] font-medium text-[#64748B] uppercase tracking-widest block mt-0.5">CERTIFIED</span>
             </div>
-            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
-              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">QUALITY</span>
+            <div class="bg-white border border-[#E2E8F0] rounded-lg p-2.5 text-center">
+              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">QUALITY</span>
+              <span class="text-[9px] font-medium text-[#64748B] uppercase tracking-widest block mt-0.5">ASSURED</span>
             </div>
-            <div class="bg-white border border-[#E8EDF2] rounded-lg px-2.5 py-2 text-center">
-              <span class="text-[10px] font-bold text-[#0F172A] uppercase tracking-wider block">SCHEDULE H</span>
+            <div class="bg-white border border-[#E2E8F0] rounded-lg p-2.5 text-center">
+              <span class="text-[11px] font-bold text-[#0F172A] uppercase tracking-wider block">SCHEDULE H</span>
+              <span class="text-[9px] font-medium text-[#64748B] uppercase tracking-widest block mt-0.5">PRESCRIPTION</span>
             </div>
           </div>
 
-          <!-- Apple Specification Table -->
-          <div class="pt-3 divide-y divide-[#E8EDF2]">
+          <!-- Light Blue Tech Spec Card (Exact Mockup Box) -->
+          <div class="bg-[#F0F5F9] border border-[#E2E8F0] rounded-[20px] p-6 space-y-3.5">
             
-            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
-              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">DOSAGE FORM</span>
-              <span class="font-medium text-[#0F172A]">Oral Suspension</span>
+            <div class="flex items-center justify-between text-xs md:text-sm">
+              <span class="font-semibold text-[#0F172A]">Dosage Form</span>
+              <span class="font-medium text-[#64748B]">Oral Suspension</span>
             </div>
 
-            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
-              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">PACK SIZE</span>
-              <span class="font-medium text-[#0F172A]">200 ml</span>
+            <div class="flex items-center justify-between text-xs md:text-sm">
+              <span class="font-semibold text-[#0F172A]">Pack Size</span>
+              <span class="font-medium text-[#64748B]">200 ml</span>
             </div>
 
-            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
-              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">STORAGE</span>
-              <span class="font-medium text-[#0F172A]">Store below 25°C. Protect from light.</span>
+            <div class="flex items-center justify-between text-xs md:text-sm">
+              <span class="font-semibold text-[#0F172A]">Storage</span>
+              <span class="font-medium text-[#64748B]">Store below 25°C. Protect from light.</span>
             </div>
 
-            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
-              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">SHELF LIFE</span>
-              <span class="font-medium text-[#0F172A]">24 Months</span>
+            <div class="flex items-center justify-between text-xs md:text-sm">
+              <span class="font-semibold text-[#0F172A]">Shelf Life</span>
+              <span class="font-medium text-[#64748B]">24 Months from the date of manufacture</span>
             </div>
 
-            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
-              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">PRESCRIPTION</span>
-              <span class="font-medium text-[#0F172A]">Schedule H Prescription Medicine</span>
-            </div>
-
-            <div class="py-2.5 flex items-center justify-between text-xs md:text-sm">
-              <span class="font-bold text-[#0F172A] uppercase tracking-wider text-[11px]">MANUFACTURER</span>
-              <span class="font-medium text-[#005E8A]">Oxentra Pharma Pvt. Ltd.</span>
+            <div class="flex items-center justify-between text-xs md:text-sm">
+              <span class="font-semibold text-[#0F172A]">Prescription</span>
+              <span class="font-medium text-[#64748B]">Schedule H Prescription Medicine</span>
             </div>
 
           </div>
 
         </div>
 
-        <!-- RIGHT 55% (7 Columns: Bottle Overlap Hero Reveal) -->
-        <div class="lg:col-span-7 flex items-center justify-center relative py-6">
-          <div class="pedestal-reveal w-full max-w-[560px] aspect-square">
-            
-            <!-- Large Radial Ambient Lighting Behind Bottle -->
-            <div class="radial-lighting"></div>
-
-            <!-- Overlapping Hero Reveal Bottle (Height 700-850px on desktop) -->
-            <div class="hero-bottle-overlap">
-              <img src="images/product_img/Medicine_bottle_on_podium_2K_202607180207.jpeg" alt="GLIDEPLUS™ Bottle Reveal" class="h-[520px] lg:h-[720px] w-auto object-contain drop-shadow-2xl">
+        <!-- RIGHT COLUMN: Circular Backdrop & Product Reveal Image -->
+        <div class="lg:col-span-6 flex items-center justify-center py-4">
+          <div class="hero-circle-backdrop">
+            <!-- Product Image from images/view_product/GLIDEPLUS.jpeg -->
+            <div class="hero-product-img">
+              <img src="images/view_product/GLIDEPLUS.jpeg" alt="GLIDEPLUS™ Product View" class="h-96 md:h-[440px] w-auto object-contain drop-shadow-2xl">
             </div>
-
-            <!-- White Circular Pedestal & Reflection -->
-            <div class="pedestal-disc"></div>
+            <!-- Pedestal Disc -->
+            <div class="pedestal-3d-disc"></div>
           </div>
         </div>
 
@@ -287,78 +268,85 @@
     </section>
 
     <!-- ---------------------------------------- -->
-    <!-- SECTION TWO: TWO-COLUMN LAYOUT           -->
+    <!-- SECTION TWO: COMPOSITION & KEY BENEFITS  -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[40px]">
-      <div class="swiss-card p-8 md:p-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-[30px]">
+      <div class="bg-white border border-[#E7EBF0] rounded-[24px] p-8 md:p-12 shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
-          <!-- LEFT: Composition Table -->
-          <div class="lg:col-span-6 space-y-6">
+          <!-- LEFT: COMPOSITION TABLE -->
+          <div class="lg:col-span-5 space-y-5">
             <div>
-              <h3 class="text-xl font-bold uppercase tracking-wider text-[#0F172A]">COMPOSITION</h3>
+              <h3 class="text-lg font-bold uppercase tracking-wider text-[#0F172A]">COMPOSITION</h3>
               <p class="text-xs text-[#64748B] mt-1">Each 5 ml contains</p>
             </div>
 
-            <div class="divide-y divide-[#E8EDF2]">
+            <div class="divide-y divide-[#E7EBF0]">
               <div class="py-3.5 flex items-center justify-between text-sm">
-                <span class="font-medium text-[#0F172A]">Liquid Paraffin IP</span>
+                <span class="font-semibold text-[#0F172A]">Liquid Paraffin IP</span>
                 <span class="font-bold text-[#0F172A]">1.25 ml</span>
               </div>
               <div class="py-3.5 flex items-center justify-between text-sm">
-                <span class="font-medium text-[#0F172A]">Milk of Magnesia IP</span>
+                <span class="font-semibold text-[#0F172A]">Milk of Magnesia IP</span>
                 <span class="font-bold text-[#0F172A]">3.75 ml</span>
               </div>
               <div class="py-3.5 flex items-center justify-between text-sm">
-                <span class="font-medium text-[#0F172A]">Sodium Picosulfate BP</span>
+                <span class="font-semibold text-[#0F172A]">Sodium Picosulfate BP</span>
                 <span class="font-bold text-[#0F172A]">3.3 mg</span>
               </div>
               <div class="py-3.5 flex items-center justify-between text-sm">
-                <span class="font-medium text-[#0F172A]">Flavoured Syrupy Base</span>
+                <span class="font-semibold text-[#0F172A]">Flavoured Syrupy Base</span>
                 <span class="font-bold text-[#0F172A]">q.s.</span>
               </div>
             </div>
           </div>
 
-          <!-- RIGHT: Key Benefits (01, 02, 03, 04 Blocks) -->
-          <div class="lg:col-span-6 space-y-6">
+          <!-- DIVIDER -->
+          <div class="hidden lg:block w-[1px] bg-[#E7EBF0]"></div>
+
+          <!-- RIGHT: KEY BENEFITS GRID -->
+          <div class="lg:col-span-6 space-y-5">
             <div>
-              <h3 class="text-xl font-bold uppercase tracking-wider text-[#0F172A]">KEY BENEFITS</h3>
+              <h3 class="text-lg font-bold uppercase tracking-wider text-[#0F172A]">KEY BENEFITS</h3>
               <div class="w-8 h-[2px] bg-[#D91B5C] mt-2"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-2">
               
               <!-- 01 -->
-              <div class="space-y-1.5">
-                <span class="text-2xl font-bold text-[#D91B5C] font-mono">01</span>
-                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
-                <h4 class="text-sm font-bold text-[#0F172A]">Triple-Action Formula</h4>
-                <p class="text-xs text-[#64748B] leading-relaxed">Works synergistically for effective constipation relief.</p>
+              <div class="flex gap-3 items-start">
+                <span class="text-base font-bold text-[#D91B5C] font-mono leading-none">01</span>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-bold text-[#0F172A]">Triple-Action Formula</h4>
+                  <p class="text-xs text-[#64748B] leading-relaxed">Works synergistically for effective constipation relief.</p>
+                </div>
               </div>
 
               <!-- 02 -->
-              <div class="space-y-1.5">
-                <span class="text-2xl font-bold text-[#D91B5C] font-mono">02</span>
-                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
-                <h4 class="text-sm font-bold text-[#0F172A]">Predictable Relief</h4>
-                <p class="text-xs text-[#64748B] leading-relaxed">Supports comfortable and consistent bowel movement.</p>
+              <div class="flex gap-3 items-start">
+                <span class="text-base font-bold text-[#D91B5C] font-mono leading-none">02</span>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-bold text-[#0F172A]">Predictable Relief</h4>
+                  <p class="text-xs text-[#64748B] leading-relaxed">Supports comfortable and consistent bowel movement.</p>
+                </div>
               </div>
 
               <!-- 03 -->
-              <div class="space-y-1.5">
-                <span class="text-2xl font-bold text-[#D91B5C] font-mono">03</span>
-                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
-                <h4 class="text-sm font-bold text-[#0F172A]">Patient Friendly</h4>
-                <p class="text-xs text-[#64748B] leading-relaxed">Pleasant taste for better compliance and experience.</p>
+              <div class="flex gap-3 items-start">
+                <span class="text-base font-bold text-[#D91B5C] font-mono leading-none">03</span>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-bold text-[#0F172A]">Patient Friendly</h4>
+                  <p class="text-xs text-[#64748B] leading-relaxed">Pleasant taste for better compliance and experience.</p>
+                </div>
               </div>
 
               <!-- 04 -->
-              <div class="space-y-1.5">
-                <span class="text-2xl font-bold text-[#D91B5C] font-mono">04</span>
-                <div class="w-6 h-[1px] bg-[#E8EDF2]"></div>
-                <h4 class="text-sm font-bold text-[#0F172A]">Physician Trusted</h4>
-                <p class="text-xs text-[#64748B] leading-relaxed">Formulated to support safe and effective outcomes.</p>
+              <div class="flex gap-3 items-start">
+                <span class="text-base font-bold text-[#D91B5C] font-mono leading-none">04</span>
+                <div class="space-y-1">
+                  <h4 class="text-sm font-bold text-[#0F172A]">Physician Trusted</h4>
+                  <p class="text-xs text-[#64748B] leading-relaxed">Formulated to support safe and effective outcomes.</p>
+                </div>
               </div>
 
             </div>
@@ -369,27 +357,31 @@
     </section>
 
     <!-- ---------------------------------------- -->
-    <!-- SECTION THREE: THREE EQUAL CARDS        -->
+    <!-- SECTION THREE: 3 EQUAL WHITE CARDS      -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[20px]">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-[20px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Dosage -->
-        <div class="swiss-card p-8 space-y-3">
-          <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">DOSAGE</h3>
-          <div class="w-6 h-[2px] bg-[#D91B5C]"></div>
+        <!-- DOSAGE -->
+        <div class="bg-white border border-[#E7EBF0] rounded-[20px] p-8 shadow-sm space-y-3">
+          <div>
+            <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">DOSAGE</h3>
+            <div class="w-6 h-[2px] bg-[#D91B5C] mt-1.5"></div>
+          </div>
           <p class="text-sm text-[#0F172A] leading-relaxed">
             Adults: 10 ml to 15 ml at bedtime, or as directed by the Physician.
           </p>
-          <p class="text-xs text-[#64748B] italic pt-1">
+          <p class="text-xs italic text-[#64748B] pt-1">
             Shake the bottle thoroughly before use.
           </p>
         </div>
 
-        <!-- Storage -->
-        <div class="swiss-card p-8 space-y-3">
-          <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">STORAGE</h3>
-          <div class="w-6 h-[2px] bg-[#D91B5C]"></div>
+        <!-- STORAGE -->
+        <div class="bg-white border border-[#E7EBF0] rounded-[20px] p-8 shadow-sm space-y-3">
+          <div>
+            <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">STORAGE</h3>
+            <div class="w-6 h-[2px] bg-[#D91B5C] mt-1.5"></div>
+          </div>
           <p class="text-sm text-[#0F172A] leading-relaxed">
             Store below 25°C.
           </p>
@@ -401,10 +393,12 @@
           </p>
         </div>
 
-        <!-- Prescription -->
-        <div class="swiss-card p-8 space-y-3">
-          <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">PRESCRIPTION</h3>
-          <div class="w-6 h-[2px] bg-[#D91B5C]"></div>
+        <!-- PRESCRIPTION -->
+        <div class="bg-white border border-[#E7EBF0] rounded-[20px] p-8 shadow-sm space-y-3">
+          <div>
+            <h3 class="text-base font-bold uppercase tracking-wider text-[#0F172A]">PRESCRIPTION</h3>
+            <div class="w-6 h-[2px] bg-[#D91B5C] mt-1.5"></div>
+          </div>
           <p class="text-sm text-[#64748B] leading-relaxed">
             Schedule H Prescription Medicine. To be sold by retail on the prescription of a Registered Medical Practitioner only.
           </p>
@@ -414,39 +408,43 @@
     </section>
 
     <!-- ---------------------------------------- -->
-    <!-- SECTION FOUR: ABOUT PRODUCT             -->
+    <!-- SECTION FOUR: ABOUT PRODUCT EDITORIAL    -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[40px]">
-      <div class="swiss-card p-8 md:p-12 space-y-8">
+    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-[20px]">
+      <div class="bg-[#F0F5F9]/80 border border-[#E7EBF0] rounded-[24px] p-8 md:p-12 space-y-8">
         
         <div>
-          <h3 class="text-2xl md:text-[32px] font-bold text-[#0F172A] tracking-tight">About GLIDEPLUS™</h3>
-          <p class="text-base text-[#64748B] max-w-3xl mt-2 leading-relaxed">
-            GLIDEPLUS™ Suspension is a therapeutic gastroenterology formulation engineered for predictable, cramping-free lower intestinal clearance under strict WHO-GMP manufacturing controls.
+          <h3 class="text-2xl md:text-[28px] font-bold text-[#0F172A] tracking-tight">ABOUT GLIDEPLUS™</h3>
+          <p class="text-sm md:text-base text-[#64748B] max-w-4xl mt-2 leading-relaxed">
+            GLIDEPLUS combines the proven efficacy of Liquid Paraffin, Milk of Magnesia and Sodium Picosulfate to provide gentle yet effective relief from chronic constipation. Its triple-action mechanism helps soften stools, improves bowel movement and supports overall digestive comfort.
           </p>
         </div>
 
-        <!-- Four Horizontal Information Columns (Apple Technical Spec Style) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-4 border-t border-[#E8EDF2]">
+        <!-- 4 Horizontal Information Columns -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-4 border-t border-[#E2E8F0]">
           
-          <div class="space-y-2">
-            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">Gentle</span>
-            <p class="text-xs text-[#64748B] leading-relaxed">Fecal lubrication prevents mucosal friction and straining.</p>
+          <div class="space-y-1.5">
+            <div class="w-6 h-[2px] bg-[#D91B5C] mb-2"></div>
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">GENTLE</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">Gentle action on the digestive system.</p>
           </div>
 
-          <div class="space-y-2">
-            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">Reliable</span>
-            <p class="text-xs text-[#64748B] leading-relaxed">Predictable colonic evacuation within 6 to 12 hours.</p>
+          <div class="space-y-1.5">
+            <div class="w-6 h-[2px] bg-[#D91B5C] mb-2"></div>
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">RELIABLE</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">Consistent performance you can trust.</p>
           </div>
 
-          <div class="space-y-2">
-            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">Quality Assured</span>
-            <p class="text-xs text-[#64748B] leading-relaxed">Formulated under WHO-GMP and ISO 9001 certified protocols.</p>
+          <div class="space-y-1.5">
+            <div class="w-6 h-[2px] bg-[#D91B5C] mb-2"></div>
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">QUALITY ASSURED</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">Manufactured in WHO-GMP certified facilities.</p>
           </div>
 
-          <div class="space-y-2">
-            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">Better Compliance</span>
-            <p class="text-xs text-[#64748B] leading-relaxed">Pleasant sugar-free mixed fruit and vanilla flavor base.</p>
+          <div class="space-y-1.5">
+            <div class="w-6 h-[2px] bg-[#D91B5C] mb-2"></div>
+            <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">BETTER COMPLIANCE</span>
+            <p class="text-xs text-[#64748B] leading-relaxed">Pleasant taste and formulation for better adherence.</p>
           </div>
 
         </div>
@@ -455,17 +453,15 @@
     </section>
 
     <!-- ---------------------------------------- -->
-    <!-- BOTTOM NOTICE: MINIMAL INFORMATION STRIP -->
+    <!-- BOTTOM SECTION: IMPORTANT DISCLAIMER     -->
     <!-- ---------------------------------------- -->
-    <section class="max-w-[1320px] mx-auto px-6 md:px-8 py-[20px]">
-      <div class="bg-white border border-[#E8EDF2] rounded-xl p-6 shadow-xs">
-        <div class="flex items-center gap-4">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#0F172A]">IMPORTANT</span>
-          <div class="w-[1px] h-4 bg-[#E8EDF2]"></div>
-          <p class="text-xs text-[#64748B]">
-            This medicine should be used only under medical supervision. Read the label carefully before use.
-          </p>
-        </div>
+    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-[20px] pb-[60px]">
+      <div class="bg-[#FFF4F6] border border-[#FCDDEC] rounded-[16px] p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#D91B5C] flex-shrink-0">IMPORTANT</span>
+        <div class="hidden sm:block w-[1px] h-4 bg-[#FCDDEC]"></div>
+        <p class="text-xs text-[#64748B]">
+          This medicine should be used only under medical supervision. Read the label carefully before use.
+        </p>
       </div>
     </section>
 
@@ -475,7 +471,7 @@
   <!-- FOOTER (Preserving Original Footer)        -->
   <!-- ========================================== -->
   <footer class="bg-[#0b1a30]/85 backdrop-blur-md text-slate-300 pt-16 pb-8 px-6 md:px-12 border-t border-slate-900/40 relative">
-    <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+    <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
       
       <div class="space-y-4 overflow-hidden">
         <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
@@ -528,7 +524,7 @@
 
     </div>
 
-    <div class="max-w-[1440px] mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div class="max-w-[1400px] mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <p>© 2026 Oxentra Pharma Pvt. Ltd. All rights reserved.</p>
     </div>
   </footer>
