@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Best Practices -->
-  <title>HEAVE™ ENEMA - Oxentra Pharma</title>
-  <meta name="description" content="Explore HEAVE™ ENEMA by Oxentra Pharma Pvt. Ltd. - Glycerine & Sodium Chloride Enema. Crafted with precision and backed by science.">
-  <meta name="keywords" content="Oxentra Pharma, HEAVE™ ENEMA, Gastroenterology, pharmaceutical formulations">
+  <title>HEAVE ENEMA™ - Glycerine & Sodium Chloride Enema 100ml | Oxentra Pharma</title>
+  <meta name="description" content="Explore HEAVE ENEMA™ by Oxentra Pharma Pvt. Ltd. - Glycerine 15% & Sodium Chloride 15% Enema for immediate and complete lower bowel evacuation.">
+  <meta name="keywords" content="Oxentra Pharma, HEAVE ENEMA™, Glycerine, Sodium Chloride, Gastroenterology, Bowel Evacuation, Osmotic Enema">
   <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
   
   <!-- Open Graph / Meta -->
-  <meta property="og:title" content="HEAVE™ ENEMA - Oxentra Pharma">
-  <meta property="og:description" content="Rapid Bowel Evacuation. Explore composition and clinical indications.">
+  <meta property="og:title" content="HEAVE ENEMA™ - Pharmaceutical Product Profile">
+  <meta property="og:description" content="Immediate & Complete Lower Bowel Evacuation. Maximum Osmotic Power, Minimal Systemic Impact.">
   <meta property="og:type" content="website">
   
   <!-- Tailwind CSS CDN -->
@@ -23,74 +23,93 @@
         extend: {
           colors: {
             brand: {
-              blue: '#005B82',
-              orange: '#F07D00',
-              dark: '#002B3E',
-              lightBlue: '#0284c7',
-              gray: '#475569'
+              blue: '#005E8A',
+              accent: '#23C483',
+              dark: '#152432',
+              muted: '#6D7C8A',
+              bgLight: '#F8FBFD',
+              border: '#EAECEF'
             }
           },
           fontFamily: {
-            sans: ['"Poppins"', 'sans-serif'],
-            display: ['"Poppins"', 'sans-serif'],
+            inter: ['"Inter"', '"Manrope"', 'system-ui', 'sans-serif'],
+            sans: ['"Inter"', '"Manrope"', 'system-ui', 'sans-serif'],
+            display: ['"Inter"', '"Manrope"', 'system-ui', 'sans-serif'],
           }
         }
       }
     }
   </script>
   
-  <!-- Google Fonts: Poppins -->
+  <!-- Google Fonts: Inter & Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Custom Premium Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=10">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=12">
 
-  <!-- Isolated Light Page Header Styles -->
+  <!-- Apple & Roche Minimal Product Presentation Styles -->
   <style>
-    body {
-      background-color: #F8FAFC !important;
+    :root {
+      --bg-gradient: linear-gradient(180deg, #F8FBFD 0%, #FFFFFF 100%);
+      --primary-blue: #005E8A;
+      --primary-green: #23C483;
+      --dark-navy: #152432;
+      --light-gray: #F8FBFD;
+      --muted-gray: #6D7C8A;
+      --border-gray: #EAECEF;
     }
+
+    body {
+      background: var(--bg-gradient) !important;
+      font-family: 'Inter', 'Manrope', system-ui, sans-serif !important;
+      color: var(--dark-navy) !important;
+      overflow-x: hidden;
+    }
+
+    /* Minimal Card Specs */
+    .apple-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-gray);
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.05);
+      border-radius: 32px;
+      transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .apple-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 94, 138, 0.08);
+      border-color: rgba(0, 94, 138, 0.2);
+    }
+
+    /* Header Preservation */
     header {
-      background-color: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
-      padding-top: 0.25rem !important;
-      padding-bottom: 0.25rem !important;
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid var(--border-gray) !important;
     }
     header img {
       transform: scale(0.85) !important;
     }
-    header nav {
-      background-color: rgba(241, 245, 249, 0.9) !important;
-      border-color: rgba(203, 213, 225, 0.5) !important;
+
+    /* Hero Image Motion */
+    .apple-float-image {
+      animation: floatAppleImage 6s ease-in-out infinite;
     }
-    header nav a:not(.bg-white) {
-      color: #334155 !important;
-    }
-    header nav a:not(.bg-white):hover {
-      color: #005B82 !important;
-      background-color: rgba(255, 255, 255, 0.7) !important;
-    }
-    header #mobile-menu-btn {
-      color: #005B82 !important;
-    }
-    /* Custom float animation */
-    .float-element {
-      animation: floatAnim 6s ease-in-out infinite;
-    }
-    @keyframes floatAnim {
-      0%, 100% { transform: translateY(0); }
+    @keyframes floatAppleImage {
+      0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-12px); }
     }
   </style>
 </head>
-<body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+<body class="bg-[#F8FBFD] text-[#152432] antialiased font-inter flex flex-col min-h-screen">
 
-  <header class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
+  <!-- ========================================== -->
+  <!-- NAVIGATION BAR (Preserving Original Header) -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#EAECEF] transition-all duration-300">
+    <div class="max-w-[1280px] mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
       
       <!-- Official Logo Image -->
       <a href="index.html" class="flex items-center group">
@@ -99,303 +118,293 @@
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-4">
-        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide p-1.5 rounded-full shadow-sm">
-          <a href="index.html" class="px-3 py-1.5 rounded-full transition-all">Home</a>
-          <a href="about.html" class="px-3 py-1.5 rounded-full transition-all">About Us</a>
-          <a href="products.html" class="bg-white text-[#0f58a2] px-4 py-1.5 rounded-full shadow-sm font-bold transition-all flex items-center gap-1">
+        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-100/90 border border-[#EAECEF] p-1.5 rounded-full shadow-sm">
+          <a href="index.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">Home</a>
+          <a href="about.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">About Us</a>
+          <a href="products.html" class="bg-[#005E8A] text-white px-4 py-1.5 rounded-full shadow-sm font-bold transition-all flex items-center gap-1">
             Products
             <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
           </a>
-          <a href="careers.html" class="px-3 py-1.5 rounded-full transition-all">Careers</a>
+          <a href="careers.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">Careers</a>
         </nav>
       </div>
 
       <!-- Desktop Contact CTA -->
       <div class="hidden lg:block">
-        <a href="contact.html" class="px-5 py-2.5 bg-[#f97316] text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-md flex items-center gap-2 text-sm">
+        <a href="contact.html" class="px-5 py-2.5 bg-[#005E8A] text-white font-bold rounded-xl hover:bg-[#004b6e] transition-all shadow-sm flex items-center gap-2 text-sm">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.384 17.791c-1.205-1.205-3.159-1.205-4.364 0l-1.613 1.613c-.24.24-.601.294-.901.129-2.316-1.272-4.215-3.171-5.486-5.486-.165-.3-.111-.661.129-.901l1.613-1.613c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451c-1.205-1.205-3.159-1.205-4.364 0l-1.391 1.391c-2.408 2.408-2.613 6.136-.549 9.387 2.062 3.248 5.486 6.672 8.734 8.734 3.251 2.064 6.979 1.859 9.387-.549l1.391-1.391c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451z"/></svg>
           Contact Us
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#0f58a2] hover:text-[#f97316] transition-colors" aria-label="Toggle navigation menu">
-        <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#005E8A] hover:text-[#23C483] transition-colors" aria-label="Toggle navigation menu">
+        <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
 
     <!-- Mobile Menu List -->
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 flex-col px-8 py-6 gap-4 shadow-lg">
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-[#EAECEF] flex-col px-8 py-6 gap-4 shadow-lg">
       <a href="index.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">Home</a>
       <a href="about.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">About Us</a>
-      <a href="products.html" class="text-[#f97316] font-semibold py-1 border-b border-slate-50">Products</a>
-      <a href="careers.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Careers</a>
-      <a href="contact.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Contact Us</a>
-      <a href="contact.html" class="mt-2 text-center py-3 bg-[#f97316] text-white font-semibold rounded-xl hover:bg-orange-600 transition-all">Contact Us</a>
+      <a href="products.html" class="text-[#005E8A] font-semibold py-1 border-b border-slate-50">Products</a>
+      <a href="careers.html" class="text-slate-600 font-semibold hover:text-[#005E8A]">Careers</a>
+      <a href="contact.html" class="mt-2 text-center py-3 bg-[#005E8A] text-white font-semibold rounded-xl hover:bg-[#004b6e] transition-all">Contact Us</a>
     </div>
   </header>
 
-  <main class="flex-grow pt-20 pb-24 px-6 md:px-12 relative z-10">
-    <!-- Breadcrumb & Back Link Row -->
-    <div class="max-w-6xl mx-auto mb-6 flex items-center justify-between text-xs font-semibold">
-      <div class="text-slate-400 tracking-wide flex items-center gap-2">
-        <a href="index.html" class="hover:text-brand-blue transition-colors">Home</a>
-        <span>/</span>
-        <a href="products.html" class="hover:text-brand-blue transition-colors">Products</a>
-        <span>/</span>
-        <span class="text-brand-orange font-bold">HEAVE™ ENEMA</span>
-      </div>
-      <div>
-        <a href="products.html" class="text-brand-blue hover:text-brand-orange transition-colors flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path></svg>
-          Back to Catalogue
-        </a>
-      </div>
-    </div>
-
-    <!-- Hero Main Container (Light Aesthetics) -->
-    <div class="max-w-6xl mx-auto mb-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+  <!-- ========================================== -->
+  <!-- MAIN PRODUCT VIEW PAGE CONTENT             -->
+  <!-- ========================================== -->
+  <main class="flex-grow pt-24">
+    
+    <!-- ---------------------------------------- -->
+    <!-- HERO SECTION (Apple Two-Column Layout)   -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-12 py-[60px] md:py-[100px]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- Left Column: Details -->
+        <!-- LEFT COLUMN -->
         <div class="lg:col-span-7 space-y-6">
-          <span class="inline-block px-3.5 py-1 bg-slate-100 text-brand-blue text-xs font-extrabold uppercase tracking-widest rounded-full border border-slate-200">Gastroenterology</span>
-          <h1 class="text-4xl md:text-6xl font-black text-black tracking-tight font-display">HEAVE™ ENEMA</h1>
-          <p class="text-lg md:text-xl font-bold text-brand-blue leading-relaxed font-sans">Fast. Complete. Reliable.</p>
-          <p class="text-base font-bold text-slate-800 font-mono italic leading-relaxed">Glycerine & Sodium Chloride Enema</p>
-          <p class="text-base text-slate-600 leading-relaxed font-medium">HEAVE™ Enema is a fast-acting rectal enema formulated to provide immediate and complete lower bowel evacuation. Its balanced combination of Glycerine and Sodium Chloride offers reliable cleansing with predictable onset of action while minimizing systemic absorption. Designed for patient comfort and ease of administration, HEAVE Enema is an effective solution for bowel preparation prior to diagnostic procedures, surgery, and the management of constipation.</p>
-
-
-        </div>
-
-        <!-- Right Column: Product Image Box on 3D Podium -->
-        <div class="lg:col-span-5 relative flex flex-col items-center justify-center py-10">
-          <!-- Floating molecules behind image -->
-          <img src="images/molecule.png" class="absolute -top-6 -left-6 w-20 opacity-30 animate-pulse" alt="molecule">
-          <img src="images/molecule.png" class="absolute top-1/3 -right-12 w-24 opacity-25 animate-bounce" style="animation-duration: 9s;" alt="molecule">
           
-          <!-- Product Packaging Image (Floating effect) -->
-          <div class="relative z-10 float-element flex items-center justify-center">
-            <img src="images/product_img/HEAVE_Enema_box_showcase_2K_202607180207.jpeg" alt="HEAVE™ ENEMA" class="h-80 w-auto object-contain mx-auto drop-shadow-3xl transform hover:scale-105 transition-transform duration-500 rounded-lg">
+          <div class="flex items-center gap-3">
+            <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#005E8A]">GASTROENTEROLOGY</span>
+            <span class="text-xs text-[#EAECEF]">|</span>
+            <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#23C483]">IMMEDIATE LOWER BOWEL EVACUATION</span>
           </div>
 
-          <!-- 3D Cylindrical Podium -->
-          <div class="w-80 h-10 bg-white rounded-[50%] shadow-lg border border-slate-200/40 z-0 -mt-6"></div>
-          <div class="w-80 h-8 bg-gradient-to-b from-white to-slate-100/90 rounded-b-[50%] shadow-2xl border-x border-b border-slate-200/40 z-0"></div>
-        </div>
-      </div>
-    </div>
+          <h1 class="text-4xl md:text-[64px] font-bold text-[#152432] leading-[1.08] font-inter">
+            HEAVE ENEMA™
+          </h1>
 
-    <!-- Technical Specifications bar -->
-    <div class="max-w-6xl mx-auto mb-16 bg-slate-50 border border-slate-100 rounded-3xl p-6 md:py-8 md:px-10 shadow-sm">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-        <!-- Therapeutic Area -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">🩺</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Therapeutic Area</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">Gastroenterology</span>
-        </div>
-        <!-- Dosage Form -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">💧</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Dosage Form</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">Rectal Enema</span>
-        </div>
-        <!-- Pack Size -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">📦</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Pack Size</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">100 ml</span>
-        </div>
-        <!-- Route -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">📍</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Route</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">Rectal</span>
-        </div>
-        <!-- Prescription -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">📄</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Prescription</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">As directed by Physician</span>
-        </div>
-      </div>
-    </div>
+          <h2 class="text-xl md:text-[24px] font-medium text-[#005E8A] leading-snug">
+            Glycerine IP 15% w/v & Sodium Chloride IP 15% w/v Enema (100 ml)
+          </h2>
 
-    <!-- Description, Composition & Benefits Grid -->
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-      
-      <!-- Left Column: Description & Composition Table (7/12) -->
-      <div class="lg:col-span-7 space-y-8">
-        <div>
-          <h3 class="text-sm font-black uppercase tracking-wider text-brand-blue mb-4 font-display">Description</h3>
-          <p class="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
-            HEAVE™ Enema is a fast-acting rectal enema formulated to provide immediate and complete lower bowel evacuation. Its balanced combination of Glycerine and Sodium Chloride offers reliable cleansing with predictable onset of action while minimizing systemic absorption. Designed for patient comfort and ease of administration, HEAVE Enema is an effective solution for bowel preparation prior to diagnostic procedures, surgery, and the management of constipation.
+          <p class="text-base md:text-[18px] text-[#6D7C8A] leading-[1.6] font-normal max-w-xl">
+            For cases demanding immediate and complete lower bowel evacuation. Fast, complete, and reliable hyperosmotic action with minimal systemic risk.
           </p>
-        </div>
 
-        <div>
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-xl">🧪</span>
-            <h3 class="text-sm font-black uppercase tracking-wider text-brand-blue font-display">Composition</h3>
+          <!-- Certification Badges -->
+          <div class="flex flex-wrap items-center gap-2.5 pt-2">
+            <span class="px-3.5 py-1.5 rounded-full bg-white border border-[#EAECEF] text-xs font-semibold text-[#152432] shadow-sm flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#23C483]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              WHO-GMP Certified
+            </span>
+            <span class="px-3.5 py-1.5 rounded-full bg-white border border-[#EAECEF] text-xs font-semibold text-[#152432] shadow-sm flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#005E8A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              ISO 9001
+            </span>
+            <span class="px-3.5 py-1.5 rounded-full bg-white border border-[#EAECEF] text-xs font-semibold text-[#152432] shadow-sm flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#005E8A]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              Quality Controlled
+            </span>
+            <span class="px-3.5 py-1.5 rounded-full bg-white border border-[#EAECEF] text-xs font-semibold text-[#152432] shadow-sm flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-[#23C483]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+              Prescription Medicine
+            </span>
           </div>
-          <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm bg-white">
-            <table class="w-full text-left border-collapse">
-              <thead>
-                <tr class="bg-slate-50 border-b border-slate-100">
-                  <th class="py-3.5 px-4 text-xs font-black uppercase tracking-wider text-slate-500 font-display">Ingredient</th>
-                  <th class="py-3.5 px-4 text-xs font-black uppercase tracking-wider text-slate-500 font-display text-right">Strength</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                  <td class="py-3 px-4 text-sm font-semibold text-slate-700">Glycerine IP</td>
-                  <td class="py-3 px-4 text-sm font-mono font-bold text-brand-orange text-right">15% w/v</td>
-                </tr>
-  
-                <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                  <td class="py-3 px-4 text-sm font-semibold text-slate-700">Sodium Chloride IP</td>
-                  <td class="py-3 px-4 text-sm font-mono font-bold text-brand-orange text-right">1% w/v</td>
-                </tr>
-  
-                <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                  <td class="py-3 px-4 text-sm font-semibold text-slate-700">Purified Water</td>
-                  <td class="py-3 px-4 text-sm font-mono font-bold text-brand-orange text-right">q.s.</td>
-                </tr>
-  
-              </tbody>
-            </table>
-          </div>
-        </div>
 
-        <!-- Quick Info Blocks beneath table -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-3.5 shadow-sm">
-            <span class="text-xl text-slate-400">💧</span>
+          <div class="border-b border-[#EAECEF] my-6"></div>
+
+          <!-- Quick Specs -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
             <div>
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Dosage Form</span>
-              <p class="text-xs font-black text-slate-800 font-display mt-0.5">Rectal Enema</p>
+              <span class="text-[#6D7C8A] font-medium block uppercase tracking-[0.15em] text-[11px]">Dosage Form</span>
+              <span class="text-[#152432] font-bold text-sm mt-0.5 block">Rectal Enema</span>
+            </div>
+            <div>
+              <span class="text-[#6D7C8A] font-medium block uppercase tracking-[0.15em] text-[11px]">Pack Size</span>
+              <span class="text-[#152432] font-bold text-sm mt-0.5 block">100 ml Squeeze Bottle</span>
+            </div>
+            <div>
+              <span class="text-[#6D7C8A] font-medium block uppercase tracking-[0.15em] text-[11px]">Base</span>
+              <span class="text-[#152432] font-bold text-sm mt-0.5 block">Aqueous Solution</span>
+            </div>
+            <div>
+              <span class="text-[#6D7C8A] font-medium block uppercase tracking-[0.15em] text-[11px]">Storage</span>
+              <span class="text-[#152432] font-bold text-sm mt-0.5 block">Store below 25°C</span>
+            </div>
+            <div>
+              <span class="text-[#6D7C8A] font-medium block uppercase tracking-[0.15em] text-[11px]">Shelf Life</span>
+              <span class="text-[#152432] font-bold text-sm mt-0.5 block">24 Months</span>
+            </div>
+            <div>
+              <span class="text-[#6D7C8A] font-medium block uppercase tracking-[0.15em] text-[11px]">Prescription</span>
+              <span class="text-[#005E8A] font-bold text-sm mt-0.5 block">Rx Required</span>
             </div>
           </div>
-          <div class="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-3.5 shadow-sm">
-            <span class="text-xl text-slate-400">📦</span>
-            <div>
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Pack Size</span>
-              <p class="text-xs font-black text-slate-800 font-display mt-0.5">100 ml</p>
+
+          <!-- Key Benefits (4 Bullet Points) -->
+          <div class="pt-4 space-y-2.5">
+            <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#152432] block mb-3">CLINICAL HIGHLIGHTS</span>
+            <div class="flex items-center gap-3 text-sm text-[#152432] font-medium">
+              <span class="w-2 h-2 rounded-full bg-[#005E8A]"></span>
+              <span>Dual Hyperosmotic Power drawing fluid directly into lower rectal lumen</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-[#152432] font-medium">
+              <span class="w-2 h-2 rounded-full bg-[#005E8A]"></span>
+              <span>Predictable & Rapid Onset of Action within minutes of rectal instillation</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-[#152432] font-medium">
+              <span class="w-2 h-2 rounded-full bg-[#005E8A]"></span>
+              <span>Minimal Systemic Risk with targeted localized therapeutic action</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-[#152432] font-medium">
+              <span class="w-2 h-2 rounded-full bg-[#23C483]"></span>
+              <span>High Efficacy Concentration for pre-procedural and emergency evacuation</span>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Right Column: Key Benefits (5/12) -->
-      <div class="lg:col-span-5 space-y-8">
-        <div>
-          <h3 class="text-sm font-black uppercase tracking-wider text-brand-blue mb-4 font-display">Key Benefits</h3>
-          <div class="flex flex-col gap-4">
+        </div>
+
+        <!-- RIGHT COLUMN: Floating Product Image -->
+        <div class="lg:col-span-5 flex items-center justify-center relative py-6">
+          <div class="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
             
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Fast & Predictable Action</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Delivers rapid lower bowel evacuation when immediate relief is required.</p>
-              </div>
+            <div class="absolute inset-0 rounded-full bg-gradient-radial from-[#005E8A]/10 via-[#005E8A]/5 to-transparent blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 apple-float-image flex items-center justify-center">
+              <img src="images/product_img/HEAVE_Enema_box_showcase_2K_202607180207.jpeg" alt="HEAVE ENEMA™ Box" class="h-80 md:h-96 w-auto object-contain rounded-2xl drop-shadow-[0_20px_35px_rgba(15,23,42,0.12)]">
             </div>
-  
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Complete Bowel Cleansing</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Ensures effective evacuation for diagnostic and pre-operative bowel preparation.</p>
-              </div>
-            </div>
-  
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Minimal Systemic Absorption</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Acts locally within the bowel, reducing systemic exposure.</p>
-              </div>
-            </div>
-  
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">High Patient Compliance</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Comfortable administration with a user-friendly enema pack.</p>
-              </div>
-            </div>
-  
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Reliable Clinical Performance</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Trusted for consistent results in hospitals and clinical practice.</p>
-              </div>
-            </div>
-  
+
+            <div class="absolute bottom-4 w-48 h-5 bg-[#152432]/10 rounded-[100%] blur-md -z-10"></div>
           </div>
         </div>
+
       </div>
+    </section>
 
-    </div>
-
-    <!-- Bottom CTA Banner Section -->
-    <div class="max-w-6xl mx-auto bg-gradient-to-r from-brand-blue to-brand-dark rounded-3xl p-8 md:p-12 shadow-2xl text-white flex flex-col lg:flex-row items-center justify-between gap-8">
-      <div class="space-y-3 max-w-2xl text-center lg:text-left">
-        <span class="text-xs font-bold text-orange-400 uppercase tracking-widest">Medical Solutions</span>
-        <h3 class="text-2xl md:text-3xl font-black font-display">Looking for a trusted medical solution?</h3>
-        <p class="text-sm text-slate-300 font-semibold leading-relaxed">
-          HEAVE™ ENEMA combines rapid action, dependable performance, and patient-friendly administration.
+    <!-- ---------------------------------------- -->
+    <!-- PRODUCT INFORMATION SECTIONS             -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-12 py-[40px] md:py-[60px] space-y-12">
+      
+      <!-- 1. Overview Card -->
+      <div class="apple-card p-8 md:p-10">
+        <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#005E8A] block mb-3">OVERVIEW</span>
+        <h3 class="text-2xl md:text-[36px] font-bold text-[#152432] mb-3">Maximum Osmotic Power. Minimal Systemic Impact</h3>
+        <p class="text-base md:text-[18px] text-[#6D7C8A] leading-[1.6] font-normal max-w-4xl">
+          HEAVE ENEMA™ (Glycerine 15% w/v + Sodium Chloride 15% w/v) is a high-efficacy hyperosmotic rectal solution engineered for rapid, total lower intestinal evacuation prior to diagnostic procedures, surgery, or acute constipation management.
         </p>
       </div>
-      <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
-        <a href="contact.html" class="w-full sm:w-auto text-center px-6 py-3 bg-white text-brand-dark hover:bg-slate-50 font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A9.342 9.342 0 0012.24 21c-1.11 0-2.154-.277-3.07-.777M14.214 16.058A9.34 9.34 0 0012.24 15c-1.11 0-2.154.277-3.07.777m5.044-3.044a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zMM3 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M3 19.128v-.003c0-1.113.285-2.16.786-3.07M3 19.128v.109A9.342 9.342 0 006.24 21c1.11 0 2.154-.277 3.07-.777M5.214 16.058A9.34 9.34 0 006.24 15c1.11 0 2.154.277 3.07.777m-5.044-3.044a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0z"/></svg>
-          Contact Our Team
-        </a>
+
+      <!-- 2. Composition Table -->
+      <div class="apple-card p-8 md:p-10">
+        <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#005E8A] block mb-4">COMPOSITION</span>
+        <h3 class="text-2xl md:text-[36px] font-bold text-[#152432] mb-6">Active Ingredients per 100 ml</h3>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-[#EAECEF] text-xs font-semibold uppercase tracking-[0.15em] text-[#6D7C8A]">
+                <th class="py-3.5 px-4">Active Ingredient</th>
+                <th class="py-3.5 px-4 text-right">Concentration</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#EAECEF] text-sm md:text-base">
+              <tr>
+                <td class="py-4 px-4 font-semibold text-[#152432]">Glycerine IP</td>
+                <td class="py-4 px-4 font-bold text-[#005E8A] text-right">15% w/v</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 font-semibold text-[#152432]">Sodium Chloride IP</td>
+                <td class="py-4 px-4 font-bold text-[#005E8A] text-right">15% w/v</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 font-semibold text-[#152432]">Aqueous Purified Base</td>
+                <td class="py-4 px-4 font-bold text-[#23C483] text-right">q.s. (100 ml)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 3. Clinical Benefits -->
+      <div>
+        <div class="mb-8">
+          <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#005E8A] block mb-2">CLINICAL PERFORMANCE</span>
+          <h3 class="text-2xl md:text-[36px] font-bold text-[#152432]">Key Clinical Benefits</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="apple-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#005E8A]/10 flex items-center justify-center text-[#005E8A]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h4 class="text-lg font-semibold text-[#152432]">Supports Patient Recovery</h4>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed">Ensures complete rectal evacuation prior to sigmoidoscopy, colonoscopy, or pelvic surgery.</p>
+          </div>
+
+          <div class="apple-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#005E8A]/10 flex items-center justify-center text-[#005E8A]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.6 15.12a2 2 0 01-1.077-1.127l-.427-1.066a2 2 0 01.127-1.745l2.062-3.437a2 2 0 011.714-.972h9.808a2 2 0 011.714.972l2.062 3.437a2 2 0 01.127 1.745l-.427 1.066z"></path></svg>
+            </div>
+            <h4 class="text-lg font-semibold text-[#152432]">High Quality Manufacturing</h4>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed">Sterile automated fill packaging adhering to WHO-GMP & ISO 9001 quality specifications.</p>
+          </div>
+
+          <div class="apple-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#23C483]/10 flex items-center justify-center text-[#23C483]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h4 class="text-lg font-semibold text-[#152432]">Reliable Clinical Efficacy</h4>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed">Hyperosmotic gradient draws fluid to soften fecal mass and initiate immediate peristalsis.</p>
+          </div>
+
+          <div class="apple-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-[#005E8A]/10 flex items-center justify-center text-[#005E8A]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            </div>
+            <h4 class="text-lg font-semibold text-[#152432]">Physician Recommended</h4>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed">Trusted pre-procedural enema chosen by gastroenterologists and hospital surgical wards.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4. Minimal Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="apple-card p-6 space-y-2">
+          <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#005E8A] block">DOSAGE</span>
+          <h4 class="text-xl font-bold text-[#152432]">Administration</h4>
+          <p class="text-sm text-[#6D7C8A] leading-relaxed">100 ml administered rectally via nozzle applicator as directed by Physician.</p>
+        </div>
+
+        <div class="apple-card p-6 space-y-2">
+          <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#005E8A] block">STORAGE</span>
+          <h4 class="text-xl font-bold text-[#152432]">Conditions</h4>
+          <p class="text-sm text-[#6D7C8A] leading-relaxed">Store below 25°C in a dry place. Keep out of reach of children. Do not freeze.</p>
+        </div>
+
+        <div class="apple-card p-6 space-y-2">
+          <span class="text-[14px] font-semibold uppercase tracking-[0.15em] text-[#23C483] block">PRESCRIPTION</span>
+          <h4 class="text-xl font-bold text-[#152432]">Schedule H Status</h4>
+          <p class="text-sm text-[#6D7C8A] leading-relaxed">To be sold by retail on the prescription of a Registered Medical Practitioner only.</p>
+        </div>
 
       </div>
-    </div>
+
+    </section>
+
   </main>
 
+  <!-- ========================================== -->
+  <!-- FOOTER (Preserving Original Footer)        -->
+  <!-- ========================================== -->
   <footer class="bg-[#0b1a30]/85 backdrop-blur-md text-slate-300 pt-16 pb-8 px-6 md:px-12 border-t border-slate-900/40 relative">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+    <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
       
-      <!-- Column 1: Branding & Intro -->
       <div class="space-y-4 overflow-hidden">
         <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
         <p class="text-xs text-slate-400 leading-relaxed">
           Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality, affordable and innovative healthcare solutions across the globe.
         </p>
-        <div class="flex gap-3 pt-2">
-          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-          </a>
-          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="#" class="w-8 h-8 rounded-full border border-slate-800 bg-[#0f2441] flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.163c-.272-1.018-1.077-1.823-2.095-2.095C19.52 3.8 12 3.8 12 3.8s-7.52 0-9.403.268C1.578 4.34 0.773 5.145.5 6.163.228 8.043.228 12 .228 12s0 3.957.272 5.837c.273 1.018 1.078 1.823 2.096 2.095C4.48 20.2 12 20.2 12 20.2s7.52 0 9.403-.268c1.018-.272 1.823-1.077 2.095-2.095.272-1.88.272-5.837.272-5.837s0-3.957-.272-5.837zm-13.88 9.356V8.48l6.39 3.52-6.39 3.519z"/></svg>
-          </a>
-        </div>
       </div>
 
-      <!-- Column 2: Quick Links -->
       <div class="space-y-4">
         <h4 class="text-white font-extrabold text-sm tracking-wide">Quick Links</h4>
         <ul class="space-y-2.5 text-xs md:text-sm text-slate-400">
@@ -407,41 +416,23 @@
         </ul>
       </div>
 
-      <!-- Column 3: Products -->
       <div class="space-y-4">
         <h4 class="text-white font-extrabold text-sm tracking-wide">Products</h4>
         <ul class="space-y-2.5 text-xs md:text-sm text-slate-400">
           <li><a href="products.html#gastro" class="hover:text-white transition-colors">Gastroenterology</a></li>
-          <li><a href="products.html#dermatology" class="hover:text-white transition-colors">Dermatology</a></li>
-          <li><a href="products.html#neuro" class="hover:text-white transition-colors">Neurology</a></li>
-          <li><a href="products.html#ortho" class="hover:text-white transition-colors">Orthopedics</a></li>
-          <li><a href="products.html#respiratory" class="hover:text-white transition-colors">Allergy Care</a></li>
-          <li><a href="products.html#pain" class="hover:text-white transition-colors">Pain Management</a></li>
         </ul>
       </div>
 
-      <!-- Column 4: Contact Us -->
       <div class="space-y-4">
         <h4 class="text-white font-extrabold text-sm tracking-wide">Contact Us</h4>
         <div class="space-y-3.5 text-xs md:text-sm text-slate-400">
-          <div class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            <span class="leading-relaxed">+91 1920 7000 923<br>+91 1920 7000 924</span>
-          </div>
           <div class="flex items-center gap-2.5">
-            <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v-10a2 2 0 002 2z"/></svg>
+            <span class="text-[#23C483]">✉️</span>
             <a href="mailto:info@oxentrapharma.com" class="hover:text-white transition-colors">info@oxentrapharma.com</a>
-          </div>
-          <div class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <span class="leading-relaxed">
-              LR Towers, Ernakulam,<br>Kerala, India - 682025
-            </span>
           </div>
         </div>
       </div>
 
-      <!-- Column 5: Our Location -->
       <div class="space-y-4">
         <h4 class="text-white font-extrabold text-sm tracking-wide">Our Location</h4>
         <div class="rounded-xl overflow-hidden shadow-lg border border-slate-800/80 bg-slate-900 h-28 md:h-32">
@@ -451,86 +442,18 @@
             height="100%" 
             style="border:0;" 
             allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+            loading="lazy">
           </iframe>
         </div>
       </div>
 
     </div>
 
-    <!-- Bottom copyright row -->
-    <div class="max-w-7xl mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div class="max-w-[1280px] mx-auto pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <p>© 2026 Oxentra Pharma Pvt. Ltd. All rights reserved.</p>
-      <div class="flex gap-4">
-        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-        <span>|</span>
-        <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
-      </div>
     </div>
   </footer>
 
-  <!-- Visual Aid Modal -->
-  <div id="visual-aid-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
-    <div class="relative bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
-      <!-- Modal Header -->
-      <div class="p-6 border-b border-slate-100 flex items-center justify-between">
-        <h3 class="text-xl font-black text-slate-850 font-display">HEAVE™ ENEMA - Visual Aid</h3>
-        <button onclick="closeVisualAid()" class="p-2 text-slate-400 hover:text-slate-600 transition-colors">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-      </div>
-      <!-- Modal Content -->
-      <div class="p-6 overflow-y-auto flex-grow flex flex-col md:flex-row gap-8 items-center">
-        <div class="w-full md:w-1/2 flex justify-center bg-slate-50 rounded-2xl p-6 border border-slate-100">
-          <img src="images/product_img/HEAVE_Enema_box_showcase_2K_202607180207.jpeg" alt="HEAVE™ ENEMA" class="max-h-[50vh] w-auto object-contain drop-shadow-2xl rounded-lg">
-        </div>
-        <div class="w-full md:w-1/2 space-y-4 text-slate-700">
-          <span class="inline-block px-3.5 py-1 bg-slate-100 text-brand-blue text-xs font-extrabold uppercase tracking-widest rounded-full border border-slate-200">Gastroenterology</span>
-          <h4 class="text-3xl font-black text-brand-dark font-display">HEAVE™ ENEMA</h4>
-          <p class="text-sm font-bold text-slate-800 font-mono italic">Glycerine & Sodium Chloride Enema</p>
-          <p class="text-sm text-slate-500 font-medium">HEAVE™ Enema is a fast-acting rectal enema formulated to provide immediate and complete lower bowel evacuation. Its balanced combination of Glycerine and Sodium Chloride offers reliable cleansing with predictable onset of action while minimizing systemic absorption. Designed for patient comfort and ease of administration, HEAVE Enema is an effective solution for bowel preparation prior to diagnostic procedures, surgery, and the management of constipation.</p>
-          
-          <div class="space-y-2 pt-2">
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Active Composition:</span>
-            <ul class="text-sm space-y-1 font-mono text-slate-600">
-              <li class="flex items-start gap-2 py-1 font-mono text-xs border-b border-slate-100"><span class="text-orange-500">🧪</span><span>Glycerine IP - 15% w/v</span></li>
-              <li class="flex items-start gap-2 py-1 font-mono text-xs border-b border-slate-100"><span class="text-orange-500">🧪</span><span>Sodium Chloride IP - 1% w/v</span></li>
-              <li class="flex items-start gap-2 py-1 font-mono text-xs border-b border-slate-100"><span class="text-orange-500">🧪</span><span>Purified Water - q.s.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="main.js?v=3" defer></script>
-
-  <!-- Visual Aid Modal toggle script -->
-  <script>
-    function openVisualAid() {
-      const modal = document.getElementById('visual-aid-modal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeVisualAid() {
-      const modal = document.getElementById('visual-aid-modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.style.overflow = '';
-    }
-    // Close on escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeVisualAid();
-    });
-    // Close on backdrop click
-    document.getElementById('visual-aid-modal').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('visual-aid-modal')) closeVisualAid();
-    });
-  </script>
 </body>
 </html>
