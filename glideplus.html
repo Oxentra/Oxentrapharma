@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Best Practices -->
-  <title>GLIDEPLUS™ - Oxentra Pharma</title>
-  <meta name="description" content="Explore GLIDEPLUS™ by Oxentra Pharma Pvt. Ltd. - Liquid Paraffin, Milk of Magnesia & Sodium Picosulfate Suspension. Crafted with precision and backed by science.">
-  <meta name="keywords" content="Oxentra Pharma, GLIDEPLUS™, Gastroenterology, pharmaceutical formulations">
+  <title>GLIDEPLUS™ - Triple-Action Chronic Constipation Relief | Oxentra Pharma</title>
+  <meta name="description" content="Explore GLIDEPLUS™ by Oxentra Pharma Pvt. Ltd. - Liquid Paraffin, Milk of Magnesia & Sodium Picosulfate Suspension. Clinically proven triple-action relief for chronic constipation.">
+  <meta name="keywords" content="Oxentra Pharma, GLIDEPLUS™, Liquid Paraffin, Milk of Magnesia, Sodium Picosulfate, Gastroenterology, laxative suspension">
   <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
   
   <!-- Open Graph / Meta -->
-  <meta property="og:title" content="GLIDEPLUS™ - Oxentra Pharma">
-  <meta property="og:description" content="For Chronic Constipation Relief. Explore composition and clinical indications.">
+  <meta property="og:title" content="GLIDEPLUS™ - Triple-Action Chronic Constipation Relief">
+  <meta property="og:description" content="Clinically proven combination of Liquid Paraffin, Milk of Magnesia, and Sodium Picosulfate for predictable, comfortable relief.">
   <meta property="og:type" content="website">
   
   <!-- Tailwind CSS CDN -->
@@ -23,77 +23,118 @@
         extend: {
           colors: {
             brand: {
-              blue: '#005B82',
-              orange: '#F07D00',
-              dark: '#002B3E',
-              lightBlue: '#0284c7',
-              gray: '#475569'
+              blue: '#005E8A',
+              secondary: '#3AA9D8',
+              accent: '#23C483',
+              highlight: '#FF9B28',
+              dark: '#152432',
+              muted: '#6D7C8A',
+              bgLight: '#F8FBFD'
             }
           },
           fontFamily: {
-            sans: ['"Poppins"', 'sans-serif'],
-            display: ['"Poppins"', 'sans-serif'],
+            manrope: ['"Manrope"', '"Poppins"', 'sans-serif'],
+            sans: ['"Manrope"', '"Poppins"', 'sans-serif'],
+            display: ['"Manrope"', '"Poppins"', 'sans-serif'],
           }
         }
       }
     }
   </script>
   
-  <!-- Google Fonts: Poppins -->
+  <!-- Google Fonts: Manrope & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Custom Premium Stylesheet -->
-  <link rel="stylesheet" href="index.css?v=10">
+  <link rel="stylesheet" href="index.css?v=12">
 
-  <!-- Isolated Light Page Header Styles -->
+  <!-- Apple & Linear Premium Styles -->
   <style>
+    :root {
+      --bg-main: #F8FBFD;
+      --primary: #005E8A;
+      --secondary: #3AA9D8;
+      --accent: #23C483;
+      --dark-text: #152432;
+      --muted-text: #6D7C8A;
+    }
+
     body {
-      background-image: url('images/pharma_smoke_bg.png') !important;
-      background-attachment: fixed !important;
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
+      background-color: var(--bg-main) !important;
+      font-family: 'Manrope', 'Poppins', sans-serif !important;
+      color: var(--dark-text) !important;
+      overflow-x: hidden;
     }
+
+    /* Ambient mesh background glow */
+    .bg-mesh-glow {
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(58, 169, 216, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(0, 94, 138, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(35, 196, 131, 0.03) 0%, transparent 50%);
+    }
+
+    /* Premium Glassmorphism Card System */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 94, 138, 0.03);
+    }
+
+    .glass-card-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 35px 90px rgba(0, 94, 138, 0.09), 0 15px 35px rgba(0, 94, 138, 0.05);
+      border-color: rgba(58, 169, 216, 0.4);
+    }
+
     header {
-      background-color: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
-      padding-top: 0.25rem !important;
-      padding-bottom: 0.25rem !important;
+      background-color: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.7) !important;
     }
+
     header img {
       transform: scale(0.85) !important;
     }
-    header nav {
-      background-color: rgba(241, 245, 249, 0.9) !important;
-      border-color: rgba(203, 213, 225, 0.5) !important;
+
+    /* Bottle Floating animation */
+    .float-bottle {
+      animation: floatBottleAnim 6s ease-in-out infinite;
     }
-    header nav a:not(.bg-white) {
-      color: #334155 !important;
+    @keyframes floatBottleAnim {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-16px) rotate(1.2deg); }
     }
-    header nav a:not(.bg-white):hover {
-      color: #005B82 !important;
-      background-color: rgba(255, 255, 255, 0.7) !important;
+
+    /* Floating particles animation */
+    .float-particle {
+      animation: floatParticleAnim 8s ease-in-out infinite;
     }
-    header #mobile-menu-btn {
-      color: #005B82 !important;
+    @keyframes floatParticleAnim {
+      0%, 100% { transform: translate(0px, 0px); opacity: 0.4; }
+      50% { transform: translate(10px, -20px); opacity: 0.8; }
     }
-    /* Custom float animation */
-    .float-element {
-      animation: floatAnim 6s ease-in-out infinite;
-    }
-    @keyframes floatAnim {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+
+    /* Timeline connecting pulse line */
+    .timeline-pulse {
+      background: linear-gradient(180deg, #005E8A 0%, #3AA9D8 50%, #23C483 100%);
     }
   </style>
 </head>
-<body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+<body class="bg-[#F8FBFD] text-[#152432] antialiased font-manrope flex flex-col min-h-screen bg-mesh-glow">
 
-  <header class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+  <!-- ========================================== -->
+  <!-- NAVIGATION BAR (Preserving Original Header) -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
       
       <!-- Official Logo Image -->
@@ -103,29 +144,29 @@
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-4">
-        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide p-1.5 rounded-full shadow-sm">
-          <a href="index.html" class="px-3 py-1.5 rounded-full transition-all">Home</a>
-          <a href="about.html" class="px-3 py-1.5 rounded-full transition-all">About Us</a>
-          <a href="products.html" class="bg-white text-[#0f58a2] px-4 py-1.5 rounded-full shadow-sm font-bold transition-all flex items-center gap-1">
+        <nav class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-100/90 border border-slate-200/80 p-1.5 rounded-full shadow-sm">
+          <a href="index.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">Home</a>
+          <a href="about.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">About Us</a>
+          <a href="products.html" class="bg-[#005E8A] text-white px-4 py-1.5 rounded-full shadow-sm font-bold transition-all flex items-center gap-1">
             Products
             <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
           </a>
-          <a href="careers.html" class="px-3 py-1.5 rounded-full transition-all">Careers</a>
+          <a href="careers.html" class="px-3 py-1.5 rounded-full transition-all text-slate-700 hover:text-[#005E8A]">Careers</a>
         </nav>
       </div>
 
       <!-- Desktop Contact CTA -->
       <div class="hidden lg:block">
-        <a href="contact.html" class="px-5 py-2.5 bg-[#f97316] text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-md flex items-center gap-2 text-sm">
+        <a href="contact.html" class="px-5 py-2.5 bg-[#F97316] text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-md flex items-center gap-2 text-sm">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.384 17.791c-1.205-1.205-3.159-1.205-4.364 0l-1.613 1.613c-.24.24-.601.294-.901.129-2.316-1.272-4.215-3.171-5.486-5.486-.165-.3-.111-.661.129-.901l1.613-1.613c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451c-1.205-1.205-3.159-1.205-4.364 0l-1.391 1.391c-2.408 2.408-2.613 6.136-.549 9.387 2.062 3.248 5.486 6.672 8.734 8.734 3.251 2.064 6.979 1.859 9.387-.549l1.391-1.391c1.205-1.205 1.205-3.159 0-4.364l-2.451-2.451z"/></svg>
           Contact Us
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#0f58a2] hover:text-[#f97316] transition-colors" aria-label="Toggle navigation menu">
-        <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#005E8A] hover:text-[#F97316] transition-colors" aria-label="Toggle navigation menu">
+        <svg id="menu-icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        <svg id="menu-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
 
@@ -133,242 +174,606 @@
     <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 flex-col px-8 py-6 gap-4 shadow-lg">
       <a href="index.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">Home</a>
       <a href="about.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">About Us</a>
-      <a href="products.html" class="text-[#f97316] font-semibold py-1 border-b border-slate-50">Products</a>
-      <a href="careers.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Careers</a>
-      <a href="contact.html" class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Contact Us</a>
-      <a href="contact.html" class="mt-2 text-center py-3 bg-[#f97316] text-white font-semibold rounded-xl hover:bg-orange-600 transition-all">Contact Us</a>
+      <a href="products.html" class="text-[#F97316] font-semibold py-1 border-b border-slate-50">Products</a>
+      <a href="careers.html" class="text-slate-600 font-semibold hover:text-[#005E8A] py-1 border-b border-slate-50">Careers</a>
+      <a href="contact.html" class="mt-2 text-center py-3 bg-[#F97316] text-white font-semibold rounded-xl hover:bg-orange-600 transition-all">Contact Us</a>
     </div>
   </header>
 
-  <main class="flex-grow pt-20 pb-24 px-6 md:px-12 relative z-10">
-    <!-- Breadcrumb & Back Link Row -->
-    <div class="max-w-6xl mx-auto mb-6 flex items-center justify-between text-xs font-semibold">
-      <div class="text-slate-400 tracking-wide flex items-center gap-2">
-        <a href="index.html" class="hover:text-brand-blue transition-colors">Home</a>
-        <span>/</span>
-        <a href="products.html" class="hover:text-brand-blue transition-colors">Products</a>
-        <span>/</span>
-        <span class="text-brand-orange font-bold">GLIDEPLUS™</span>
+  <!-- ========================================== -->
+  <!-- MAIN PRODUCT DETAIL PAGE CONTENT           -->
+  <!-- ========================================== -->
+  <main class="flex-grow pt-28 pb-24 relative z-10">
+    
+    <!-- ---------------------------------------- -->
+    <!-- 1. HERO SECTION                          -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 pt-4 pb-16">
+      
+      <!-- Breadcrumb Navigation -->
+      <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#6D7C8A] mb-8">
+        <a href="index.html" class="hover:text-[#005E8A] transition-colors">Home</a>
+        <span class="text-slate-300">/</span>
+        <a href="products.html" class="hover:text-[#005E8A] transition-colors">Products</a>
+        <span class="text-slate-300">/</span>
+        <span class="text-[#005E8A] font-extrabold">GLIDEPLUS™</span>
       </div>
-      <div>
-        <a href="products.html" class="text-brand-blue hover:text-brand-orange transition-colors flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path></svg>
-          Back to Catalogue
-        </a>
-      </div>
-    </div>
 
-    <!-- Hero Main Container (Light Aesthetics) -->
-    <div class="max-w-6xl mx-auto mb-12">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- Left Column: Details -->
+        <!-- Left Column: Title, Subtitle, CTAs -->
         <div class="lg:col-span-7 space-y-6">
-          <span class="inline-block px-3.5 py-1 bg-slate-100 text-brand-blue text-xs font-extrabold uppercase tracking-widest rounded-full border border-slate-200">Gastroenterology</span>
-          <h1 class="text-4xl md:text-6xl font-black text-black tracking-tight font-display">GLIDEPLUS™</h1>
-          <p class="text-lg md:text-xl font-bold text-brand-blue leading-relaxed font-sans">The Triple-Action key to effortless relief</p>
-          <p class="text-base font-bold text-slate-800 font-mono italic leading-relaxed">Liquid Paraffin, Milk of Magnesia & Sodium Picosulfate Suspension</p>
-          <p class="text-base text-slate-600 leading-relaxed font-medium">GLIDEPLUS™ Suspension is a clinically proven triple-action laxative designed to provide gentle and effective relief from chronic constipation. Combining Liquid Paraffin, Milk of Magnesia, and Sodium Picosulfate, it works by softening the stool, drawing water into the bowel, and stimulating bowel movement to ensure predictable, comfortable clearance.</p>
-
-
-        </div>
-
-        <!-- Right Column: Product Image Box on 3D Podium -->
-        <div class="lg:col-span-5 relative flex flex-col items-center justify-center py-10">
-          <!-- Floating molecules behind image -->
-          <img src="images/molecule.png" class="absolute -top-6 -left-6 w-20 opacity-30 animate-pulse" alt="molecule">
-          <img src="images/molecule.png" class="absolute top-1/3 -right-12 w-24 opacity-25 animate-bounce" style="animation-duration: 9s;" alt="molecule">
           
-          <!-- Product Packaging Image (Floating effect) -->
-          <div class="relative z-10 float-element flex items-center justify-center">
-            <img src="images/product_img/Medicine_bottle_on_podium_2K_202607180207.jpeg" alt="GLIDEPLUS™" class="h-80 w-auto object-contain mx-auto drop-shadow-3xl transform hover:scale-105 transition-transform duration-500 rounded-lg">
+          <!-- Category Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#005E8A]/10 border border-[#005E8A]/20">
+            <span class="w-2 h-2 rounded-full bg-[#23C483] animate-ping"></span>
+            <span class="text-xs font-extrabold text-[#005E8A] uppercase tracking-widest">GASTROENTEROLOGY • CLINICALLY PROVEN</span>
           </div>
 
-          <!-- 3D Cylindrical Podium -->
-          <div class="w-80 h-10 bg-white rounded-[50%] shadow-lg border border-slate-200/40 z-0 -mt-6"></div>
-          <div class="w-80 h-8 bg-gradient-to-b from-white to-slate-100/90 rounded-b-[50%] shadow-2xl border-x border-b border-slate-200/40 z-0"></div>
-        </div>
-      </div>
-    </div>
+          <!-- Product Title -->
+          <h1 class="text-5xl md:text-7xl font-extrabold text-[#152432] tracking-tight leading-[1.05] font-manrope">
+            GLIDEPLUS™
+          </h1>
 
-    <!-- Technical Specifications bar -->
-    <div class="max-w-6xl mx-auto mb-16 bg-slate-50 border border-slate-100 rounded-3xl p-6 md:py-8 md:px-10 shadow-sm">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-        <!-- Therapeutic Area -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">🩺</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Therapeutic Area</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">Gastroenterology</span>
-        </div>
-        <!-- Dosage Form -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">💧</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Dosage Form</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">Suspension</span>
-        </div>
-        <!-- Pack Size -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">📦</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Pack Size</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">200 ml</span>
-        </div>
-        <!-- Route -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">📍</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Route</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">Oral</span>
-        </div>
-        <!-- Prescription -->
-        <div class="flex flex-col items-center text-center p-3 md:p-0 md:pt-0 pt-6">
-          <span class="text-2xl mb-2 text-slate-400 flex items-center justify-center w-12 h-12 bg-white rounded-full border border-slate-100 shadow-sm">📄</span>
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Prescription</span>
-          <span class="text-sm font-black text-slate-800 mt-1 font-display">As directed by Physician</span>
-        </div>
-      </div>
-    </div>
+          <!-- Headline -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#005E8A] leading-snug font-manrope">
+            Triple-Action Relief for Chronic Constipation
+          </h2>
 
-    <!-- Description, Composition & Benefits Grid -->
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+          <!-- Short Description -->
+          <p class="text-lg md:text-xl text-[#6D7C8A] leading-relaxed font-medium max-w-2xl">
+            Clinically proven combination of <strong class="text-[#152432]">Liquid Paraffin</strong>, <strong class="text-[#152432]">Milk of Magnesia</strong>, and <strong class="text-[#152432]">Sodium Picosulfate</strong> for gentle, predictable, and comfortable bowel clearance.
+          </p>
+
+          <!-- CTA Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#composition" class="px-8 py-4 bg-[#005E8A] text-white font-extrabold rounded-2xl hover:bg-[#004b6e] transition-all duration-300 shadow-xl shadow-[#005E8A]/20 flex items-center gap-2.5 text-base transform hover:-translate-y-0.5">
+              <span>View Composition</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+
+            <button onclick="openVisualAid()" class="px-7 py-4 bg-white/80 text-[#152432] font-bold rounded-2xl border border-slate-200 hover:border-[#3AA9D8] hover:bg-white transition-all duration-300 shadow-sm flex items-center gap-2.5 text-base transform hover:-translate-y-0.5 backdrop-blur-md">
+              <svg class="w-5 h-5 text-[#005E8A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              <span>Download Product PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Luxury Floating Product Presentation -->
+        <div class="lg:col-span-5 relative flex items-center justify-center py-6">
+          
+          <!-- Outer Ambient Glowing Radial Glass Circle -->
+          <div class="relative w-[360px] h-[360px] md:w-[440px] md:h-[440px] rounded-full bg-gradient-to-tr from-[#005E8A]/20 via-[#3AA9D8]/10 to-white/40 backdrop-blur-2xl border border-white/80 shadow-2xl flex items-center justify-center">
+            
+            <!-- Floating Particle Accent Dots -->
+            <div class="absolute top-8 left-8 w-3 h-3 rounded-full bg-[#3AA9D8] float-particle"></div>
+            <div class="absolute bottom-12 right-10 w-4 h-4 rounded-full bg-[#23C483] float-particle" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 -right-4 w-2 h-2 rounded-full bg-[#FF9B28] float-particle" style="animation-delay: 4s;"></div>
+
+            <!-- Molecular graphic backdrop -->
+            <img src="images/molecule.png" class="absolute -top-6 -left-4 w-20 opacity-30 animate-pulse pointer-events-none" alt="molecule">
+            <img src="images/molecule.png" class="absolute -bottom-4 -right-6 w-24 opacity-25 animate-bounce pointer-events-none" style="animation-duration: 9s;" alt="molecule">
+
+            <!-- Floating Medicine Bottle Presentation -->
+            <div class="relative z-10 float-bottle">
+              <img src="images/product_img/Medicine_bottle_on_podium_2K_202607180207.jpeg" alt="GLIDEPLUS™ Medicine Bottle" class="h-80 md:h-96 w-auto object-contain rounded-2xl drop-shadow-[0_25px_35px_rgba(0,94,138,0.25)] transform hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <!-- Soft Floor Shadow & Reflection -->
+            <div class="absolute bottom-6 w-56 h-6 bg-[#005E8A]/15 rounded-[100%] blur-md -z-10"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 2. QUICK PRODUCT STATS                   -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 mb-24">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Stat Card 1 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 md:p-8 flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-[#005E8A]/10 border border-[#005E8A]/20 flex items-center justify-center text-[#005E8A] font-bold text-2xl flex-shrink-0">
+            📦
+          </div>
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#6D7C8A] block mb-1">Pack Size</span>
+            <span class="text-2xl md:text-3xl font-extrabold text-[#152432] font-manrope">200 ml</span>
+          </div>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 md:p-8 flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-[#3AA9D8]/10 border border-[#3AA9D8]/20 flex items-center justify-center text-[#3AA9D8] font-bold text-2xl flex-shrink-0">
+            💧
+          </div>
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#6D7C8A] block mb-1">Dosage Form</span>
+            <span class="text-2xl md:text-3xl font-extrabold text-[#152432] font-manrope">Suspension</span>
+          </div>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 md:p-8 flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-[#23C483]/10 border border-[#23C483]/20 flex items-center justify-center text-[#23C483] font-bold text-2xl flex-shrink-0">
+            📍
+          </div>
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#6D7C8A] block mb-1">Route</span>
+            <span class="text-2xl md:text-3xl font-extrabold text-[#152432] font-manrope">Oral</span>
+          </div>
+        </div>
+
+        <!-- Stat Card 4 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 md:p-8 flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-[#FF9B28]/10 border border-[#FF9B28]/20 flex items-center justify-center text-[#FF9B28] font-bold text-2xl flex-shrink-0">
+            📄
+          </div>
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#6D7C8A] block mb-1">Prescription</span>
+            <span class="text-xl md:text-2xl font-extrabold text-[#152432] font-manrope">Physician Directed</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 3. TRIPLE ACTION SECTION (Animated Flow)  -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 mb-28">
       
-      <!-- Left Column: Description & Composition Table (7/12) -->
-      <div class="lg:col-span-7 space-y-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold text-[#23C483] uppercase tracking-widest bg-[#23C483]/10 px-4 py-1.5 rounded-full border border-[#23C483]/20 inline-block">MECHANISM OF ACTION</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-[#152432] font-manrope tracking-tight">
+          How GLIDEPLUS Works
+        </h2>
+        <p class="text-lg text-[#6D7C8A] font-medium leading-relaxed">
+          Synergistic triple-action formula targeting three distinct physiological mechanisms for gentle, predictable clearance.
+        </p>
+      </div>
+
+      <!-- Modern Timeline Flow -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1 Card -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex flex-col justify-between relative z-10">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold text-[#005E8A] bg-[#005E8A]/10 px-3.5 py-1 rounded-full border border-[#005E8A]/20">STEP 01</span>
+              <span class="text-2xl">🧪</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#152432]">Lubricates Stool</h3>
+            <p class="text-sm font-semibold text-[#005E8A]">Liquid Paraffin (1.25 ml)</p>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed">Coats the intestinal wall and softens hardened fecal mass to facilitate effortless transit without mucosal irritation.</p>
+          </div>
+          <div class="pt-6 border-t border-slate-200/50 mt-6 flex items-center justify-between text-xs text-[#6D7C8A] font-bold">
+            <span>Primary Mechanism</span>
+            <span class="text-[#005E8A]">Softening</span>
+          </div>
+        </div>
+
+        <!-- Step 2 Card -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex flex-col justify-between relative z-10">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold text-[#3AA9D8] bg-[#3AA9D8]/10 px-3.5 py-1 rounded-full border border-[#3AA9D8]/20">STEP 02</span>
+              <span class="text-2xl">💧</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#152432]">Draws Water Into Bowel</h3>
+            <p class="text-sm font-semibold text-[#3AA9D8]">Milk of Magnesia (3.75 ml)</p>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed">Acts as an osmotic gradient, pulling moisture into the colonic lumen to expand stool volume and soften consistency.</p>
+          </div>
+          <div class="pt-6 border-t border-slate-200/50 mt-6 flex items-center justify-between text-xs text-[#6D7C8A] font-bold">
+            <span>Osmotic Action</span>
+            <span class="text-[#3AA9D8]">Hydration</span>
+          </div>
+        </div>
+
+        <!-- Step 3 Card -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex flex-col justify-between relative z-10">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold text-[#23C483] bg-[#23C483]/10 px-3.5 py-1 rounded-full border border-[#23C483]/20">STEP 03</span>
+              <span class="text-2xl">⚡</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#152432]">Stimulates Natural Movement</h3>
+            <p class="text-sm font-semibold text-[#23C483]">Sodium Picosulfate (3.33 mg)</p>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed">Directly stimulates nerve endings in the colonic mucosa, activating rhythmic peristaltic contractions for predictable timing.</p>
+          </div>
+          <div class="pt-6 border-t border-slate-200/50 mt-6 flex items-center justify-between text-xs text-[#6D7C8A] font-bold">
+            <span>Peristalsis</span>
+            <span class="text-[#23C483]">Propulsion</span>
+          </div>
+        </div>
+
+        <!-- Step 4 Outcome Card -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 bg-gradient-to-br from-[#005E8A] to-[#152432] text-white flex flex-col justify-between relative z-10 shadow-2xl">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold text-[#23C483] bg-[#23C483]/20 px-3.5 py-1 rounded-full border border-[#23C483]/30">OUTCOME</span>
+              <span class="text-2xl">✨</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Comfortable & Complete Relief</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">Enables gentle, cramping-free bowel evacuation within 6 to 12 hours of bedtime administration.</p>
+          </div>
+          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs text-slate-300 font-bold">
+            <span>Therapeutic Result</span>
+            <span class="text-[#23C483]">Predictable</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 4. COMPOSITION SECTION (Apple Health Style)-->
+    <!-- ---------------------------------------- -->
+    <section id="composition" class="max-w-[1440px] mx-auto px-6 md:px-12 mb-28 scroll-mt-32">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <h3 class="text-sm font-black uppercase tracking-wider text-brand-blue mb-4 font-display">Description</h3>
-          <p class="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
-            GLIDEPLUS™ Suspension is a clinically proven triple-action laxative designed to provide gentle and effective relief from chronic constipation. Combining Liquid Paraffin, Milk of Magnesia, and Sodium Picosulfate, it works by softening the stool, drawing water into the bowel, and stimulating bowel movement to ensure predictable, comfortable clearance.
+          <span class="text-xs font-extrabold text-[#005E8A] uppercase tracking-widest block mb-2">ACTIVE FORMULATION</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-[#152432] font-manrope tracking-tight">
+            Ingredient Composition
+          </h2>
+        </div>
+        <p class="text-[#6D7C8A] text-base font-medium max-w-md">
+          Each 5 ml contains a precision-balanced ratio of active laxative agents in a pleasant sugar-free base.
+        </p>
+      </div>
+
+      <!-- Ingredient Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Ingredient 1 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#005E8A]/10 border border-[#005E8A]/20 flex items-center justify-center text-[#005E8A] font-bold text-xl">
+            💧
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-extrabold text-[#005E8A] uppercase tracking-wider block">Active Agent 01</span>
+            <h3 class="text-xl font-extrabold text-[#152432]">Liquid Paraffin IP</h3>
+            <span class="text-2xl font-extrabold text-[#FF9B28] font-manrope block pt-1">1.25 ml</span>
+          </div>
+          <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">
+            Acts as a mechanical lubricant inside the colonic lumen, preventing excessive absorption of water and softening hard fecal material for smooth transit.
           </p>
         </div>
 
-        <div>
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-xl">🧪</span>
-            <h3 class="text-sm font-black uppercase tracking-wider text-brand-blue font-display">Composition</h3>
+        <!-- Ingredient 2 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#3AA9D8]/10 border border-[#3AA9D8]/20 flex items-center justify-center text-[#3AA9D8] font-bold text-xl">
+            🥛
           </div>
-          <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm bg-white">
-            <table class="w-full text-left border-collapse">
-              <thead>
-                <tr class="bg-slate-50 border-b border-slate-100">
-                  <th class="py-3.5 px-4 text-xs font-black uppercase tracking-wider text-slate-500 font-display">Ingredient</th>
-                  <th class="py-3.5 px-4 text-xs font-black uppercase tracking-wider text-slate-500 font-display text-right">Strength</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                  <td class="py-3 px-4 text-sm font-semibold text-slate-700">Liquid Paraffin IP</td>
-                  <td class="py-3 px-4 text-sm font-mono font-bold text-brand-orange text-right">1.25 ml</td>
-                </tr>
-  
-                <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                  <td class="py-3 px-4 text-sm font-semibold text-slate-700">Milk of Magnesia IP</td>
-                  <td class="py-3 px-4 text-sm font-mono font-bold text-brand-orange text-right">3.75 ml</td>
-                </tr>
-  
-                <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                  <td class="py-3 px-4 text-sm font-semibold text-slate-700">Sodium Picosulfate BP</td>
-                  <td class="py-3 px-4 text-sm font-mono font-bold text-brand-orange text-right">3.3 mg</td>
-                </tr>
-  
-                <tr class="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                  <td class="py-3 px-4 text-sm font-semibold text-slate-700">In a flavored sugar-free base</td>
-                  <td class="py-3 px-4 text-sm font-mono font-bold text-brand-orange text-right">q.s.</td>
-                </tr>
-  
-              </tbody>
-            </table>
+          <div class="space-y-1">
+            <span class="text-xs font-extrabold text-[#3AA9D8] uppercase tracking-wider block">Active Agent 02</span>
+            <h3 class="text-xl font-extrabold text-[#152432]">Milk of Magnesia IP</h3>
+            <span class="text-2xl font-extrabold text-[#FF9B28] font-manrope block pt-1">3.75 ml</span>
           </div>
+          <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">
+            Osmotic laxative that draws moisture into the intestines, increasing fluid volume and softening stool mass to trigger gentle colonic distension.
+          </p>
         </div>
 
-        <!-- Quick Info Blocks beneath table -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-3.5 shadow-sm">
-            <span class="text-xl text-slate-400">💧</span>
-            <div>
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Dosage Form</span>
-              <p class="text-xs font-black text-slate-800 font-display mt-0.5">Suspension</p>
-            </div>
+        <!-- Ingredient 3 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#23C483]/10 border border-[#23C483]/20 flex items-center justify-center text-[#23C483] font-bold text-xl">
+            ⚡
           </div>
-          <div class="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-3.5 shadow-sm">
-            <span class="text-xl text-slate-400">📦</span>
-            <div>
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Pack Size</span>
-              <p class="text-xs font-black text-slate-800 font-display mt-0.5">200 ml</p>
-            </div>
+          <div class="space-y-1">
+            <span class="text-xs font-extrabold text-[#23C483] uppercase tracking-wider block">Active Agent 03</span>
+            <h3 class="text-xl font-extrabold text-[#152432]">Sodium Picosulfate BP</h3>
+            <span class="text-2xl font-extrabold text-[#FF9B28] font-manrope block pt-1">3.33 mg</span>
           </div>
+          <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">
+            Stimulant laxative metabolized by colonic bacteria to directly enhance propulsive gut motility and accelerate transit time.
+          </p>
         </div>
+
+        <!-- Ingredient 4 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 space-y-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#FF9B28]/10 border border-[#FF9B28]/20 flex items-center justify-center text-[#FF9B28] font-bold text-xl">
+            🍓
+          </div>
+          <div class="space-y-1">
+            <span class="text-xs font-extrabold text-[#FF9B28] uppercase tracking-wider block">Excipient Base</span>
+            <h3 class="text-xl font-extrabold text-[#152432]">Sugar-Free Base</h3>
+            <span class="text-2xl font-extrabold text-[#FF9B28] font-manrope block pt-1">q.s.</span>
+          </div>
+          <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">
+            Delicious mixed fruit and vanilla flavor base formulated without added sugar, ensuring safety for diabetic and elderly patients.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 5. KEY BENEFITS                          -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 mb-28">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold text-[#005E8A] uppercase tracking-widest bg-[#005E8A]/10 px-4 py-1.5 rounded-full border border-[#005E8A]/20 inline-block">CLINICAL ADVANTAGES</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-[#152432] font-manrope tracking-tight">
+          Key Benefits of GLIDEPLUS™
+        </h2>
       </div>
 
-      <!-- Right Column: Key Benefits (5/12) -->
-      <div class="lg:col-span-5 space-y-8">
-        <div>
-          <h3 class="text-sm font-black uppercase tracking-wider text-brand-blue mb-4 font-display">Key Benefits</h3>
-          <div class="flex flex-col gap-4">
+      <!-- Feature Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Benefit 1 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex items-start gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#005E8A] to-[#3AA9D8] text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-[#005E8A]/20">
+            ✓
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-extrabold text-[#152432]">Triple Action Synergy</h3>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">Combines lubrication, osmotic hydration, and peristaltic stimulation for rapid clearance.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex items-start gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#005E8A] to-[#3AA9D8] text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-[#005E8A]/20">
+            ⏰
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-extrabold text-[#152432]">Predictable Relief</h3>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">Promotes natural and controlled bowel movement within a predictable 6 to 12 hour timeframe.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex items-start gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#005E8A] to-[#3AA9D8] text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-[#005E8A]/20">
+            🌿
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-extrabold text-[#152432]">100% Sugar Free</h3>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">Completely safe for diabetic patients, cardiac care, and prolonged therapeutic management.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex items-start gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#005E8A] to-[#3AA9D8] text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-[#005E8A]/20">
+            😋
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-extrabold text-[#152432]">Pleasing Taste</h3>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">Smooth, non-chalky mixed fruit and vanilla flavor ensures high patient compliance.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex items-start gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#005E8A] to-[#3AA9D8] text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-[#005E8A]/20">
+            ⚡
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-extrabold text-[#152432]">Fast Acting Formula</h3>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">Provides quick onset therapeutic action for both acute episodes and chronic constipation.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="glass-card glass-card-hover rounded-[32px] p-8 flex items-start gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#005E8A] to-[#3AA9D8] text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-lg shadow-[#005E8A]/20">
+            🔬
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl font-extrabold text-[#152432]">Clinically Proven</h3>
+            <p class="text-sm text-[#6D7C8A] leading-relaxed font-medium">Formulated under strict GMP & ISO quality standards for optimal stability and efficacy.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 6. VISUAL BIOTECH SECTION                 -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 mb-28">
+      <div class="rounded-[32px] bg-gradient-to-r from-[#152432] via-[#005E8A] to-[#152432] text-white p-10 md:p-16 relative overflow-hidden shadow-2xl">
+        
+        <!-- Background Ambient Glow & Molecular Illustration -->
+        <div class="absolute -right-16 -top-16 w-96 h-96 bg-[#3AA9D8]/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-16 -bottom-16 w-96 h-96 bg-[#23C483]/15 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-6">
+            <span class="text-xs font-extrabold text-[#23C483] uppercase tracking-widest bg-[#23C483]/20 px-4 py-1.5 rounded-full border border-[#23C483]/30 inline-block">PRECISION FORMULATION</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold font-manrope leading-tight">
+              Biotech-Grade Manufacturing & Quality Assurance
+            </h2>
+            <p class="text-base md:text-lg text-slate-300 font-medium leading-relaxed">
+              Every batch of GLIDEPLUS™ is manufactured in WHO-GMP certified facilities utilizing advanced micronization techniques to ensure uniform suspension distribution and consistent therapeutic dosing.
+            </p>
             
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4 border-t border-white/10">
+              <div>
+                <span class="text-2xl md:text-3xl font-extrabold text-[#23C483] block font-manrope">WHO-GMP</span>
+                <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Certified Facility</span>
               </div>
               <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Triple-Action Synergy</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Combines lubrication, osmotic hydration, and peristaltic stimulation.</p>
-              </div>
-            </div>
-  
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
+                <span class="text-2xl md:text-3xl font-extrabold text-[#3AA9D8] block font-manrope">100%</span>
+                <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Batch Stability</span>
               </div>
               <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Predictable Relief</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Promotes natural and controlled bowel movement within a predictable timeframe.</p>
+                <span class="text-2xl md:text-3xl font-extrabold text-[#FF9B28] block font-manrope">ISO 9001</span>
+                <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Quality Control</span>
               </div>
             </div>
-  
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Sugar-Free Formulation</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Perfectly safe for diabetic patients and long-term therapeutic care.</p>
-              </div>
+          </div>
+
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative p-6 bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl">
+              <img src="images/product_img/Medicine_bottle_on_podium_2K_202607180207.jpeg" alt="GLIDEPLUS™ Quality" class="h-64 md:h-80 w-auto object-contain rounded-xl drop-shadow-2xl">
             </div>
-  
-            <div class="flex items-start gap-4 p-4 bg-slate-50/60 rounded-2xl border border-slate-100 hover:border-brand-blue/15 hover:bg-slate-50 transition-all duration-300">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full border border-emerald-500/20 bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <h4 class="text-sm font-black text-slate-800 font-display">Superior Palatability</h4>
-                <p class="text-xs text-slate-500 font-semibold leading-relaxed mt-1">Delightful mixed fruit and vanilla flavor ensures high patient compliance.</p>
-              </div>
-            </div>
-  
           </div>
         </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom CTA Banner Section -->
-    <div class="max-w-6xl mx-auto bg-gradient-to-r from-brand-blue to-brand-dark rounded-3xl p-8 md:p-12 shadow-2xl text-white flex flex-col lg:flex-row items-center justify-between gap-8">
-      <div class="space-y-3 max-w-2xl text-center lg:text-left">
-        <span class="text-xs font-bold text-orange-400 uppercase tracking-widest">Medical Solutions</span>
-        <h3 class="text-2xl md:text-3xl font-black font-display">Looking for a trusted medical solution?</h3>
-        <p class="text-sm text-slate-300 font-semibold leading-relaxed">
-          GLIDEPLUS™ combines rapid action, dependable performance, and patient-friendly administration.
-        </p>
-      </div>
-      <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
-        <a href="contact.html" class="w-full sm:w-auto text-center px-6 py-3 bg-white text-brand-dark hover:bg-slate-50 font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A9.342 9.342 0 0012.24 21c-1.11 0-2.154-.277-3.07-.777M14.214 16.058A9.34 9.34 0 0012.24 15c-1.11 0-2.154.277-3.07.777m5.044-3.044a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zMM3 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M3 19.128v-.003c0-1.113.285-2.16.786-3.07M3 19.128v.109A9.342 9.342 0 006.24 21c1.11 0 2.154-.277 3.07-.777M5.214 16.058A9.34 9.34 0 006.24 15c1.11 0 2.154.277 3.07.777m-5.044-3.044a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0z"/></svg>
-          Contact Our Team
-        </a>
 
       </div>
-    </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 7. DOSAGE INFORMATION                    -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 mb-28">
+      <div class="glass-card rounded-[32px] p-8 md:p-12 relative overflow-hidden">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-8 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-[#005E8A]/10 border border-[#005E8A]/20 flex items-center justify-center text-[#005E8A] text-2xl font-bold">
+                🩺
+              </div>
+              <div>
+                <span class="text-xs font-extrabold text-[#005E8A] uppercase tracking-widest block">ADMINISTRATION GUIDELINES</span>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-[#152432]">Dosage & Instructions</h3>
+              </div>
+            </div>
+
+            <p class="text-base text-[#6D7C8A] font-medium leading-relaxed">
+              <strong>Adult Dosage:</strong> 10 ml to 15 ml at bedtime, or as directed by the Physician. Shake the bottle thoroughly before each use to ensure uniform suspension concentration.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <span class="px-4 py-1.5 rounded-full bg-[#FF9B28]/10 text-[#FF9B28] text-xs font-extrabold border border-[#FF9B28]/30">⚠️ PRESCRIPTION REQUIRED</span>
+              <span class="px-4 py-1.5 rounded-full bg-[#005E8A]/10 text-[#005E8A] text-xs font-extrabold border border-[#005E8A]/30">SHAKE WELL BEFORE USE</span>
+              <span class="px-4 py-1.5 rounded-full bg-[#23C483]/10 text-[#23C483] text-xs font-extrabold border border-[#23C483]/30">STORE BELOW 25°C</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 p-6 rounded-2xl bg-[#152432] text-white space-y-3 shadow-xl">
+            <div class="flex items-center gap-2 text-[#FF9B28] font-bold text-sm uppercase tracking-wider">
+              <span>🔒</span>
+              <span>Physician Notice</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed font-medium">
+              Schedule H Prescription Drug. To be sold by retail on the prescription of a Registered Medical Practitioner only.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 8. DOWNLOADS SECTION                     -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 mb-28">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold text-[#005E8A] uppercase tracking-widest bg-[#005E8A]/10 px-4 py-1.5 rounded-full border border-[#005E8A]/20 inline-block">RESOURCE CENTER</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-[#152432] font-manrope tracking-tight">
+          Product Documentation
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Download 1 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-[#005E8A]/10 border border-[#005E8A]/20 flex items-center justify-center text-[#005E8A] text-xl font-bold">
+              📄
+            </div>
+            <h3 class="text-lg font-bold text-[#152432]">Product Brochure PDF</h3>
+            <p class="text-xs text-[#6D7C8A] font-medium leading-relaxed">Comprehensive overview of therapeutic indications, pharmacology & dosage.</p>
+          </div>
+          <button onclick="openVisualAid()" class="w-full py-3 bg-[#005E8A]/10 text-[#005E8A] font-extrabold rounded-xl hover:bg-[#005E8A] hover:text-white transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+            <span>Download PDF</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          </button>
+        </div>
+
+        <!-- Download 2 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-[#3AA9D8]/10 border border-[#3AA9D8]/20 flex items-center justify-center text-[#3AA9D8] text-xl font-bold">
+              🧪
+            </div>
+            <h3 class="text-lg font-bold text-[#152432]">Composition Sheet</h3>
+            <p class="text-xs text-[#6D7C8A] font-medium leading-relaxed">Detailed chemical breakdown, excipient profile, & stability testing specs.</p>
+          </div>
+          <button onclick="openVisualAid()" class="w-full py-3 bg-[#3AA9D8]/10 text-[#005E8A] font-extrabold rounded-xl hover:bg-[#3AA9D8] hover:text-white transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+            <span>Download Sheet</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          </button>
+        </div>
+
+        <!-- Download 3 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-[#23C483]/10 border border-[#23C483]/20 flex items-center justify-center text-[#23C483] text-xl font-bold">
+              🩺
+            </div>
+            <h3 class="text-lg font-bold text-[#152432]">Medical Information</h3>
+            <p class="text-xs text-[#6D7C8A] font-medium leading-relaxed">Clinical safety trials, drug interaction matrix, & adverse reaction profiles.</p>
+          </div>
+          <button onclick="openVisualAid()" class="w-full py-3 bg-[#23C483]/10 text-[#005E8A] font-extrabold rounded-xl hover:bg-[#23C483] hover:text-white transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+            <span>Download Data</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          </button>
+        </div>
+
+        <!-- Download 4 -->
+        <div class="glass-card glass-card-hover rounded-[28px] p-6 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-[#FF9B28]/10 border border-[#FF9B28]/20 flex items-center justify-center text-[#FF9B28] text-xl font-bold">
+              📦
+            </div>
+            <h3 class="text-lg font-bold text-[#152432]">Package Insert</h3>
+            <p class="text-xs text-[#6D7C8A] font-medium leading-relaxed">Official patient information leaflet & approved storage instructions.</p>
+          </div>
+          <button onclick="openVisualAid()" class="w-full py-3 bg-[#FF9B28]/10 text-[#005E8A] font-extrabold rounded-xl hover:bg-[#FF9B28] hover:text-white transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+            <span>Download Insert</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------- -->
+    <!-- 9. CALL TO ACTION                        -->
+    <!-- ---------------------------------------- -->
+    <section class="max-w-[1440px] mx-auto px-6 md:px-12 mb-16">
+      <div class="rounded-[32px] bg-gradient-to-r from-[#152432] via-[#005E8A] to-[#152432] p-10 md:p-16 text-white shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        
+        <div class="space-y-4 max-w-2xl text-center lg:text-left z-10">
+          <span class="text-xs font-extrabold text-[#23C483] uppercase tracking-widest bg-[#23C483]/20 px-4 py-1.5 rounded-full border border-[#23C483]/30 inline-block">MEDICAL AFFAIRS</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold font-manrope">Need Medical Information?</h2>
+          <p class="text-base text-slate-300 font-medium leading-relaxed">
+            Our medical affairs team is available to provide detailed product information and prescribing resources to healthcare professionals.
+          </p>
+        </div>
+
+        <div class="z-10 w-full lg:w-auto flex justify-center">
+          <a href="contact.html" class="w-full sm:w-auto text-center px-8 py-4 bg-[#23C483] hover:bg-[#1fb377] text-white font-extrabold rounded-2xl transition-all duration-300 shadow-xl shadow-[#23C483]/20 flex items-center justify-center gap-3 text-base transform hover:-translate-y-0.5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A9.342 9.342 0 0012.24 21c-1.11 0-2.154-.277-3.07-.777M14.214 16.058A9.34 9.34 0 0012.24 15c-1.11 0-2.154.277-3.07.777m5.044-3.044a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zMM3 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M3 19.128v-.003c0-1.113.285-2.16.786-3.07M3 19.128v.109A9.342 9.342 0 006.24 21c1.11 0 2.154-.277 3.07-.777M5.214 16.058A9.34 9.34 0 006.24 15c1.11 0 2.154.277 3.07.777m-5.044-3.044a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0z"/></svg>
+            <span>Contact Medical Team</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
+  <!-- ========================================== -->
+  <!-- FOOTER (Preserving Original Footer)        -->
+  <!-- ========================================== -->
   <footer class="bg-[#0b1a30]/85 backdrop-blur-md text-slate-300 pt-16 pb-8 px-6 md:px-12 border-t border-slate-900/40 relative">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
       
@@ -450,8 +855,7 @@
             height="100%" 
             style="border:0;" 
             allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+            loading="lazy">
           </iframe>
         </div>
       </div>
