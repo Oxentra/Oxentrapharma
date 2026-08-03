@@ -58,7 +58,7 @@
   <!-- ========================================== -->
   <!-- NAVIGATION BAR                             -->
   <!-- ========================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all duration-300">
+  <header class="fixed top-0 left-0 right-0 z-50 pharma-navbar transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center justify-between">
 
       <!-- Official Logo Image -->
@@ -70,7 +70,7 @@
       <!-- Desktop Links & Search -->
       <div class="hidden lg:flex items-center gap-4">
         <nav
-          class="flex items-center gap-1.5 text-xs font-semibold tracking-wide bg-slate-100 border border-slate-200 p-1.5 rounded-full shadow-sm">
+          class="flex items-center gap-1.5 text-xs font-semibold tracking-wide pharma-nav-container p-1.5 rounded-full shadow-sm">
           <a href="index.html"
             class="text-slate-600 hover:text-[#0f58a2] hover:bg-white px-3 py-1.5 rounded-full transition-all">Home</a>
           <a href="about.html"
@@ -84,7 +84,7 @@
             </svg>
           </a>
           <a href="careers.html"
-            class="bg-[#0f58a2] text-white px-4 py-1.5 rounded-full shadow-sm font-bold transition-all">Careers</a>
+            class="pharma-nav-active px-4 py-1.5 rounded-full">Careers</a>
         </nav>
 
         <!-- Desktop Search Bar -->
@@ -96,7 +96,7 @@
             </svg>
           </span>
           <input type="text" placeholder="Search..."
-            class="nav-search-input w-full pl-8 pr-3 py-1.5 rounded-full text-xs font-semibold bg-slate-100 border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#005B82] focus:bg-white transition-all duration-300">
+            class="nav-search-input w-full pl-8 pr-3 py-1.5 rounded-full text-xs font-semibold bg-white/80 border border-[#AFD2F7]/70 text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#005B82] focus:bg-white transition-all duration-300">
         </div>
       </div>
 
@@ -126,7 +126,7 @@
 
     <!-- Mobile Menu List -->
     <div id="mobile-menu"
-      class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 flex-col px-8 py-6 gap-4 shadow-lg">
+      class="hidden lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-[#AFD2F7]/50 flex-col px-8 py-6 gap-4 shadow-lg">
       <!-- Search Input for Mobile -->
       <div class="relative flex items-center w-full mb-2">
         <span class="absolute left-3 text-slate-400 pointer-events-none">
@@ -141,7 +141,7 @@
       <a href="about.html" class="text-slate-600 font-semibold py-1 border-b border-slate-50">About Us</a>
       <a href="products.html"
         class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Products</a>
-      <a href="careers.html" class="text-[#f97316] font-semibold py-1 border-b border-slate-50">Careers</a>
+      <a href="careers.html" class="text-[#005B82] font-extrabold py-1 border-b border-slate-50">Careers</a>
       <a href="contact.html"
         class="text-slate-600 font-semibold hover:text-[#0f58a2] py-1 border-b border-slate-50">Contact Us</a>
       <a href="contact.html"
@@ -155,24 +155,25 @@
     <!-- ========================================== -->
     <!-- HERO HEADER SECTION                        -->
     <!-- ========================================== -->
-    <section class="relative py-20 md:py-24 overflow-hidden min-h-[380px] flex items-center">
-      <!-- Clean 3D Background Image -->
+    <section class="relative pt-24 pb-12 sm:py-24 md:py-28 lg:py-32 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[480px] flex items-center pharma-hero-section">
+      <!-- Background Image -->
       <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <img src="images/background (2).png" alt="Oxentra Pharma Showcase" class="w-full h-full object-cover object-center">
+        <img src="images/corporate_banner.png" alt="Oxentra Pharma Corporate Banner" class="w-full h-full object-cover object-[75%_center] sm:object-[82%_center] md:object-right opacity-90 transition-all duration-300">
       </div>
 
-      <!-- Glow decoration -->
-      <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-orange/10 rounded-full filter blur-[100px] pointer-events-none z-0"></div>
+      <!-- Ambient Glow Spotlights -->
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#AFD2F7]/40 rounded-full filter blur-[100px] pointer-events-none z-0"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#C5DEF9]/60 rounded-full filter blur-[80px] pointer-events-none z-0"></div>
 
       <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-left w-full">
         <div class="max-w-lg lg:max-w-xl">
-          <span class="inline-block text-xs md:text-sm font-extrabold uppercase tracking-[0.25em] text-[#f97316] mb-3">
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest text-white pharma-pill-badge mb-4">
             Shape the Future of Medicine
           </span>
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-[#002b3e] font-display">
             Careers at Oxentra
           </h1>
-          <p class="text-slate-600 mt-4 text-base md:text-lg leading-relaxed font-medium">
+          <p class="text-slate-700 mt-4 text-base md:text-lg leading-relaxed font-medium">
             Join a team dedicated to innovation, pharmaceutical excellence, and improving global healthcare standard.
           </p>
         </div>

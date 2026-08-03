@@ -767,6 +767,97 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   stroke: #0f58a2 !important;
 }
 
+/* ==========================================================================
+   Luxury Pharmaceutical Header & Hero Section Design System
+   Primary: #CAE3FD | Supporting: #AFD2F7, #C5DEF9, #EAF4FF
+   ========================================================================== */
+
+:root {
+  --pharma-bg-primary: #CAE3FD;
+  --pharma-bg-support-1: #AFD2F7;
+  --pharma-bg-support-2: #C5DEF9;
+  --pharma-bg-support-3: #EAF4FF;
+  --pharma-brand-dark: #002B3E;
+  --pharma-brand-blue: #005B82;
+  --pharma-brand-orange: #F07D00;
+}
+
+/* Navbar glassmorphic background with smooth sky-blue gradient blend */
+.pharma-navbar {
+  background: linear-gradient(135deg, rgba(234, 244, 255, 0.94) 0%, rgba(202, 227, 253, 0.90) 50%, rgba(197, 222, 249, 0.94) 100%) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(175, 210, 247, 0.6) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 43, 62, 0.06) !important;
+}
+
+/* Hero Section background gradient */
+.pharma-hero-section {
+  background: linear-gradient(135deg, #EAF4FF 0%, #CAE3FD 35%, #C5DEF9 70%, #AFD2F7 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Transparent container for hero content (no card background) */
+.pharma-glass-hero-card {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Navigation Pill Container */
+.pharma-nav-container {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(175, 210, 247, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 8px rgba(0, 43, 62, 0.04) !important;
+}
+
+/* Navigation Pill Active State */
+.pharma-nav-active {
+  background: linear-gradient(135deg, #005B82 0%, #0f58a2 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 91, 130, 0.3) !important;
+  font-weight: 700 !important;
+}
+
+/* Category Pill Badge */
+.pharma-pill-badge {
+  background: linear-gradient(135deg, #005B82 0%, #0f58a2 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 91, 130, 0.2);
+}
+
+/* Mobile Responsiveness for Hero Banner Header Image */
+@media (max-width: 768px) {
+  .pharma-hero-section {
+    min-height: 380px !important;
+    padding-top: 6rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .pharma-hero-section img {
+    object-fit: cover !important;
+    object-position: 80% center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pharma-hero-section {
+    min-height: 340px !important;
+    padding-top: 5.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .pharma-hero-section img {
+    object-fit: cover !important;
+    object-position: 75% center !important;
+  }
+}
+
+
 
 
 
