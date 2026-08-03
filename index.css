@@ -5,7 +5,7 @@
   --color-brand-orange: #F07D00;
   --color-brand-dark: #002B3E;
   --color-brand-light-blue: #0284c7;
-  
+
   --font-family: "Poppins", sans-serif;
   --font-primary: var(--font-family);
   --font-display: var(--font-family);
@@ -31,7 +31,12 @@ body {
   background-repeat: no-repeat;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family);
 }
 
@@ -77,13 +82,17 @@ h6 {
   line-height: 24px;
 }
 
-caption, .caption {
+caption,
+.caption {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
 }
 
-button, .btn, input[type="button"], input[type="submit"] {
+button,
+.btn,
+input[type="button"],
+input[type="submit"] {
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 600;
@@ -96,10 +105,12 @@ button, .btn, input[type="button"], input[type="submit"] {
     font-size: 44px;
     line-height: 54px;
   }
+
   h2 {
     font-size: 38px;
     line-height: 46px;
   }
+
   h3 {
     font-size: 32px;
     line-height: 40px;
@@ -111,14 +122,17 @@ button, .btn, input[type="button"], input[type="submit"] {
     font-size: 34px;
     line-height: 42px;
   }
+
   h2 {
     font-size: 30px;
     line-height: 38px;
   }
+
   h3 {
     font-size: 26px;
     line-height: 34px;
   }
+
   body {
     font-size: 16px;
   }
@@ -131,8 +145,10 @@ button, .btn, input[type="button"], input[type="submit"] {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Glassmorphism effects */
@@ -161,9 +177,17 @@ button, .btn, input[type="button"], input[type="submit"] {
 }
 
 @keyframes floating {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Product Slider scroll behavior */
@@ -251,15 +275,41 @@ button, .btn, input[type="button"], input[type="submit"] {
 }
 
 /* Product Specific Color Highlights */
-.glideplus-theme { --theme-color: #ec4899; }
-.oxentibmr-theme { --theme-color: #ef4444; }
-.nervoxplus-theme { --theme-color: #10b981; }
-.calcintra-theme { --theme-color: #8b5cf6; }
-.pxentradsr-theme { --theme-color: #3b82f6; }
-.lxentra-theme { --theme-color: #14b8a6; }
-.oxrizinelc-theme { --theme-color: #f97316; }
-.heaveenema-theme { --theme-color: #06b6d4; }
-.heavesenema-theme { --theme-color: #f43f5e; }
+.glideplus-theme {
+  --theme-color: #ec4899;
+}
+
+.oxentibmr-theme {
+  --theme-color: #ef4444;
+}
+
+.nervoxplus-theme {
+  --theme-color: #10b981;
+}
+
+.calcintra-theme {
+  --theme-color: #8b5cf6;
+}
+
+.pxentradsr-theme {
+  --theme-color: #3b82f6;
+}
+
+.lxentra-theme {
+  --theme-color: #14b8a6;
+}
+
+.oxrizinelc-theme {
+  --theme-color: #f97316;
+}
+
+.heaveenema-theme {
+  --theme-color: #06b6d4;
+}
+
+.heavesenema-theme {
+  --theme-color: #f43f5e;
+}
 
 .product-card {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -301,6 +351,7 @@ button, .btn, input[type="button"], input[type="submit"] {
 .slider-arrow-btn {
   transition: all 0.3s ease;
 }
+
 .slider-arrow-btn:hover {
   transform: scale(1.05);
 }
@@ -310,22 +361,27 @@ button, .btn, input[type="button"], input[type="submit"] {
   background: linear-gradient(135deg, #c5a880 0%, #b29369 100%);
   color: #fff;
 }
+
 .portfolio-card-derm {
   background: #4A1A24;
   color: #fff;
 }
+
 .portfolio-card-neuro {
   background: #112233;
   color: #fff;
 }
+
 .portfolio-card-bone {
   background: #A06550;
   color: #fff;
 }
+
 .portfolio-card-pain {
   background: #6D7784;
   color: #fff;
 }
+
 .portfolio-card-allergy {
   background: #2E3D4D;
   color: #fff;
@@ -347,7 +403,8 @@ button, .btn, input[type="button"], input[type="submit"] {
   .cipla-tab-active::before {
     content: '';
     position: absolute;
-    left: -28px; /* Sticks out past the container padding */
+    left: -28px;
+    /* Sticks out past the container padding */
     top: 50%;
     transform: translateY(-50%);
     width: 0;
@@ -379,6 +436,7 @@ button, .btn, input[type="button"], input[type="submit"] {
     opacity: 0;
     transform: translateY(15px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -391,8 +449,10 @@ button, .btn, input[type="button"], input[type="submit"] {
 #hero {
   position: relative;
   width: 100%;
-  height: 400vh; /* Extended scrolling depth for 270 frames */
-  background-color: #020617; /* Slate 950 */
+  height: 400vh;
+  /* Extended scrolling depth for 270 frames */
+  background-color: #020617;
+  /* Slate 950 */
 }
 
 .hero-sticky-viewport {
@@ -477,75 +537,361 @@ header.glass-panel {
 }
 
 @keyframes clockGlowPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(249, 115, 22, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
   }
+
   50% {
     box-shadow: 0 0 35px rgba(249, 115, 22, 0.25), inset 0 0 15px rgba(249, 115, 22, 0.1);
     border-color: rgba(249, 115, 22, 0.3);
   }
 }
 
-/* Glass Header Global & Consistent Compact Styles (Matches Image 2) */
+/* ==========================================================================
+   Luxury Floating Glassmorphic Header & Navbar System (Apple, Stripe, Vercel, Linear)
+   ========================================================================== */
+
+/* ==========================================================================
+   Luxury Floating Glassmorphic Header & Navbar System (Matches Reference Design)
+   ========================================================================== */
+
+/* Outer fixed top wrapper */
 header {
-  transition: all 0.3s ease-in-out !important;
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
-  box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.05) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  padding: 0.625rem 0.75rem !important;
+  /* Floating margins from viewport top & sides */
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  pointer-events: none !important;
+  /* Non-blocking margins */
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-header > div {
-  padding-top: 0.35rem !important;
-  padding-bottom: 0.35rem !important;
+@media (min-width: 640px) {
+  header {
+    padding: 0.875rem 1.25rem !important;
+  }
 }
 
-header img {
-  height: 140px !important;
-  margin: -55px -45px !important;
-  transform: scale(0.9) !important;
-  transition: transform 0.3s ease !important;
+/* Floating Glass Capsule Container - Full Frosted Glassmorphism (No Opaque White) */
+.pharma-navbar,
+header>div {
+  width: 95% !important;
+  max-width: 95% !important;
+  /* Expanded horizontal span across viewport */
+  margin: 0 auto !important;
+  border-radius: 20px !important;
+  /* 18–24px rounded corners requirement */
+  background: linear-gradient(135deg, rgba(238, 245, 251, 0.88) 0%, rgba(228, 237, 245, 0.85) 100%) !important;
+  /* Soft pharmaceutical light-blue #E4EDF5 theme */
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  /* Translucent white border */
+  box-shadow:
+    0 10px 30px -5px rgba(0, 43, 62, 0.08),
+    0 4px 12px -2px rgba(0, 43, 62, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+  /* Soft layered floating shadow */
+  pointer-events: auto !important;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 0.35rem 1.5rem !important;
+  /* Compact vertical height preserved */
 }
 
-header nav {
-  background-color: rgba(241, 245, 249, 0.9) !important;
-  border-color: rgba(203, 213, 225, 0.6) !important;
+/* Frosted glass elevation state when scrolled */
+header.header-scrolled .pharma-navbar,
+header.header-scrolled>div,
+.pharma-navbar.scrolled {
+  background: linear-gradient(135deg, rgba(238, 245, 251, 0.96) 0%, rgba(228, 237, 245, 0.93) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow:
+    0 16px 40px -6px rgba(0, 43, 62, 0.12),
+    0 6px 16px -2px rgba(0, 43, 62, 0.06),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95) !important;
 }
 
-header nav a:not(.bg-white) {
-  color: #334155 !important;
+/* Crisp, Prominent & Perfectly Aligned Logo */
+header img,
+.pharma-navbar img,
+header>div img {
+  height: 175px !important;
+  margin: -66px -40px !important;
+  transform: scale(1.15) !important;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-header nav a:not(.bg-white):hover {
-  color: #0f58a2 !important;
-  background-color: rgba(255, 255, 255, 0.8) !important;
+header img:hover,
+.pharma-navbar img:hover,
+header>div img:hover {
+  transform: scale(1.18) !important;
 }
 
+/* Floating Navigation Links Capsule Container */
+header nav,
+.pharma-nav-container {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 2px 8px rgba(0, 43, 62, 0.03), inset 0 1px 0 0 rgba(255, 255, 255, 0.2) !important;
+  padding: 0.25rem !important;
+  border-radius: 9999px !important;
+}
+
+/* Nav Items & Hover Animations (200-300ms smooth transition) */
+header nav a,
+.pharma-nav-container a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 32px !important;
+  padding: 0 0.875rem !important;
+  border-radius: 9999px !important;
+  color: #002B3E !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+header nav a:not(.pharma-nav-active):not(.bg-white):hover {
+  color: #005B82 !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 91, 130, 0.08) !important;
+}
+
+/* Active Navigation Pill State */
+.pharma-nav-active {
+  background: linear-gradient(135deg, #005B82 0%, #0f58a2 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 91, 130, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.25) !important;
+  font-weight: 700 !important;
+}
+
+/* Refined Seamless Glass Search Bar */
 header .nav-search-input {
-  background-color: rgba(241, 245, 249, 0.9) !important;
-  border-color: rgba(203, 213, 225, 0.6) !important;
-  color: #334155 !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #002B3E !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 9999px !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 header .nav-search-input::placeholder {
-  color: #94a3b8 !important;
+  color: #475569 !important;
 }
 
 header .nav-search-input:focus {
-  background-color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.35) !important;
   border-color: #005B82 !important;
   color: #0f2441 !important;
+  box-shadow: 0 0 0 3px rgba(0, 91, 130, 0.15), 0 4px 12px rgba(0, 91, 130, 0.06) !important;
+}
+
+/* Refined Orange Contact Us CTA Button with softer shadows & smooth hover */
+header a[href="contact.html"].bg-\[\#f97316\],
+header a[href="contact.html"].px-5,
+.pharma-contact-cta {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 14px -1px rgba(249, 115, 22, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.3) !important;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+header a[href="contact.html"].bg-\[\#f97316\]:hover,
+header a[href="contact.html"].px-5:hover,
+.pharma-contact-cta:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 8px 20px -2px rgba(249, 115, 22, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+header a[href="contact.html"].bg-\[\#f97316\]:active,
+header a[href="contact.html"].px-5:active,
+.pharma-contact-cta:active {
+  transform: translateY(0px) !important;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3) !important;
+}
+
+header a[href="contact.html"].bg-\[\#f97316\]:active,
+header a[href="contact.html"].px-5:active,
+.pharma-contact-cta:active {
+  transform: translateY(0px) !important;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3) !important;
 }
 
 header #mobile-menu-btn {
   color: #0f58a2 !important;
 }
 
-/* Mobile Menu container placement adjustment */
-#mobile-menu {
-  transition: all 0.3s ease-in-out;
+/* ==========================================================================
+   Premium Light-Blue Mobile Navigation Drawer System
+   ========================================================================== */
+@media (max-width: 1023px) {
+  #mobile-menu {
+    top: calc(100% + 0.625rem) !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    width: auto !important;
+    border-radius: 22px !important;
+    /* Soft rounded corners (20-24px) */
+    background: linear-gradient(135deg, rgba(234, 244, 255, 0.98) 0%, rgba(202, 227, 253, 0.98) 100%) !important;
+    /* Light-blue theme background */
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(175, 210, 247, 0.9) !important;
+    /* Subtle theme border */
+    box-shadow:
+      0 20px 40px -10px rgba(0, 43, 62, 0.18),
+      0 8px 16px -4px rgba(0, 43, 62, 0.08) !important;
+    /* Soft depth shadow */
+    padding: 1.5rem !important;
+    gap: 0.75rem !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    pointer-events: auto !important;
+    z-index: 60 !important;
+  }
+
+  /* Mobile Links readable styling */
+  #mobile-menu a:not(.bg-\[\#f97316\]):not(.mt-2) {
+    color: #002B3E !important;
+    font-size: 0.9375rem !important;
+    font-weight: 700 !important;
+    padding: 0.625rem 0.5rem !important;
+    border-bottom: 1px solid rgba(175, 210, 247, 0.4) !important;
+    transition: color 200ms ease !important;
+  }
+
+  #mobile-menu a:not(.bg-\[\#f97316\]):not(.mt-2):hover {
+    color: #005B82 !important;
+  }
+
+  /* Hide text list item Contact Us in mobile menu, leaving only orange CTA button */
+  #mobile-menu a[href="contact.html"]:not(.mt-2):not(.bg-\[\#f97316\]) {
+    display: none !important;
+  }
+
+  /* Mobile Search Bar */
+  #mobile-menu .nav-search-input {
+    background: #ffffff !important;
+    border: 1px solid rgba(175, 210, 247, 0.9) !important;
+    color: #002B3E !important;
+    border-radius: 14px !important;
+    padding: 0.625rem 0.875rem 0.625rem 2.5rem !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  /* Mobile Contact CTA Button */
+  #mobile-menu a[href="contact.html"].mt-2,
+  #mobile-menu a.bg-\[\#f97316\] {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 14px !important;
+    padding: 0.75rem 1rem !important;
+    margin-top: 0.5rem !important;
+    border-bottom: none !important;
+    box-shadow: 0 4px 14px -1px rgba(249, 115, 22, 0.35) !important;
+    text-align: center !important;
+    display: block !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile-Only Horizontal Scrollable Product Category Tab Bar (Amazon/Apple UX)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  /* Category Filters Container - Single Row Horizontal Scroll */
+  .filter-btn-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 2rem !important;
+    padding: 0.5rem 1.25rem !important;
+    /* Side padding so first/last pills aren't flush */
+    gap: 0.625rem !important;
+    scrollbar-width: none !important;
+    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE/Edge */
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Hide scrollbar on Chrome, Safari, Opera */
+  .filter-btn-container::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* Individual Category Pill Buttons (Accessibility 44px min touch target) */
+  .filter-btn-container .filter-btn {
+    flex-shrink: 0 !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    padding: 0 1.25rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.8125rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    scroll-snap-align: start !important;
+    transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  /* Active Category Pill Button */
+  .filter-btn-container .filter-btn.bg-\[\#5b51e8\],
+  .filter-btn-container .filter-btn.bg-\[\#005B82\],
+  .filter-btn-container .filter-btn.active {
+    background: linear-gradient(135deg, #005B82 0%, #0f58a2 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 91, 130, 0.35) !important;
+    border: none !important;
+  }
+
+  /* Inactive Category Pill Buttons */
+  .filter-btn-container .filter-btn:not(.bg-\[\#5b51e8\]):not(.bg-\[\#005B82\]):not(.active) {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(175, 210, 247, 0.8) !important;
+    color: #002B3E !important;
+    box-shadow: 0 2px 8px rgba(0, 43, 62, 0.04) !important;
+  }
+
+  .filter-btn-container .filter-btn:not(.bg-\[\#5b51e8\]):not(.bg-\[\#005B82\]):not(.active):active {
+    transform: scale(0.96) !important;
+    background: #ffffff !important;
+  }
 }
 
 /* Background styling for Portfolio-Partners wrapper section to create a single continuous canvas */
@@ -553,7 +899,9 @@ header #mobile-menu-btn {
   background-image: none !important;
 }
 
-#portfolio, #why-us, #partners {
+#portfolio,
+#why-us,
+#partners {
   background-image: none !important;
   background-color: transparent !important;
 }
@@ -562,18 +910,23 @@ header #mobile-menu-btn {
 #metrics-section {
   background-color: transparent !important;
 }
+
 #about {
   background-color: rgba(248, 250, 252, 0.45) !important;
 }
+
 #products {
   background-color: transparent !important;
 }
+
 #portfolio {
   background-color: rgba(248, 250, 252, 0.45) !important;
 }
+
 #why-us {
   background-color: transparent !important;
 }
+
 #partners {
   background-color: rgba(248, 250, 252, 0.45) !important;
 }
@@ -595,38 +948,49 @@ html {
 }
 
 /* Enhanced Mobile Typography Legibility Rules */
-p, span, li, td, th, label {
+p,
+span,
+li,
+td,
+th,
+label {
   letter-spacing: 0.01em;
 }
 
 /* Upgrade utility text sizes to industry standards */
 .text-xs {
-  font-size: 0.8125rem !important; /* 13px */
+  font-size: 0.8125rem !important;
+  /* 13px */
   line-height: 1.5 !important;
 }
 
 .text-sm {
-  font-size: 0.9375rem !important; /* 15px */
+  font-size: 0.9375rem !important;
+  /* 15px */
   line-height: 1.6 !important;
 }
 
 .text-base {
-  font-size: 1.0625rem !important; /* 17px */
+  font-size: 1.0625rem !important;
+  /* 17px */
   line-height: 1.75 !important;
 }
 
 .text-lg {
-  font-size: 1.25rem !important; /* 20px */
+  font-size: 1.25rem !important;
+  /* 20px */
   line-height: 1.65 !important;
 }
 
 .text-xl {
-  font-size: 1.4375rem !important; /* 23px */
+  font-size: 1.4375rem !important;
+  /* 23px */
   line-height: 1.5 !important;
 }
 
 .text-2xl {
-  font-size: 1.75rem !important; /* 28px */
+  font-size: 1.75rem !important;
+  /* 28px */
   line-height: 1.4 !important;
 }
 
@@ -650,23 +1014,45 @@ h3 {
 }
 
 @media (max-width: 1024px) {
-  h1 { font-size: 44px !important; line-height: 1.2 !important; }
-  h2 { font-size: 38px !important; line-height: 1.2 !important; }
-  h3 { font-size: 32px !important; line-height: 1.25 !important; }
+  h1 {
+    font-size: 44px !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 38px !important;
+    line-height: 1.2 !important;
+  }
+
+  h3 {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+  }
 }
 
 @media (max-width: 640px) {
-  h1 { font-size: 34px !important; line-height: 1.2 !important; }
-  h2 { font-size: 30px !important; line-height: 1.2 !important; }
-  h3 { font-size: 26px !important; line-height: 1.25 !important; }
+  h1 {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+
+  h3 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
 }
 
 /* Mobile Touch Target Standards (Minimum 44px for WCAG & Mobile UX) */
-button, 
-a.px-6, 
-a.px-4, 
-input[type="text"], 
-input[type="email"], 
+button,
+a.px-6,
+a.px-4,
+input[type="text"],
+input[type="email"],
 textarea,
 select {
   min-height: 44px;
@@ -681,23 +1067,31 @@ select {
 }
 
 /* Prevent horizontal body overflow on small viewports */
-body, html {
+body,
+html {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 /* Mobile Padding & Spacing Touchups */
 @media (max-width: 768px) {
-  .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl {
+
+  .container,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
-  
-  .py-16, .py-20, .py-24 {
+
+  .py-16,
+  .py-20,
+  .py-24 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }
-  
+
   /* Mobile modal adjustments */
   .modal-content {
     max-height: 90vh;
@@ -724,12 +1118,12 @@ header nav a {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
   }
-  
+
   header a[href="index.html"],
   header a.flex.items-center {
     padding-left: 0.5rem !important;
   }
-  
+
   header #mobile-menu-btn {
     padding-right: 0.5rem !important;
   }
@@ -782,14 +1176,6 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   --pharma-brand-orange: #F07D00;
 }
 
-/* Navbar glassmorphic background with smooth sky-blue gradient blend */
-.pharma-navbar {
-  background: linear-gradient(135deg, rgba(234, 244, 255, 0.94) 0%, rgba(202, 227, 253, 0.90) 50%, rgba(197, 222, 249, 0.94) 100%) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid rgba(175, 210, 247, 0.6) !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 43, 62, 0.06) !important;
-}
 
 /* Hero Section background gradient */
 .pharma-hero-section {
@@ -823,11 +1209,19 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   font-weight: 700 !important;
 }
 
-/* Category Pill Badge */
+/* Category Sub-heading Label - Clean Text Only (No Box, No Background, No Border) */
 .pharma-pill-badge {
-  background: linear-gradient(135deg, #005B82 0%, #0f58a2 100%);
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 91, 130, 0.2);
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+  color: #005B82 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
 }
 
 /* Mobile Responsiveness for Hero Banner Header Image */
@@ -837,7 +1231,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     padding-top: 6rem !important;
     padding-bottom: 3rem !important;
   }
-  
+
   .pharma-hero-section img {
     object-fit: cover !important;
     object-position: 80% center !important;
@@ -850,19 +1244,41 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     padding-top: 5.5rem !important;
     padding-bottom: 2.5rem !important;
   }
-  
+
   .pharma-hero-section img {
     object-fit: cover !important;
     object-position: 75% center !important;
   }
 }
 
+/* Hero Text Block Alignment & Proportional Spacing (About Us, Products, Careers, Contact Us) */
+.pharma-hero-text-block {
+  width: 100%;
+  max-width: 28rem;
+  margin-left: 0;
+  margin-right: auto;
+}
 
+@media (min-width: 768px) {
+  .pharma-hero-text-block {
+    width: 44%;
+    max-width: 350px;
+    margin-left: -0.75rem;
+  }
+}
 
+@media (min-width: 1024px) {
+  .pharma-hero-text-block {
+    width: 42%;
+    max-width: 420px;
+    margin-left: -1.25rem;
+  }
+}
 
-
-
-
-
-
-
+@media (min-width: 1280px) {
+  .pharma-hero-text-block {
+    width: 40%;
+    max-width: 450px;
+    margin-left: -1.75rem;
+  }
+}
