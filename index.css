@@ -1508,3 +1508,233 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     object-fit: contain !important;
   }
 }
+
+/* ==========================================================================
+   MOBILE NAVIGATION DRAWER & OVERLAY (Hdden on Desktop View > 768px)
+   ========================================================================== */
+
+.oxentra-drawer-overlay,
+.oxentra-mobile-drawer {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .oxentra-drawer-overlay {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease, visibility 300ms ease;
+    pointer-events: auto;
+  }
+
+  .oxentra-drawer-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .oxentra-mobile-drawer {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: 82vw;
+    max-width: 320px;
+    background: #FFFFFF !important;
+    border-radius: 32px 0 0 32px;
+    box-shadow: -12px 0 36px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 999;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 300ms cubic-bezier(.22, 1, .36, 1);
+    pointer-events: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .oxentra-mobile-drawer.active {
+    transform: translateX(0) !important;
+  }
+
+  .oxentra-drawer-header {
+    height: 72px;
+    padding: 0 24px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #F1F5F9;
+    flex-shrink: 0;
+  }
+
+  .oxentra-drawer-logo {
+    height: 24px !important;
+    max-height: 24px !important;
+    width: auto !important;
+    max-width: 115px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    margin-left: 4px !important;
+  }
+
+  .oxentra-drawer-close-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 9999px;
+    background: #F1F5F9;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .oxentra-drawer-close-btn:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+  }
+
+  .oxentra-drawer-close-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .oxentra-drawer-nav {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+
+  .oxentra-drawer-card {
+    height: 56px;
+    min-height: 56px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .oxentra-drawer-card:hover {
+    border-color: #CBD5E1;
+    background: #FAFAFA;
+  }
+
+  .oxentra-drawer-card.active {
+    background: #EFF6FF;
+    border-color: #DBEAFE;
+    box-shadow: none;
+  }
+
+  .oxentra-drawer-card-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .oxentra-drawer-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    flex-shrink: 0;
+  }
+
+  .oxentra-drawer-card.active .oxentra-drawer-icon-box {
+    background: #DBEAFE;
+    color: #0284C7;
+  }
+
+  .oxentra-drawer-card-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0F172A;
+  }
+
+  .oxentra-drawer-card.active .oxentra-drawer-card-label {
+    color: #0284C7;
+  }
+
+  .oxentra-drawer-sublist {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px 0 6px 14px;
+  }
+
+  .oxentra-drawer-sublist.active {
+    display: flex;
+  }
+
+  .oxentra-drawer-subitem {
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+
+  .oxentra-drawer-subitem:hover {
+    background: #F1F5F9;
+    color: #0284C7;
+  }
+
+  .oxentra-drawer-contact-btn {
+    margin-top: auto;
+    height: 54px;
+    min-height: 54px;
+    width: 100%;
+    border-radius: 16px;
+    background: #F97316;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .oxentra-drawer-contact-btn:hover {
+    background: #EA580C;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(249, 115, 22, 0.45);
+  }
+
+  .oxentra-drawer-contact-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #FFFFFF;
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oxentra Pharma - Premium Mobile Drawer</title>
+  <title>Oxentra Pharma - Industry Standard Mobile Navigation Drawer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
       overflow-x: hidden;
     }
 
-    /* Ambient background wave overlay to match pharma aesthetic reference */
+    /* Ambient background wave overlay */
     .pharma-bg-overlay {
       position: absolute;
       top: 0;
@@ -80,7 +80,7 @@
       transition: all 0.2s ease;
     }
 
-    /* Right Section: 40x40 Icon Buttons (12px Border Radius, 12px Spacing) */
+    /* Right Section: 40x40 Icon Buttons */
     .oxentra-nav-right-row {
       display: flex;
       align-items: center;
@@ -153,16 +153,14 @@
     }
 
     /* ==========================================================================
-       PREMIUM SAAS MOBILE DRAWER & FADE OVERLAY
+       EXACT MOBILE DRAWER & OVERLAY (MATCHING SCREENSHOT 100%)
        ========================================================================== */
 
-    /* Dark Overlay Behind Drawer (rgba(0,0,0,0.45) + Fade) */
+    /* Dark Overlay Behind Drawer */
     .oxentra-drawer-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
       z-index: 998;
       opacity: 0;
       visibility: hidden;
@@ -175,7 +173,7 @@
       visibility: visible;
     }
 
-    /* Drawer Container (82vw, max-width: 320px, right-aligned, 24px border radius) */
+    /* Right Sliding Mobile Drawer (Solid white container with 32px rounded left corners) */
     .oxentra-mobile-drawer {
       position: fixed;
       top: 0;
@@ -184,11 +182,9 @@
       height: 100dvh;
       width: 82vw;
       max-width: 320px;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-radius: 24px 0 0 24px;
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+      background: #FFFFFF;
+      border-radius: 32px 0 0 32px;
+      box-shadow: -12px 0 36px rgba(0, 0, 0, 0.15);
       overflow: hidden;
       z-index: 999;
       display: flex;
@@ -196,27 +192,32 @@
       transform: translateX(100%);
       transition: transform 300ms cubic-bezier(.22, 1, .36, 1);
       pointer-events: auto;
+      -webkit-font-smoothing: antialiased;
     }
 
     .oxentra-mobile-drawer.active {
       transform: translateX(0);
     }
 
-    /* Drawer Header (72px height, 20px padding, bottom border) */
+    /* Header inside Drawer */
     .oxentra-drawer-header {
       height: 72px;
-      padding: 0 20px;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid #F1F5F9;
       flex-shrink: 0;
     }
 
     .oxentra-drawer-logo {
-      height: 36px;
+      height: 24px;
+      max-height: 24px;
       width: auto;
+      max-width: 115px;
       object-fit: contain;
+      flex-shrink: 0;
+      margin-left: 4px;
     }
 
     .oxentra-drawer-close-btn {
@@ -232,7 +233,7 @@
       justify-content: center;
       color: #475569;
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .oxentra-drawer-close-btn:hover {
@@ -241,82 +242,89 @@
     }
 
     .oxentra-drawer-close-btn svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
     }
 
-    /* Drawer Navigation Scroll Content */
+    /* Scrollable Drawer Nav Container */
     .oxentra-drawer-nav {
-      padding: 20px;
+      padding: 20px 16px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
       overflow-y: auto;
       flex-grow: 1;
     }
 
-    /* Primary Menu Item (52px height, 18px padding, 14px radius, 16px text) */
-    .oxentra-drawer-item {
-      height: 52px;
-      min-height: 52px;
-      padding: 0 18px;
+    /* Individual Card Menu Item */
+    .oxentra-drawer-card {
+      height: 56px;
+      min-height: 56px;
+      padding: 0 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 1.4;
-      color: #0F172A;
+      border-radius: 16px;
+      background: #FFFFFF;
+      border: 1px solid #F1F5F9;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
       text-decoration: none;
-      background: transparent;
-      transition: all 0.25s ease;
-      user-select: none;
+      transition: all 0.2s ease;
       cursor: pointer;
+      user-select: none;
     }
 
-    .oxentra-drawer-item:hover {
-      background: #F3F7FC;
-      color: #005B82;
+    .oxentra-drawer-card:hover {
+      border-color: #CBD5E1;
+      background: #FAFAFA;
     }
 
-    /* Active Page Item (Primary Blue Background, White Text & Icons) */
-    .oxentra-drawer-item.active {
-      background: #005B82;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(0, 91, 130, 0.25);
+    /* Active Page Card (Home) */
+    .oxentra-drawer-card.active {
+      background: #EFF6FF;
+      border-color: #DBEAFE;
+      box-shadow: none;
     }
 
-    .oxentra-drawer-item.active svg {
-      color: #FFFFFF !important;
-      stroke: #FFFFFF !important;
-    }
-
-    .oxentra-drawer-left {
+    .oxentra-drawer-card-left {
       display: flex;
       align-items: center;
       gap: 14px;
     }
 
-    .oxentra-drawer-icon {
-      width: 22px;
-      height: 22px;
+    .oxentra-drawer-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #F8FAFC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
       flex-shrink: 0;
-      color: #005B82;
     }
 
-    .oxentra-drawer-item.active .oxentra-drawer-icon {
-      color: #FFFFFF;
+    .oxentra-drawer-card.active .oxentra-drawer-icon-box {
+      background: #DBEAFE;
+      color: #0284C7;
     }
 
-    /* Expandable Products Nested Sublist */
+    .oxentra-drawer-card-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0F172A;
+    }
+
+    .oxentra-drawer-card.active .oxentra-drawer-card-label {
+      color: #0284C7;
+    }
+
+    /* Expandable Sublist */
     .oxentra-drawer-sublist {
       display: none;
       flex-direction: column;
-      gap: 4px;
-      padding-top: 4px;
-      padding-bottom: 4px;
+      gap: 6px;
+      padding: 6px 0 6px 14px;
     }
 
     .oxentra-drawer-sublist.active {
@@ -325,13 +333,11 @@
 
     .oxentra-drawer-subitem {
       height: 44px;
-      padding-left: 52px;
-      padding-right: 18px;
+      padding: 0 16px;
       display: flex;
       align-items: center;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
-      line-height: 1.4;
       color: #475569;
       text-decoration: none;
       border-radius: 12px;
@@ -339,34 +345,35 @@
     }
 
     .oxentra-drawer-subitem:hover {
-      background: #F3F7FC;
-      color: #005B82;
+      background: #F1F5F9;
+      color: #0284C7;
     }
 
     /* Sticky Orange Contact Button at Bottom */
     .oxentra-drawer-contact-btn {
       margin-top: auto;
-      height: 52px;
-      min-height: 52px;
+      height: 54px;
+      min-height: 54px;
       width: 100%;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      border-radius: 16px;
+      background: #F97316;
       color: #FFFFFF !important;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       text-decoration: none;
-      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.3);
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
       transition: all 0.25s ease;
       flex-shrink: 0;
     }
 
     .oxentra-drawer-contact-btn:hover {
+      background: #EA580C;
       transform: translateY(-1px);
-      box-shadow: 0 8px 22px rgba(249, 115, 22, 0.4);
+      box-shadow: 0 10px 24px rgba(249, 115, 22, 0.45);
     }
 
     .oxentra-drawer-contact-btn svg {
@@ -380,7 +387,7 @@
 
   <div class="pharma-bg-overlay"></div>
 
-  <!-- Dark Backdrop Overlay (rgba(0,0,0,0.45) with fade) -->
+  <!-- Dark Backdrop Overlay -->
   <div id="drawer-overlay" class="oxentra-drawer-overlay"></div>
 
   <!-- Main Showcase Container -->
@@ -389,10 +396,10 @@
     <!-- Title & Subtitle Badge -->
     <div class="text-center mb-5">
       <span class="inline-block px-3 py-1 bg-sky-100 text-[#005B82] text-xs font-semibold rounded-full uppercase tracking-wider mb-2">
-        Premium SaaS Mobile Navigation
+        Mobile View Navigation Drawer
       </span>
-      <h1 class="text-xl font-bold text-[#002B3E]">Oxentra Mobile Drawer</h1>
-      <p class="text-slate-500 text-xs mt-1">Inspired by Apple, Stripe, Vercel & Linear</p>
+      <h1 class="text-xl font-bold text-[#002B3E]">Exact Match to Reference Screenshot</h1>
+      <p class="text-slate-500 text-xs mt-1">Click the menu button to toggle the sidebar drawer</p>
     </div>
 
     <!-- ========================================== -->
@@ -428,11 +435,11 @@
     </nav>
 
     <!-- ========================================== -->
-    <!-- SLIDING MOBILE DRAWER (Right 82vw max 320px) -->
+    <!-- SLIDING MOBILE DRAWER (Exact Screenshot Match) -->
     <!-- ========================================== -->
     <div id="mobile-drawer" class="oxentra-mobile-drawer">
       
-      <!-- Drawer Header (72px, 20px padding, logo left, 40x40 close right) -->
+      <!-- Drawer Header (Logo Left, Circular Close Button Right) -->
       <div class="oxentra-drawer-header">
         <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo">
         <button id="drawer-close-btn" class="oxentra-drawer-close-btn" aria-label="Close menu">
@@ -442,63 +449,71 @@
         </button>
       </div>
 
-      <!-- Drawer Scrollable Navigation Items -->
+      <!-- Drawer Scrollable Menu Cards -->
       <div class="oxentra-drawer-nav">
         
-        <!-- 1. Home (Active Page) -->
-        <a href="index.html" class="oxentra-drawer-item active">
-          <div class="oxentra-drawer-left">
-            <svg class="oxentra-drawer-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-            </svg>
-            <span>Home</span>
-          </div>
-        </a>
-
-        <!-- 2. About Us -->
-        <a href="about.html" class="oxentra-drawer-item">
-          <div class="oxentra-drawer-left">
-            <svg class="oxentra-drawer-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
-            </svg>
-            <span>About Us</span>
-          </div>
-        </a>
-
-        <!-- 3. Products (Expandable Menu with Right Chevron) -->
-        <div>
-          <div id="products-toggle-btn" class="oxentra-drawer-item">
-            <div class="oxentra-drawer-left">
-              <svg class="oxentra-drawer-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+        <!-- 1. Home (Active Card) -->
+        <a href="index.html" class="oxentra-drawer-card active">
+          <div class="oxentra-drawer-card-left">
+            <div class="oxentra-drawer-icon-box">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
               </svg>
-              <span>Products</span>
+            </div>
+            <span class="oxentra-drawer-card-label">Home</span>
+          </div>
+        </a>
+
+        <!-- 2. About Us Card -->
+        <a href="about.html" class="oxentra-drawer-card">
+          <div class="oxentra-drawer-card-left">
+            <div class="oxentra-drawer-icon-box">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+              </svg>
+            </div>
+            <span class="oxentra-drawer-card-label">About Us</span>
+          </div>
+        </a>
+
+        <!-- 3. Products Card (Expandable Menu with Right Chevron) -->
+        <div>
+          <div id="products-toggle-btn" class="oxentra-drawer-card">
+            <div class="oxentra-drawer-card-left">
+              <div class="oxentra-drawer-icon-box">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                </svg>
+              </div>
+              <span class="oxentra-drawer-card-label">Products</span>
             </div>
             <svg id="products-chevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
             </svg>
           </div>
 
-          <!-- Nested Sublist (Padding-left: 52px, height: 44px) -->
+          <!-- Nested Sublist -->
           <div id="products-sublist" class="oxentra-drawer-sublist">
             <a href="glideplus.html" class="oxentra-drawer-subitem">GLIDEPLUS™</a>
             <a href="nervoxplus.html" class="oxentra-drawer-subitem">NERVOX PLUS™</a>
             <a href="oxentibmr.html" class="oxentra-drawer-subitem">OXENTIB MR™</a>
-            <a href="products.html" class="oxentra-drawer-subitem text-[#005B82] font-semibold">View All Catalog →</a>
+            <a href="products.html" class="oxentra-drawer-subitem text-[#0284C7] font-semibold">View All Catalog →</a>
           </div>
         </div>
 
-        <!-- 4. Careers -->
-        <a href="careers.html" class="oxentra-drawer-item">
-          <div class="oxentra-drawer-left">
-            <svg class="oxentra-drawer-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            <span>Careers</span>
+        <!-- 4. Careers Card -->
+        <a href="careers.html" class="oxentra-drawer-card">
+          <div class="oxentra-drawer-card-left">
+            <div class="oxentra-drawer-icon-box">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="oxentra-drawer-card-label">Careers</span>
           </div>
         </a>
 
-        <!-- Sticky Orange Contact Button at Bottom (margin-top: auto) -->
+        <!-- Sticky Orange Contact Button at Bottom -->
         <a href="contact.html" class="oxentra-drawer-contact-btn">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -508,39 +523,6 @@
 
       </div>
 
-    </div>
-
-    <!-- Live Drawer Specs Verification Card -->
-    <div class="mt-12 bg-white/80 backdrop-blur-md border border-slate-200/80 rounded-2xl p-5 shadow-sm">
-      <h3 class="text-xs font-bold text-[#002B3E] uppercase tracking-wider mb-3 border-b border-slate-100 pb-2">
-        Mobile Drawer Specs Verification
-      </h3>
-      <div class="grid grid-cols-2 gap-3 text-xs">
-        <div class="bg-slate-50 p-2.5 rounded-xl">
-          <span class="text-slate-400 block text-[11px]">Drawer Size</span>
-          <span class="font-bold text-slate-700">82vw (Max 320px)</span>
-        </div>
-        <div class="bg-slate-50 p-2.5 rounded-xl">
-          <span class="text-slate-400 block text-[11px]">Border Radius</span>
-          <span class="font-bold text-slate-700">24px 0 0 24px</span>
-        </div>
-        <div class="bg-slate-50 p-2.5 rounded-xl">
-          <span class="text-slate-400 block text-[11px]">Header Height</span>
-          <span class="font-bold text-slate-700">72px (20px pad)</span>
-        </div>
-        <div class="bg-slate-50 p-2.5 rounded-xl">
-          <span class="text-slate-400 block text-[11px]">Close Button</span>
-          <span class="font-bold text-slate-700">40×40px Circular</span>
-        </div>
-        <div class="bg-slate-50 p-2.5 rounded-xl">
-          <span class="text-slate-400 block text-[11px]">Item Height</span>
-          <span class="font-bold text-slate-700">52px (18px pad)</span>
-        </div>
-        <div class="bg-slate-50 p-2.5 rounded-xl">
-          <span class="text-slate-400 block text-[11px]">Contact Button</span>
-          <span class="font-bold text-slate-700">Sticky Bottom 52px</span>
-        </div>
-      </div>
     </div>
 
   </div>
