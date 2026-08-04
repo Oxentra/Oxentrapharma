@@ -551,7 +551,6 @@ const result = JSON.parse(text);
       const productsChevron = document.getElementById('products-chevron');
 
       function toggleDrawer(open) {
-        if (window.innerWidth > 768) return;
         if (!drawer || !overlay) return;
         const shouldOpen = open !== undefined ? open : !drawer.classList.contains('active');
         if (shouldOpen) {
@@ -569,8 +568,18 @@ const result = JSON.parse(text);
       if (closeBtn) closeBtn.addEventListener('click', () => toggleDrawer(false));
       if (overlay) overlay.addEventListener('click', () => toggleDrawer(false));
 
+      // Instantly close drawer and release scroll lock on link click for fast navigation
+      if (drawer) {
+        drawer.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            toggleDrawer(false);
+          });
+        });
+      }
+
       if (productsBtn && productsSublist) {
-        productsBtn.addEventListener('click', () => {
+        productsBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
           productsSublist.classList.toggle('active');
           if (productsChevron) productsChevron.classList.toggle('rotate-180');
         });
@@ -584,6 +593,11 @@ const result = JSON.parse(text);
         if (window.innerWidth > 768) {
           toggleDrawer(false);
         }
+      });
+
+      window.addEventListener('pageshow', () => {
+        toggleDrawer(false);
+        document.body.style.overflow = '';
       });
     });
   </script>

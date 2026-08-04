@@ -583,5 +583,66 @@
   </footer>
 
   <script src="main.js?v=3" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const drawer = document.getElementById('mobile-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const closeBtn = document.getElementById('drawer-close-btn');
+      const productsBtn = document.getElementById('products-toggle-btn');
+      const productsSublist = document.getElementById('products-sublist');
+      const productsChevron = document.getElementById('products-chevron');
+
+      function toggleDrawer(open) {
+        if (!drawer || !overlay) return;
+        const shouldOpen = open !== undefined ? open : !drawer.classList.contains('active');
+        if (shouldOpen) {
+          drawer.classList.add('active');
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        } else {
+          drawer.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (menuBtn) menuBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleDrawer(true); });
+      if (closeBtn) closeBtn.addEventListener('click', () => toggleDrawer(false));
+      if (overlay) overlay.addEventListener('click', () => toggleDrawer(false));
+
+      // Instantly close drawer and release scroll lock on link click for fast navigation
+      if (drawer) {
+        drawer.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            toggleDrawer(false);
+          });
+        });
+      }
+
+      if (productsBtn && productsSublist) {
+        productsBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          productsSublist.classList.toggle('active');
+          if (productsChevron) productsChevron.classList.toggle('rotate-180');
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') toggleDrawer(false);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          toggleDrawer(false);
+        }
+      });
+
+      window.addEventListener('pageshow', () => {
+        toggleDrawer(false);
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
 </body>
 </html>

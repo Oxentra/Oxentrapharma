@@ -1527,7 +1527,8 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     z-index: 99998 !important;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 300ms ease, visibility 300ms ease;
+    will-change: opacity, visibility;
+    transition: opacity 250ms ease, visibility 250ms ease;
     pointer-events: auto !important;
   }
 
@@ -1554,14 +1555,15 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     overflow: hidden;
     z-index: 99999 !important;
     flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 300ms cubic-bezier(.22, 1, .36, 1);
+    transform: translate3d(100%, 0, 0);
+    will-change: transform;
+    transition: transform 250ms cubic-bezier(.16, 1, .3, 1);
     pointer-events: auto !important;
     -webkit-font-smoothing: antialiased;
   }
 
   .oxentra-mobile-drawer.active {
-    transform: translateX(0) !important;
+    transform: translate3d(0, 0, 0) !important;
   }
 
   .oxentra-drawer-header {
