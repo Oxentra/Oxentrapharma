@@ -54,10 +54,108 @@
 <body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
 
   <!-- ========================================== -->
-  <!-- NAVIGATION BAR & MOBILE DRAWER             -->
+  <!-- MOBILE DRAWER & OVERLAY (OUTSIDE HEADER)   -->
   <!-- ========================================== -->
   <div id="drawer-overlay" class="oxentra-drawer-overlay hidden lg:hidden"></div>
 
+  <!-- Sliding Mobile Drawer -->
+  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden">
+    
+    <!-- Drawer Header (Logo Left, Circular Close Button Right) -->
+    <div class="oxentra-drawer-header">
+      <a href="index.html">
+        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo">
+      </a>
+      <button id="drawer-close-btn" class="oxentra-drawer-close-btn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Scrollable Menu Cards -->
+    <div class="oxentra-drawer-nav">
+      
+      <!-- 1. Home Card -->
+      <a href="index.html" class="oxentra-drawer-card active">
+        <div class="oxentra-drawer-card-left">
+          <div class="oxentra-drawer-icon-box">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <span class="oxentra-drawer-card-label">Home</span>
+        </div>
+      </a>
+
+      <!-- 2. About Us Card -->
+      <a href="about.html" class="oxentra-drawer-card">
+        <div class="oxentra-drawer-card-left">
+          <div class="oxentra-drawer-icon-box">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <span class="oxentra-drawer-card-label">About Us</span>
+        </div>
+      </a>
+
+      <!-- 3. Products Card (Navigates to products.html, Chevron toggles sublist) -->
+      <div>
+        <div class="flex items-center gap-1">
+          <a href="products.html" class="oxentra-drawer-card flex-grow">
+            <div class="oxentra-drawer-card-left">
+              <div class="oxentra-drawer-icon-box">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                </svg>
+              </div>
+              <span class="oxentra-drawer-card-label">Products</span>
+            </div>
+          </a>
+          <button id="products-toggle-btn" class="w-12 h-14 rounded-2xl bg-white border border-black/5 flex items-center justify-center text-slate-400 hover:text-slate-700 shadow-sm transition-colors" aria-label="Expand products menu">
+            <svg id="products-chevron" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nested Sublist -->
+        <div id="products-sublist" class="oxentra-drawer-sublist">
+          <a href="glideplus.html" class="oxentra-drawer-subitem">GLIDEPLUS™</a>
+          <a href="nervoxplus.html" class="oxentra-drawer-subitem">NERVOX PLUS™</a>
+          <a href="oxentibmr.html" class="oxentra-drawer-subitem">OXENTIB MR™</a>
+          <a href="products.html" class="oxentra-drawer-subitem text-[#0284C7] font-semibold">View All Catalog →</a>
+        </div>
+      </div>
+
+      <!-- 4. Careers Card -->
+      <a href="careers.html" class="oxentra-drawer-card">
+        <div class="oxentra-drawer-card-left">
+          <div class="oxentra-drawer-icon-box">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <span class="oxentra-drawer-card-label">Careers</span>
+        </div>
+      </a>
+
+      <!-- 5. Contact Us Button -->
+      <a href="contact.html" class="oxentra-drawer-contact-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        <span>Contact Us</span>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- NAVIGATION BAR (DESKTOP / MOBILE TOP BAR)  -->
+  <!-- ========================================== -->
   <header class="oxentra-header-wrapper">
     <div class="oxentra-navbar-shell">
       
@@ -124,95 +222,6 @@
         </div>
 
       </div>
-    </div>
-
-    <!-- Sliding Mobile Drawer (Hidden on Desktop via hidden lg:hidden) -->
-    <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden">
-      
-      <!-- Drawer Header (Logo Left, Circular Close Button Right) -->
-      <div class="oxentra-drawer-header">
-        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo">
-        <button id="drawer-close-btn" class="oxentra-drawer-close-btn" aria-label="Close menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Drawer Scrollable Menu Cards -->
-      <div class="oxentra-drawer-nav">
-        
-        <!-- 1. Home (Active Card) -->
-        <a href="index.html" class="oxentra-drawer-card active">
-          <div class="oxentra-drawer-card-left">
-            <div class="oxentra-drawer-icon-box">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-              </svg>
-            </div>
-            <span class="oxentra-drawer-card-label">Home</span>
-          </div>
-        </a>
-
-        <!-- 2. About Us Card -->
-        <a href="about.html" class="oxentra-drawer-card">
-          <div class="oxentra-drawer-card-left">
-            <div class="oxentra-drawer-icon-box">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
-              </svg>
-            </div>
-            <span class="oxentra-drawer-card-label">About Us</span>
-          </div>
-        </a>
-
-        <!-- 3. Products Card (Expandable Menu with Right Chevron) -->
-        <div>
-          <div id="products-toggle-btn" class="oxentra-drawer-card">
-            <div class="oxentra-drawer-card-left">
-              <div class="oxentra-drawer-icon-box">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                </svg>
-              </div>
-              <span class="oxentra-drawer-card-label">Products</span>
-            </div>
-            <svg id="products-chevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </div>
-
-          <!-- Nested Sublist -->
-          <div id="products-sublist" class="oxentra-drawer-sublist">
-            <a href="glideplus.html" class="oxentra-drawer-subitem">GLIDEPLUS™</a>
-            <a href="nervoxplus.html" class="oxentra-drawer-subitem">NERVOX PLUS™</a>
-            <a href="oxentibmr.html" class="oxentra-drawer-subitem">OXENTIB MR™</a>
-            <a href="products.html" class="oxentra-drawer-subitem text-[#0284C7] font-semibold">View All Catalog →</a>
-          </div>
-        </div>
-
-        <!-- 4. Careers Card -->
-        <a href="careers.html" class="oxentra-drawer-card">
-          <div class="oxentra-drawer-card-left">
-            <div class="oxentra-drawer-icon-box">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-            </div>
-            <span class="oxentra-drawer-card-label">Careers</span>
-          </div>
-        </a>
-
-        <!-- Sticky Orange Contact Button at Bottom -->
-        <a href="contact.html" class="oxentra-drawer-contact-btn">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-          </svg>
-          <span>Contact Us</span>
-        </a>
-
-      </div>
-
     </div>
   </header>
 

@@ -1523,12 +1523,12 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     display: block !important;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 998;
+    background: rgba(0, 0, 0, 0.25) !important;
+    z-index: 99998 !important;
     opacity: 0;
     visibility: hidden;
     transition: opacity 300ms ease, visibility 300ms ease;
-    pointer-events: auto;
+    pointer-events: auto !important;
   }
 
   .oxentra-drawer-overlay.active {
@@ -1545,15 +1545,18 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     height: 100dvh;
     width: 82vw;
     max-width: 320px;
-    background: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.99) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
     border-radius: 32px 0 0 32px;
-    box-shadow: -12px 0 36px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.05) !important;
     overflow: hidden;
-    z-index: 999;
+    z-index: 99999 !important;
     flex-direction: column;
     transform: translateX(100%);
     transition: transform 300ms cubic-bezier(.22, 1, .36, 1);
-    pointer-events: auto;
+    pointer-events: auto !important;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -1567,7 +1570,8 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #F1F5F9;
+    background: #FFFFFF !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
     flex-shrink: 0;
   }
 
@@ -1587,19 +1591,19 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     min-width: 40px;
     min-height: 40px;
     border-radius: 9999px;
-    background: #F1F5F9;
+    background: #F3F4F6 !important;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #475569;
+    color: #374151 !important;
     cursor: pointer;
     transition: all 0.2s ease;
   }
 
   .oxentra-drawer-close-btn:hover {
-    background: #E2E8F0;
-    color: #0F172A;
+    background: #E5E7EB !important;
+    color: #111827 !important;
   }
 
   .oxentra-drawer-close-btn svg {
@@ -1624,9 +1628,9 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     align-items: center;
     justify-content: space-between;
     border-radius: 16px;
-    background: #FFFFFF;
-    border: 1px solid #F1F5F9;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
     text-decoration: none;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -1634,14 +1638,14 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   }
 
   .oxentra-drawer-card:hover {
-    border-color: #CBD5E1;
-    background: #FAFAFA;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
   }
 
   .oxentra-drawer-card.active {
-    background: #EFF6FF;
-    border-color: #DBEAFE;
-    box-shadow: none;
+    background: linear-gradient(135deg, #0B6FBF, #0A84FF) !important;
+    border-color: transparent !important;
+    box-shadow: 0 6px 18px rgba(10, 132, 255, 0.3) !important;
   }
 
   .oxentra-drawer-card-left {
@@ -1654,27 +1658,32 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: #F8FAFC;
+    background: #F9FAFB !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #475569;
+    color: #374151 !important;
     flex-shrink: 0;
   }
 
   .oxentra-drawer-card.active .oxentra-drawer-icon-box {
-    background: #DBEAFE;
-    color: #0284C7;
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #FFFFFF !important;
+  }
+
+  .oxentra-drawer-card.active .oxentra-drawer-icon-box svg {
+    stroke: #FFFFFF !important;
+    color: #FFFFFF !important;
   }
 
   .oxentra-drawer-card-label {
     font-size: 15px;
     font-weight: 600;
-    color: #0F172A;
+    color: #1F2937 !important;
   }
 
   .oxentra-drawer-card.active .oxentra-drawer-card-label {
-    color: #0284C7;
+    color: #FFFFFF !important;
   }
 
   .oxentra-drawer-sublist {
@@ -1695,15 +1704,15 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     align-items: center;
     font-size: 14px;
     font-weight: 500;
-    color: #475569;
+    color: #4B5563 !important;
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.2s ease;
   }
 
   .oxentra-drawer-subitem:hover {
-    background: #F1F5F9;
-    color: #0284C7;
+    background: #F3F4F6 !important;
+    color: #0A84FF !important;
   }
 
   .oxentra-drawer-contact-btn {
@@ -1712,7 +1721,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     min-height: 54px;
     width: 100%;
     border-radius: 16px;
-    background: #F97316;
+    background: linear-gradient(135deg, #FF7A00, #FF5500) !important;
     color: #FFFFFF !important;
     font-size: 16px;
     font-weight: 700;
@@ -1721,20 +1730,20 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     justify-content: center;
     gap: 10px;
     text-decoration: none;
-    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+    box-shadow: 0 8px 24px rgba(255, 102, 0, 0.35) !important;
     transition: all 0.25s ease;
     flex-shrink: 0;
   }
 
   .oxentra-drawer-contact-btn:hover {
-    background: #EA580C;
+    background: linear-gradient(135deg, #FF6600, #E64A00) !important;
     transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgba(249, 115, 22, 0.45);
+    box-shadow: 0 10px 28px rgba(255, 102, 0, 0.45) !important;
   }
 
   .oxentra-drawer-contact-btn svg {
     width: 20px;
     height: 20px;
-    fill: #FFFFFF;
+    fill: #FFFFFF !important;
   }
 }
