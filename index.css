@@ -1612,25 +1612,25 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   }
 
   .oxentra-drawer-nav {
-    padding: 20px 16px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
     overflow-y: auto;
     flex-grow: 1;
   }
 
   .oxentra-drawer-card {
-    height: 56px;
-    min-height: 56px;
+    height: 48px;
+    min-height: 48px;
     padding: 0 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 16px;
-    background: #FFFFFF !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+    border-radius: 12px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     text-decoration: none;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -1638,36 +1638,38 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   }
 
   .oxentra-drawer-card:hover {
-    border-color: rgba(0, 0, 0, 0.1) !important;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+    background: rgba(0, 0, 0, 0.04) !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .oxentra-drawer-card.active {
     background: linear-gradient(135deg, #0B6FBF, #0A84FF) !important;
-    border-color: transparent !important;
-    box-shadow: 0 6px 18px rgba(10, 132, 255, 0.3) !important;
+    border: none !important;
+    box-shadow: 0 4px 14px rgba(10, 132, 255, 0.25) !important;
   }
 
   .oxentra-drawer-card-left {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
   }
 
   .oxentra-drawer-icon-box {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: #F9FAFB !important;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: transparent !important;
+    border: none !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #374151 !important;
+    color: #4B5563 !important;
     flex-shrink: 0;
   }
 
   .oxentra-drawer-card.active .oxentra-drawer-icon-box {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: transparent !important;
     color: #FFFFFF !important;
   }
 
@@ -1686,11 +1688,25 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     color: #FFFFFF !important;
   }
 
+  #products-toggle-btn {
+    height: 48px !important;
+    min-height: 48px !important;
+    width: 44px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 12px !important;
+  }
+
+  #products-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.04) !important;
+  }
+
   .oxentra-drawer-sublist {
     display: none;
     flex-direction: column;
-    gap: 6px;
-    padding: 6px 0 6px 14px;
+    gap: 4px;
+    padding: 4px 0 4px 44px;
   }
 
   .oxentra-drawer-sublist.active {
