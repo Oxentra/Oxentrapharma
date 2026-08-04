@@ -1322,20 +1322,20 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
 .oxentra-logo-link {
   display: flex !important;
   align-items: center !important;
-  height: 46px !important;
-  max-height: 46px !important;
+  height: 28px !important;
+  max-height: 28px !important;
   text-decoration: none !important;
   flex-shrink: 0 !important;
-  margin-right: 40px !important;
+  margin-right: 32px !important;
   margin-left: 0 !important;
   padding: 0 !important;
 }
 
 .oxentra-logo-img {
-  height: 46px !important;
-  max-height: 46px !important;
+  height: 28px !important;
+  max-height: 28px !important;
   width: auto !important;
-  max-width: 220px !important;
+  max-width: 140px !important;
   object-fit: contain !important;
   display: block !important;
   margin: 0 !important;
@@ -1488,5 +1488,23 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   .oxentra-navbar-shell {
     height: 64px;
     padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .oxentra-logo-link {
+    height: 24px !important;
+    max-height: 24px !important;
+    flex-shrink: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .oxentra-logo-img {
+    height: 24px !important;
+    max-height: 24px !important;
+    width: auto !important;
+    max-width: 115px !important;
+    flex-shrink: 0 !important;
+    object-fit: contain !important;
   }
 }
