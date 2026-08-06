@@ -336,15 +336,50 @@ input[type="submit"] {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
+.open-details-btn:hover,
+.open-details-btn:active,
+.open-details-btn:focus,
 .product-card:hover .open-details-btn {
   background-color: #0f58a2 !important;
   border-color: #0f58a2 !important;
-  color: white !important;
-  box-shadow: 0 8px 20px -4px rgba(15, 88, 162, 0.4);
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px -4px rgba(15, 88, 162, 0.4) !important;
+}
+
+.open-details-btn:hover span,
+.open-details-btn:active span,
+.product-card:hover .open-details-btn span {
+  transform: translateX(4px);
+  display: inline-block;
+  color: #ffffff !important;
+}
+
+/* Career Apply Now Hover Animation */
+.apply-btn {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.apply-btn:hover,
+.apply-btn:active,
+.apply-btn:focus,
+.group:hover .apply-btn {
+  background-color: #0f58a2 !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px -4px rgba(15, 88, 162, 0.35) !important;
+}
+
+.apply-btn:hover span,
+.apply-btn:active span,
+.group:hover .apply-btn span {
+  transform: translateX(4px);
+  display: inline-block;
 }
 
 /* Custom slider buttons */
