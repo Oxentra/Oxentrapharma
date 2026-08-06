@@ -1534,7 +1534,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .oxentra-header-wrapper {
     padding: 10px 12px 0 12px !important;
   }
@@ -1569,7 +1569,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     object-fit: contain !important;
   }
 
-  /* Mobile Header Action Icon Buttons (Phone Call & Hamburger Menu) */
+  /* Mobile/iPad Header Action Icon Buttons (Phone Call & Hamburger Menu) */
   header .flex.lg\:hidden {
     display: flex !important;
     align-items: center !important;
@@ -1640,7 +1640,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
 }
 
 /* ==========================================================================
-   MOBILE NAVIGATION DRAWER & OVERLAY (Hidden on Desktop View > 768px)
+   MOBILE & IPAD NAVIGATION DRAWER & OVERLAY (Hidden on Desktop View > 1024px)
    ========================================================================== */
 
 .oxentra-drawer-overlay,
@@ -1648,7 +1648,18 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   display: none !important;
 }
 
-@media (max-width: 768px) {
+.oxentra-drawer-overlay.active {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.oxentra-mobile-drawer.active {
+  display: flex !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+@media (max-width: 1024px) {
   .oxentra-drawer-overlay {
     display: block !important;
     position: fixed;
@@ -1663,6 +1674,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   }
 
   .oxentra-drawer-overlay.active {
+    display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
@@ -1674,8 +1686,8 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     right: 0;
     height: 100vh;
     height: 100dvh;
-    width: 82vw;
-    max-width: 320px;
+    width: 340px;
+    max-width: 85vw;
     background: rgba(255, 255, 255, 0.99) !important;
     backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(24px) !important;
@@ -1693,6 +1705,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   }
 
   .oxentra-mobile-drawer.active {
+    display: flex !important;
     transform: translate3d(0, 0, 0) !important;
   }
 
