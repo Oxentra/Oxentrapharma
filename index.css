@@ -1287,6 +1287,14 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
 }
 
 /* Hero Text Block Alignment & Proportional Spacing (About Us, Products, Careers, Contact Us) */
+/* Primary Pages (About Us, Products, Careers, Contact Us) Hero Section Background */
+.pharma-hero-section {
+  background-image: url('images/banner.png') !important;
+  background-size: cover !important;
+  background-position: center right !important;
+  background-repeat: no-repeat !important;
+}
+
 .pharma-hero-text-block {
   width: 100%;
   max-width: 28rem;
