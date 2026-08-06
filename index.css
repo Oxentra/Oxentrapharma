@@ -1602,10 +1602,11 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     height: 18px !important;
     min-width: 18px !important;
     min-height: 18px !important;
-    margin: auto !important;
+    margin: 0 !important;
     fill: #F97316 !important;
     color: #F97316 !important;
     flex-shrink: 0 !important;
+    transform: translate(2px, 0px) !important;
   }
 
   header #mobile-menu-btn {
