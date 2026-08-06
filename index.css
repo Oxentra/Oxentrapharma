@@ -1606,7 +1606,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     fill: #F97316 !important;
     color: #F97316 !important;
     flex-shrink: 0 !important;
-    transform: translate(2px, 0px) !important;
+    transform: translate(-3.5px, -2px) !important;
   }
 
   header #mobile-menu-btn {
