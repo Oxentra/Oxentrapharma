@@ -235,14 +235,14 @@
     <!-- ========================================== -->
     <!-- ========================================== -->
     <!-- 1. SCROLL-DRIVEN HERO SECTION              -->
-    <section id="hero" class="relative w-full h-[400vh] bg-[#163844]">
+    <section id="hero" class="relative w-full h-[400vh] bg-transparent">
       <!-- Sticky viewport container that stays fixed while scrolling -->
       <div class="hero-sticky-viewport sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
         <!-- Canvas Image Sequence Layer (300 Frames from images/herosection) -->
         <canvas id="hero-canvas" class="absolute inset-0 w-full h-full object-cover z-0"></canvas>
 
-        <!-- Dark Gradient Shade Overlay (Starts opacity-0, reveals after frame 76) -->
-        <div id="hero-shade-overlay" class="absolute inset-0 bg-gradient-to-b from-[#163844]/80 via-[#163844]/45 to-[#163844]/90 pointer-events-none z-10 opacity-0 transition-opacity duration-300"></div>
+        <!-- Seamless Gradient Overlay (Clean top, subtle read-overlay at center/bottom when scrolling text) -->
+        <div id="hero-shade-overlay" class="absolute inset-0 bg-gradient-to-b from-transparent via-[#002b3e]/30 to-[#002b3e]/75 pointer-events-none z-10 opacity-0 transition-opacity duration-300"></div>
 
         <!-- Corporate Pharmaceutical Hero Content Overlay (Reveals smoothly after frame 76) -->
         <div class="relative z-20 max-w-5xl mx-auto px-6 w-full h-full flex items-center justify-center pointer-events-none">
