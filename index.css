@@ -1967,4 +1967,10 @@ footer {
     padding-top: 4px !important;
     padding-bottom: 20px !important;
   }
+
+  /* Move hero section text overlay downwards in mobile view only */
+  #hero-main-header {
+    padding-top: 10rem !important;
+    margin-top: 3.5rem !important;
+  }
 }
