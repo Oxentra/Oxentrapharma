@@ -906,23 +906,15 @@ function initHeaderScroll() {
 
   if (!header) return;
 
-  let ticking = false;
   function checkScroll() {
     if (window.scrollY > scrollThreshold) {
       header.classList.add("header-scrolled");
     } else {
       header.classList.remove("header-scrolled");
     }
-    ticking = false;
   }
 
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(checkScroll);
-      ticking = true;
-    }
-  }, { passive: true });
-
+  window.addEventListener("scroll", checkScroll);
   checkScroll(); // Run immediately on load
 }
 
