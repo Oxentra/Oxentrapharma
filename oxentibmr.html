@@ -98,6 +98,26 @@
       box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08), inset 0 2px 6px rgba(255, 255, 255, 0.9);
       z-index: 1;
     }
+    @media (max-width: 768px) {
+      .hero-circle-backdrop {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 260px !important;
+        margin: 0 auto !important;
+      }
+      .pedestal-3d-disc {
+        width: 90% !important;
+        max-width: 270px !important;
+        height: 44px !important;
+        bottom: 8px !important;
+      }
+      .hero-product-img img {
+        height: 220px !important;
+        max-height: 230px !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+    }
     .hero-product-img {
       position: relative;
       z-index: 10;
@@ -293,7 +313,7 @@
   <main class="flex-grow pt-28">
     
     <!-- TOP SECTION -->
-    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-[40px] md:py-[60px]">
+    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-3 md:py-[60px]">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <!-- LEFT COLUMN -->
@@ -377,7 +397,7 @@
     </section>
 
     <!-- SECTION TWO: COMPOSITION & KEY BENEFITS -->
-    <section class="max-w-[1360px] mx-auto px-6 md:px-10 py-[30px]">
+    <section class="max-w-[1360px] mx-auto px-6 md:px-10 pt-1 pb-6 md:py-[30px]">
       <div class="bg-white border border-[#E7EBF0] rounded-[24px] p-8 md:p-12 shadow-sm">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           

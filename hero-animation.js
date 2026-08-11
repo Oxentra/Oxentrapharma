@@ -14,40 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const ctx = canvas.getContext("2d");
 
-  // Select text overlay frames
-  const overlay = document.querySelector(".hero-dark-overlay");
-  const frame1 = document.querySelector(".hero-frame-1");
-  const frame2 = document.querySelector(".hero-frame-2");
-  const frame3 = document.querySelector(".hero-frame-3");
-  const productsCta = document.getElementById("hero-products-cta");
-
-  // Force initial CSS states via GSAP to prevent layout shifts
-  gsap.set(frame1, { opacity: 1, scale: 1, y: 0 });
-  gsap.set(frame2, { opacity: 0, y: 40, scale: 0.95 });
-  gsap.set(frame3, { opacity: 0, y: 40, scale: 0.95 });
-
-  // Click handler for Products CTA to smooth scroll to products
-  if (productsCta) {
-    productsCta.addEventListener("click", (e) => {
-      e.preventDefault();
-      const productsSection = document.getElementById("products");
-      if (productsSection) {
-        productsSection.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  }
-
-  // Sequence Configuration (300 JPEG frames)
+  // 300 Frames sequence (ezgif-frame-001.jpg to ezgif-frame-300.jpg)
   const totalFrames = 300;
   const images = [];
   const loadedFrames = {};
 
   const pad = (num, size) => num.toString().padStart(size, '0');
 
-  // Pre-generate image paths
+  // Pre-generate image paths: images/herosection/ezgif-frame-001.jpg ... 300.jpg
   for (let i = 1; i <= totalFrames; i++) {
     const img = new Image();
-    img.src = `images/herosections/ezgif-frame-${pad(i, 3)}.jpg`;
+    img.src = `images/herosection/ezgif-frame-${pad(i, 3)}.jpg`;
     images.push(img);
   }
 
@@ -108,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resizeCanvas();
   };
   
-  // Background Preloading for the remaining frames
+  // Background Preloading for the remaining 299 frames
   images.forEach((img, idx) => {
     if (idx === 0) return;
     img.onload = () => {
@@ -122,26 +99,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // Playhead variable for GSAP scrubbing
   const playhead = { frame: 0 };
 
+  // DOM elements
+  const heroHeader = document.getElementById("hero-main-header");
+  const heroShadeOverlay = document.getElementById("hero-shade-overlay");
+
+  // Set initial state: NO black shade at start, NO text overlay at start
+  if (heroShadeOverlay) {
+    gsap.set(heroShadeOverlay, { opacity: 0 });
+  }
+  if (heroHeader) {
+    gsap.set(heroHeader, { opacity: 0, y: 35, scale: 0.95, pointerEvents: "none" });
+  }
+
   // Master timeline scrubbing through the 400vh hero section
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#hero",
       start: "top top",
       end: "bottom bottom",
-      scrub: 1, // Smooth scrolling physics
+      scrub: 0.25, // Smooth physics scrubbing
       pin: ".hero-sticky-viewport",
-      pinSpacing: false, // Viewport pins within the 400vh parent
-      invalidateOnRefresh: true,
-      onLeave: () => {
-        const productsSection = document.getElementById("products");
-        if (productsSection) {
-          productsSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }
+      pinSpacing: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true
     }
   });
 
-  // Animate the image sequence frames (0 to 299)
+  // 1. Scrub through all 300 image frames across the scroll
   tl.to(playhead, {
     frame: totalFrames - 1,
     snap: "frame",
@@ -152,63 +136,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 0);
 
-  // Synchronized text overlays animations
-  // --- STAGE 1: Frame 1 Fade Out ---
-  tl.to(frame1, {
-    opacity: 0,
-    scale: 1.1,
-    y: -50,
-    ease: "power1.out",
-    duration: 0.18
-  }, 0.05); // starts at progress 0.05, ends at 0.23
+  // 2. Fade in Black/Navy Shade Overlay AND Content AFTER Frame 76 (between 0.22 and 0.42 scroll progress)
+  if (heroShadeOverlay) {
+    tl.to(heroShadeOverlay, {
+      opacity: 1,
+      ease: "power1.out",
+      duration: 0.2
+    }, 0.22);
+  }
 
-  // --- STAGE 2: Frame 2 Fade In, Hold, Fade Out ---
-  tl.to(frame2, {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    pointerEvents: "auto",
-    ease: "power2.out",
-    duration: 0.18
-  }, 0.28); // starts at 0.28, ends at 0.46
-
-  tl.to(frame2, {
-    opacity: 0,
-    scale: 1.05,
-    y: -50,
-    pointerEvents: "none",
-    ease: "power1.in",
-    duration: 0.18
-  }, 0.52); // starts at 0.52, ends at 0.70
-
-
-
-  tl.to(frame3, {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    pointerEvents: "auto",
-    ease: "power2.out",
-    duration: 0.18
-  }, 0.72); // starts at 0.72, ends at 0.90
-
-  // No rotating clock progress circles; simplified to a clean pill button CTA
-
-  // --- STAGE 4: Final Smooth Exit Transition ---
-  tl.to(frame3, {
-    y: 450, // Physical downward motion to guide the scroll transition to products
-    opacity: 0,
-    scale: 0.85,
-    ease: "power1.in",
-    duration: 0.12
-  }, 0.93);
-
-
+  if (heroHeader) {
+    tl.to(heroHeader, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      pointerEvents: "auto",
+      ease: "back.out(1.2)",
+      duration: 0.2
+    }, 0.22);
+  }
 
   // Listeners
   window.addEventListener("resize", resizeCanvas);
 
-  // Fallback initial draw in case onload happened before setup
+  // Fallback initial draw
   if (images[0].complete) {
     loadedFrames[0] = true;
     resizeCanvas();

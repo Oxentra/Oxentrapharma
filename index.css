@@ -485,9 +485,7 @@ input[type="submit"] {
   position: relative;
   width: 100%;
   height: 400vh;
-  /* Extended scrolling depth for 270 frames */
-  background-color: #020617;
-  /* Slate 950 */
+  background-color: #002B3E;
 }
 
 .hero-sticky-viewport {
@@ -547,22 +545,39 @@ header.glass-panel {
   z-index: 100;
 }
 
-/* Interactive Clock CTA Styles */
-.hero-clock-container {
+/* Interactive Clock & Scroll Text Styles */
+.hero-clock-container,
+#hero-clock-widget {
   will-change: transform, opacity;
   z-index: 30;
 }
 
-#hero-clock-cta {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+#hero-clock-ring {
+  will-change: transform;
+  transition: box-shadow 0.5s ease;
 }
 
-#hero-clock-cta:hover {
-  transform: scale(1.05);
+#hero-clock-hand {
+  will-change: transform;
 }
 
-#hero-clock-cta:active {
-  transform: scale(0.98);
+#hero-clock-orbit {
+  will-change: transform;
+}
+
+#hero-text-see-all,
+#hero-text-our-products {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+#hero-clock-center-btn {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+#hero-clock-center-btn:hover {
+  box-shadow: 0 0 45px rgba(0, 180, 216, 0.6), inset 0 0 20px rgba(240, 125, 0, 0.3);
 }
 
 /* Pulse glow animation for the inner circle */
@@ -1262,8 +1277,8 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
 /* Mobile Responsiveness for Hero Banner Header Image */
 @media (max-width: 768px) {
   .pharma-hero-section {
-    min-height: 380px !important;
-    padding-top: 6rem !important;
+    min-height: 400px !important;
+    padding-top: 7.5rem !important;
     padding-bottom: 3rem !important;
   }
 
@@ -1275,8 +1290,8 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
 
 @media (max-width: 480px) {
   .pharma-hero-section {
-    min-height: 340px !important;
-    padding-top: 5.5rem !important;
+    min-height: 380px !important;
+    padding-top: 7.5rem !important;
     padding-bottom: 2.5rem !important;
   }
 
@@ -1912,4 +1927,44 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
 /* Consistent Opaque Footer Background across all pages */
 footer {
   background-color: #0b1a30 !important;
+}
+
+/* ================================================= */
+/* MOBILE VIEW PRODUCT PICTURE & GAP OPTIMIZATIONS   */
+/* ================================================= */
+@media (max-width: 768px) {
+  /* Reduce 480px backdrop height on mobile to prevent massive vertical empty space */
+  .hero-circle-backdrop {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 300px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Scale pedestal disc for mobile screen size */
+  .pedestal-3d-disc {
+    width: 90% !important;
+    max-width: 280px !important;
+    height: 48px !important;
+    bottom: 12px !important;
+  }
+
+  /* Make product image prominent without excessive empty padding */
+  .hero-product-img img {
+    height: 250px !important;
+    max-height: 260px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Reduce vertical gap between sections on mobile view */
+  main > section:first-of-type {
+    padding-top: 16px !important;
+    padding-bottom: 8px !important;
+  }
+
+  main > section:nth-of-type(2) {
+    padding-top: 4px !important;
+    padding-bottom: 20px !important;
+  }
 }
