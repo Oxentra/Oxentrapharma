@@ -403,9 +403,13 @@ function initMobileMenu() {
   }
 }
 
-// Reveal Scroll Observer
+// Reveal Scroll Observer (Enhanced for Smooth Animations)
 function initRevealOnScroll() {
-  const reveals = document.querySelectorAll(".reveal");
+  const selector = ".reveal, .reveal-fade, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur";
+  const reveals = document.querySelectorAll(selector);
+  
+  if (!reveals.length) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -413,7 +417,11 @@ function initRevealOnScroll() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { 
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
+  });
+  
   reveals.forEach(el => observer.observe(el));
 }
 
