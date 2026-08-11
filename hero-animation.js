@@ -21,11 +21,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const pad = (num, size) => num.toString().padStart(size, '0');
 
-  // Pre-generate image paths: images/herosection/ezgif-frame-001.jpg ... 300.jpg
+  // Create Image objects
   for (let i = 1; i <= totalFrames; i++) {
-    const img = new Image();
-    img.src = `images/herosection/ezgif-frame-${pad(i, 3)}.jpg`;
-    images.push(img);
+    images.push(new Image());
+  }
+
+  function loadImage(idx) {
+    if (idx < 0 || idx >= totalFrames) return;
+    const img = images[idx];
+    if (img.src) return;
+    img.onload = () => {
+      loadedFrames[idx] = true;
+      if (Math.round(playhead.frame) === idx) {
+        drawFrame(idx);
+      }
+    };
+    img.src = `images/herosection/ezgif-frame-${pad(idx + 1, 3)}.jpg`;
   }
 
   // Handle aspect-ratio canvas scaling (cover size centering)
@@ -98,25 +109,45 @@ document.addEventListener("DOMContentLoaded", () => {
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    drawFrame(playhead.frame);
+    drawFrame(playhead ? playhead.frame : 0);
   }
 
-  // Synchronous Load of the first frame for instantaneous first-paint
-  images[0].onload = () => {
+  // 1. Synchronous load of the 1st frame for instantaneous first paint
+  loadImage(0);
+  if (images[0].complete) {
     loadedFrames[0] = true;
     resizeCanvas();
-  };
-  
-  // Background Preloading for the remaining 299 frames
-  images.forEach((img, idx) => {
-    if (idx === 0) return;
-    img.onload = () => {
-      loadedFrames[idx] = true;
-      if (Math.round(playhead.frame) === idx) {
-        drawFrame(idx);
+  }
+
+  // 2. Progressive preloading: Load keyframes (every 4th frame) first
+  for (let i = 0; i < totalFrames; i += 4) {
+    loadImage(i);
+  }
+  loadImage(totalFrames - 1);
+
+  // 3. Fill in remaining frames in gentle idle batches
+  function loadRemainingFrames() {
+    let curr = 0;
+    function batch() {
+      let count = 0;
+      while (curr < totalFrames && count < 8) {
+        if (!images[curr].src) {
+          loadImage(curr);
+          count++;
+        }
+        curr++;
       }
-    };
-  });
+      if (curr < totalFrames) {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(batch, { timeout: 1000 });
+        } else {
+          setTimeout(batch, 60);
+        }
+      }
+    }
+    batch();
+  }
+  setTimeout(loadRemainingFrames, 300);
 
   // Playhead variable for GSAP scrubbing
   const playhead = { frame: 0 };
