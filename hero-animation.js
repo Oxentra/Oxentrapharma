@@ -133,13 +133,28 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set(heroHeader, { opacity: 0, y: 35, scale: 0.95, pointerEvents: "none" });
   }
 
+  // Detect mobile device
+  const isMobile = window.innerWidth <= 768;
+
+  // RequestAnimationFrame throttled frame rendering for 60fps/120fps mobile display sync
+  let renderPending = false;
+  function scheduleRender() {
+    if (!renderPending) {
+      renderPending = true;
+      requestAnimationFrame(() => {
+        drawFrame(playhead.frame);
+        renderPending = false;
+      });
+    }
+  }
+
   // Master timeline scrubbing through the 400vh hero section
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#hero",
       start: "top top",
       end: "bottom bottom",
-      scrub: 0.25, // Smooth physics scrubbing
+      scrub: isMobile ? 0.05 : 0.25, // Responsive scrub for instant touch performance on mobile
       pin: ".hero-sticky-viewport",
       pinSpacing: true,
       anticipatePin: 1,
@@ -153,16 +168,14 @@ document.addEventListener("DOMContentLoaded", () => {
     snap: "frame",
     ease: "none",
     duration: 1,
-    onUpdate: () => {
-      drawFrame(playhead.frame);
-    }
+    onUpdate: scheduleRender
   }, 0);
 
   // 2. Fade in Black/Navy Shade Overlay AND Content AFTER Frame 76 (between 0.22 and 0.42 scroll progress)
   if (heroShadeOverlay) {
     tl.to(heroShadeOverlay, {
       opacity: 1,
-      ease: "power1.out",
+      ease: "power2.out",
       duration: 0.2
     }, 0.22);
   }
@@ -173,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
       y: 0,
       scale: 1,
       pointerEvents: "auto",
-      ease: "back.out(1.2)",
+      ease: "power2.out",
       duration: 0.2
     }, 0.22);
   }
