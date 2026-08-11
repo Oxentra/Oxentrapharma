@@ -167,14 +167,36 @@
       <!-- Center: Navigation Links Capsule (Desktop) -->
       <div class="hidden lg:flex items-center">
         <nav class="oxentra-nav-capsule">
-          <a href="index.html" class="oxentra-nav-item">Home</a>
+          <a href="index.html" class="oxentra-nav-item active">Home</a>
           <a href="about.html" class="oxentra-nav-item">About Us</a>
-          <a href="products.html" class="oxentra-nav-item active">
-            <span>Products</span>
-            <svg class="w-3.5 h-3.5 ml-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </a>
+          <div class="relative group">
+            <a href="products.html" class="oxentra-nav-item">
+              <span>Products</span>
+              <svg class="w-3.5 h-3.5 ml-0.5 opacity-70 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <!-- Desktop Products Dropdown -->
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white/95 backdrop-blur-xl border border-slate-200/80 rounded-2xl shadow-[0_15px_40px_-5px_rgba(15,23,42,0.12)] p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <a href="glideplus.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100/80 text-xs font-semibold text-slate-700 transition-colors">
+                <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                <span>GLIDEPLUS™</span>
+              </a>
+              <a href="nervoxplus.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100/80 text-xs font-semibold text-slate-700 transition-colors">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>NERVOX PLUS™</span>
+              </a>
+              <a href="oxentibmr.html" class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100/80 text-xs font-semibold text-slate-700 transition-colors">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                <span>OXENTIB MR™</span>
+              </a>
+              <div class="my-1 border-t border-slate-100"></div>
+              <a href="products.html" class="flex items-center justify-between px-3 py-1.5 rounded-xl text-xs font-bold text-[#005B82] hover:bg-sky-50 transition-colors">
+                <span>View Full Catalog</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
           <a href="careers.html" class="oxentra-nav-item">Careers</a>
         </nav>
       </div>
