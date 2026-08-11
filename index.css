@@ -498,8 +498,6 @@ input[type="submit"] {
   align-items: center;
   justify-content: center;
   z-index: 10;
-  will-change: transform;
-  transform: translateZ(0);
 }
 
 #hero-canvas {
@@ -509,9 +507,6 @@ input[type="submit"] {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 .hero-dark-overlay {
