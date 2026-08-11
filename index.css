@@ -22,6 +22,7 @@ body {
   font-size: var(--font-size-base);
   line-height: 26px;
   font-weight: var(--font-weight-regular);
+  scroll-behavior: smooth;
   overflow-x: hidden;
   background-image: linear-gradient(rgba(248, 250, 252, 0.35), rgba(248, 250, 252, 0.35)), url('images/pharma_smoke_bg.png');
   background-attachment: fixed;
@@ -1967,30 +1968,9 @@ footer {
     padding-bottom: 20px !important;
   }
 
-  /* Fix hero section to mobile screen first window */
-  .hero-sticky-viewport {
-    height: 100vh !important;
-    height: 100dvh !important;
-    top: 0 !important;
-  }
-
-  /* Align hero section text overlay in mobile screen first window */
+  /* Move hero section text overlay downwards in mobile view only */
   #hero-main-header {
-    padding-top: 4.5rem !important;
-    margin-top: 0 !important;
-  }
-
-  /* Increase text typography size in mobile view for high impact readability */
-  #hero-main-header h1 {
-    font-size: 2.35rem !important;
-    line-height: 1.15 !important;
-    font-weight: 800 !important;
-  }
-
-  #hero-main-header p {
-    font-size: 1.05rem !important;
-    line-height: 1.5 !important;
-    font-weight: 500 !important;
-    margin-top: 1rem !important;
+    padding-top: 10rem !important;
+    margin-top: 3.5rem !important;
   }
 }

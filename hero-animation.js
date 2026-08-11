@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: "#hero",
       start: "top top",
       end: "bottom bottom",
-      scrub: 0.15, // Responsive mouse wheel scrubbing
+      scrub: 0.25, // Smooth physics scrubbing
       pin: ".hero-sticky-viewport",
       pinSpacing: true,
       anticipatePin: 1,
@@ -125,9 +125,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 1. Scrub through all 300 image frames smoothly with mouse wheel
+  // 1. Scrub through all 300 image frames across the scroll
   tl.to(playhead, {
     frame: totalFrames - 1,
+    snap: "frame",
     ease: "none",
     duration: 1,
     onUpdate: () => {
