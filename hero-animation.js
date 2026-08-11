@@ -45,6 +45,28 @@ document.addEventListener("DOMContentLoaded", () => {
       0, 0, img.naturalWidth, img.naturalHeight,
       centerShift_x, centerShift_y, img.naturalWidth * ratio, img.naturalHeight * ratio
     );
+
+    const isMobilePortrait =
+      window.innerWidth <= 768 &&
+      window.innerWidth < window.innerHeight;
+
+    if (isMobilePortrait) {
+      const gradientHeight = Math.min(
+        Math.max(canvas.height * 0.22, 140),
+        300
+      );
+
+      const topGrad = ctx.createLinearGradient(0, 0, 0, gradientHeight);
+      topGrad.addColorStop(0, "rgba(0, 43, 62, 1)");
+      topGrad.addColorStop(0.40, "rgba(0, 43, 62, 0.95)");
+      topGrad.addColorStop(0.75, "rgba(0, 43, 62, 0.60)");
+      topGrad.addColorStop(1, "rgba(0, 43, 62, 0)");
+
+      ctx.save();
+      ctx.fillStyle = topGrad;
+      ctx.fillRect(0, 0, canvas.width, gradientHeight);
+      ctx.restore();
+    }
   }
 
   // Nearest Loaded Frame fallback scanner
