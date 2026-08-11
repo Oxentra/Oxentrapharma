@@ -2182,6 +2182,10 @@ footer {
     margin-top: 3.5rem !important;
   }
 
+  .pharma-hero-section .pharma-hero-text-block {
+    padding-top: 1.75rem !important;
+  }
+
   #hero {
     background: #002B3E !important;
     isolation: isolate;
