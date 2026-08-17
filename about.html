@@ -9,12 +9,29 @@
   <meta name="description" content="Oxentra Pharma Pvt. Ltd. is a forward-thinking pharmaceutical company focused on delivering quality healthcare solutions, affordable medicines, and shaping the future of global medicine.">
   <meta name="keywords" content="Oxentra Pharma, about us, pharmaceutical mission, medicine vision, quality healthcare, affordable medicine">
   <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_clean.png">
+  <link rel="apple-touch-icon" href="logo_clean.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://oxentrapharma.com/about.html">
+
   <!-- Open Graph / Meta -->
   <meta property="og:title" content="About Us - Oxentra Pharma">
-  <meta property="og:description" content="Oxentra Pharma Pvt. Ltd. is a forward-thinking pharmaceutical company focused on delivering quality healthcare solutions.">
+  <meta property="og:description" content="Oxentra Pharma Pvt. Ltd. is a forward-thinking pharmaceutical company focused on delivering quality healthcare solutions, affordable medicines, and shaping the future of global medicine.">
   <meta property="og:type" content="website">
-  
+  <meta property="og:url" content="https://oxentrapharma.com/about.html">
+  <meta property="og:image" content="https://oxentrapharma.com/logo_clean.png">
+  <meta property="og:site_name" content="Oxentra Pharma">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us - Oxentra Pharma">
+  <meta name="twitter:description" content="Oxentra Pharma Pvt. Ltd. is a forward-thinking pharmaceutical company focused on delivering quality healthcare solutions.">
+  <meta name="twitter:image" content="https://oxentrapharma.com/logo_clean.png">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -42,10 +59,26 @@
   <!-- Google Fonts: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Custom Premium Stylesheet -->
   <link rel="stylesheet" href="index.css?v=35">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Oxentra Pharma Pvt. Ltd.",
+  "url": "https://oxentrapharma.com/",
+  "logo": "https://oxentrapharma.com/logo_clean.png",
+  "description": "Oxentra Pharma Pvt. Ltd. is a research-driven pharmaceutical formulations company.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  }
+}
+  </script>
 </head>
 <body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
 
@@ -55,12 +88,12 @@
   <div id="drawer-overlay" class="oxentra-drawer-overlay hidden lg:hidden"></div>
 
   <!-- Sliding Mobile Drawer -->
-  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden">
+  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
     
     <!-- Drawer Header (Logo Left, Circular Close Button Right) -->
     <div class="oxentra-drawer-header">
       <a href="index.html">
-        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo">
+        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo" decoding="async" loading="lazy" width="456" height="113">
       </a>
       <button id="drawer-close-btn" class="oxentra-drawer-close-btn" aria-label="Close menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -157,7 +190,7 @@
       
       <!-- Left: Logo -->
       <a href="index.html" class="oxentra-logo-link" title="Oxentra Pharma Pvt. Ltd.">
-        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img">
+        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img" decoding="async" loading="eager" fetchpriority="high" width="456" height="113">
       </a>
 
       <!-- Center: Navigation Links Capsule (Desktop) -->
@@ -208,7 +241,7 @@
           </a>
 
           <!-- Hamburger Menu Button -->
-          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu">
+          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
             <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
               <path d="M4 7H20"/>
               <path d="M4 12H20"/>
@@ -257,7 +290,7 @@
         <div class="w-full lg:w-[54%] relative group">
           <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-orange to-brand-blue rounded-3xl blur opacity-15 group-hover:opacity-25 transition duration-500"></div>
           <div class="relative overflow-hidden rounded-3xl bg-slate-100 aspect-[3/2] shadow-md border border-slate-100">
-            <img src="images/about.png" alt="Oxentra Research Scientist and Products Showcase" class="w-full h-full object-contain bg-white group-hover:scale-105 transition-all duration-700">
+            <img src="images/about.png" alt="Oxentra Research Scientist and Products Showcase" class="w-full h-full object-contain bg-white group-hover:scale-105 transition-all duration-700" decoding="async" loading="lazy" width="1536" height="1024">
           </div>
         </div>
 
@@ -393,7 +426,7 @@
       
       <!-- Column 1: Branding & Intro -->
       <div class="space-y-4 overflow-hidden">
-        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
+        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;" decoding="async" loading="lazy" width="842" height="595">
         <p class="text-xs text-slate-400 leading-relaxed">
           Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality, affordable and innovative healthcare solutions across the globe.
         </p>
@@ -489,10 +522,6 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="main.js?v=3" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {

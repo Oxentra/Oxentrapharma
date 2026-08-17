@@ -671,10 +671,10 @@ function initProductModals() {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.classList.contains("hidden")) close(); });
 }
 
-// Leaflet Map
+// Leaflet Map (Safe Guarded)
 function initLeafletMap() {
   const el = document.getElementById("location-map");
-  if (!el) return;
+  if (!el || typeof L === "undefined") return;
 
   const coords = [9.998994, 76.302732];
   try {
@@ -899,22 +899,29 @@ function initBrochureLibrary() {
   renderBrochure("gastro");
 }
 
-// Global Header Scroll Event Listener
+// Global Header Scroll Event Listener (Optimized with RAF & Passive Listener)
 function initHeaderScroll() {
   const header = document.querySelector("header");
   const scrollThreshold = 30;
 
   if (!header) return;
 
+  let ticking = false;
   function checkScroll() {
-    if (window.scrollY > scrollThreshold) {
-      header.classList.add("header-scrolled");
-    } else {
-      header.classList.remove("header-scrolled");
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > scrollThreshold) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   }
 
-  window.addEventListener("scroll", checkScroll);
+  window.addEventListener("scroll", checkScroll, { passive: true });
   checkScroll(); // Run immediately on load
 }
 
@@ -1002,12 +1009,15 @@ function initSearchBar() {
   }
 }
 
-// Automatic Lazy Loading for Images
+// Automatic Lazy Loading & Async Decoding for Images
 function initImageLazyLoading() {
-  const images = document.querySelectorAll("img:not([loading])");
+  const images = document.querySelectorAll("img");
   images.forEach(img => {
+    if (!img.hasAttribute("decoding")) {
+      img.setAttribute("decoding", "async");
+    }
     // Skip logo and hero images for immediate LCP rendering
-    if (!img.src.includes("logo") && !img.closest("#hero")) {
+    if (!img.src.includes("logo") && !img.closest("#hero") && !img.hasAttribute("loading")) {
       img.setAttribute("loading", "lazy");
     }
   });

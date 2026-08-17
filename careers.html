@@ -12,12 +12,29 @@
   <meta name="keywords"
     content="Oxentra Pharma careers, pharma jobs, medical representative jobs, territory sales officer, sales manager vacancies">
   <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_clean.png">
+  <link rel="apple-touch-icon" href="logo_clean.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://oxentrapharma.com/careers.html">
 
   <!-- Open Graph Meta -->
   <meta property="og:title" content="Careers - Oxentra Pharma">
   <meta property="og:description"
-    content="Build your career with Oxentra Pharma. Apply for positions in office administration and regional/zonal sales management.">
+    content="Join Oxentra Pharma and build a meaningful career in healthcare. Discover our open job positions including Office Staff, Territory Sales Officer (TSO), Area Sales Manager (ASM), Regional Sales Manager (RSM), and Zonal Sales Manager (ZSM).">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oxentrapharma.com/careers.html">
+  <meta property="og:image" content="https://oxentrapharma.com/logo_clean.png">
+  <meta property="og:site_name" content="Oxentra Pharma">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Careers - Oxentra Pharma">
+  <meta name="twitter:description" content="Build your career with Oxentra Pharma. Apply for positions in office administration and regional/zonal sales management.">
+  <meta name="twitter:image" content="https://oxentrapharma.com/logo_clean.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -46,11 +63,27 @@
   <!-- Google Fonts: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Custom Premium Stylesheet -->
   <link rel="stylesheet" href="index.css?v=35">
   <script src="main.js?v=3" defer></script>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Oxentra Pharma Pvt. Ltd.",
+  "url": "https://oxentrapharma.com/",
+  "logo": "https://oxentrapharma.com/logo_clean.png",
+  "description": "Oxentra Pharma Pvt. Ltd. is a research-driven pharmaceutical formulations company.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  }
+}
+  </script>
 </head>
 
 <body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
@@ -61,12 +94,12 @@
   <div id="drawer-overlay" class="oxentra-drawer-overlay hidden lg:hidden"></div>
 
   <!-- Sliding Mobile Drawer -->
-  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden">
+  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
     
     <!-- Drawer Header (Logo Left, Circular Close Button Right) -->
     <div class="oxentra-drawer-header">
       <a href="index.html">
-        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo">
+        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo" decoding="async" loading="lazy" width="456" height="113">
       </a>
       <button id="drawer-close-btn" class="oxentra-drawer-close-btn" aria-label="Close menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -163,7 +196,7 @@
       
       <!-- Left: Logo -->
       <a href="index.html" class="oxentra-logo-link" title="Oxentra Pharma Pvt. Ltd.">
-        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img">
+        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img" decoding="async" loading="eager" fetchpriority="high" width="456" height="113">
       </a>
 
       <!-- Center: Navigation Links Capsule (Desktop) -->
@@ -214,7 +247,7 @@
           </a>
 
           <!-- Hamburger Menu Button -->
-          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu">
+          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
             <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
               <path d="M4 7H20"/>
               <path d="M4 12H20"/>
@@ -408,6 +441,9 @@
         <form id="job-application-form"
           class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 md:p-12 space-y-6">
 
+          <!-- Security Honeypot Field (Hidden for bots) -->
+          <input type="text" name="_hp_security_check" id="app-hp" style="display:none !important; position:absolute !important; left:-9999px !important;" tabindex="-1" autocomplete="off">
+
           <!-- Grid 1: Personal Info -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-1.5 text-left">
@@ -517,7 +553,7 @@
       <!-- Column 1: Branding & Intro -->
       <div class="space-y-4 overflow-hidden">
         <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain"
-          style="height: 150px; margin: -61px -49px;">
+          style="height: 150px; margin: -61px -49px;" decoding="async" loading="lazy" width="842" height="595">
         <p class="text-xs text-slate-400 leading-relaxed">
           Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality,
           affordable and innovative healthcare solutions across the globe.
@@ -641,8 +677,6 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
     // Your deployed Google Apps Script Web App URL
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-H6xS7V89_IOvCocBUm5uRM5kYvOYHpDzrw7atcurZzJshKUkBHoopSGBJFR3cj4O/exec";
@@ -682,10 +716,27 @@
         const submitBtn = form.querySelector("button[type='submit']");
         const originalText = submitBtn.innerText;
 
+        // Bot detection via honeypot
+        const hpVal = document.getElementById("app-hp") ? document.getElementById("app-hp").value : "";
+        if (hpVal) {
+          submitBtn.innerText = "APPLICATION SUBMITTED!";
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalText;
+            form.reset();
+          }, 1000);
+          return;
+        }
+
         // 1. Validate File
         const file = fileInput.files[0];
         if (!file) {
           alert("Please attach your CV / Resume.");
+          return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+          alert("File size exceeds 5MB limit. Please attach a compressed PDF file under 5MB.");
           return;
         }
 

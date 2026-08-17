@@ -13,19 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!heroSection || !canvas) return;
 
   const ctx = canvas.getContext("2d");
+  if (ctx) {
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+  }
 
   // 300 Frames sequence (ezgif-frame-001.jpg to ezgif-frame-300.jpg)
   const totalFrames = 300;
-  const images = [];
+  const images = new Array(totalFrames);
   const loadedFrames = {};
+  const requestedFrames = {};
 
   const pad = (num, size) => num.toString().padStart(size, '0');
+  const getFrameSrc = (idx) => `images/herosection/ezgif-frame-${pad(idx + 1, 3)}.jpg`;
 
-  // Pre-generate image paths: images/herosection/ezgif-frame-001.jpg ... 300.jpg
-  for (let i = 1; i <= totalFrames; i++) {
-    const img = new Image();
-    img.src = `images/herosection/ezgif-frame-${pad(i, 3)}.jpg`;
-    images.push(img);
+  // Create image instances
+  for (let i = 0; i < totalFrames; i++) {
+    images[i] = new Image();
   }
 
   // Handle aspect-ratio canvas scaling (cover size centering)
@@ -69,12 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Nearest Loaded Frame fallback scanner
+  // Nearest Loaded Frame fallback scanner (Ensures zero blank frames / flickering on fast scrubs)
   function getNearestLoadedImage(index) {
-    if (loadedFrames[index]) return images[index];
+    const rounded = Math.round(index);
+    if (loadedFrames[rounded]) return images[rounded];
 
-    let left = index - 1;
-    let right = index + 1;
+    let left = rounded - 1;
+    let right = rounded + 1;
 
     while (left >= 0 || right < totalFrames) {
       if (left >= 0 && loadedFrames[left]) return images[left];
@@ -94,49 +99,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Playhead variable for GSAP scrubbing
+  const playhead = { frame: 0 };
+
   // Resize canvas to window dimensions
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    if (ctx) {
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+    }
     drawFrame(playhead.frame);
   }
 
-  // Synchronous Load of the first frame for instantaneous first-paint
-  images[0].onload = () => {
-    loadedFrames[0] = true;
-    resizeCanvas();
-  };
-  
-  // Background Preloading for the remaining 299 frames
-  images.forEach((img, idx) => {
-    if (idx === 0) return;
-    img.onload = () => {
-      loadedFrames[idx] = true;
-      if (Math.round(playhead.frame) === idx) {
-        drawFrame(idx);
-      }
-    };
-  });
-
-  // Playhead variable for GSAP scrubbing
-  const playhead = { frame: 0 };
-
-  // DOM elements
-  const heroHeader = document.getElementById("hero-main-header");
-  const heroShadeOverlay = document.getElementById("hero-shade-overlay");
-
-  // Set initial state: NO black shade at start, NO text overlay at start
-  if (heroShadeOverlay) {
-    gsap.set(heroShadeOverlay, { opacity: 0 });
-  }
-  if (heroHeader) {
-    gsap.set(heroHeader, { opacity: 0, y: 35, scale: 0.95, pointerEvents: "none" });
-  }
-
-  // Detect mobile device
-  const isMobile = window.innerWidth <= 768;
-
-  // RequestAnimationFrame throttled frame rendering for 60fps/120fps mobile display sync
+  // RequestAnimationFrame throttled frame rendering for 60fps/120fps display sync
   let renderPending = false;
   function scheduleRender() {
     if (!renderPending) {
@@ -148,6 +125,146 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // -------------------------------------------------------------
+  // Progressive Controlled-Concurrency Frame Preloading & Decoding Queue
+  // -------------------------------------------------------------
+  const MAX_CONCURRENT_REQUESTS = 6;
+  let activeRequests = 0;
+  const loadQueue = [];
+
+  function loadSingleFrame(idx, onComplete) {
+    if (loadedFrames[idx] || requestedFrames[idx]) {
+      if (onComplete) onComplete();
+      return;
+    }
+
+    requestedFrames[idx] = true;
+    activeRequests++;
+
+    const img = images[idx];
+    
+    const finalizeLoad = () => {
+      loadedFrames[idx] = true;
+      activeRequests--;
+      if (Math.round(playhead.frame) === idx) {
+        scheduleRender();
+      }
+      if (onComplete) onComplete();
+      processQueue();
+    };
+
+    img.onload = () => {
+      // Decode asynchronously off the main thread if supported to prevent drawImage jank
+      if ("decode" in img) {
+        img.decode().then(finalizeLoad).catch(finalizeLoad);
+      } else {
+        finalizeLoad();
+      }
+    };
+
+    img.onerror = () => {
+      activeRequests--;
+      if (onComplete) onComplete();
+      processQueue();
+    };
+
+    img.src = getFrameSrc(idx);
+  }
+
+  function processQueue() {
+    while (activeRequests < MAX_CONCURRENT_REQUESTS && loadQueue.length > 0) {
+      const nextIdx = loadQueue.shift();
+      if (!loadedFrames[nextIdx] && !requestedFrames[nextIdx]) {
+        loadSingleFrame(nextIdx);
+      }
+    }
+  }
+
+  function enqueueFrame(idx, prioritize = false) {
+    if (loadedFrames[idx] || requestedFrames[idx]) return;
+    if (prioritize) {
+      const existingIdx = loadQueue.indexOf(idx);
+      if (existingIdx !== -1) {
+        loadQueue.splice(existingIdx, 1);
+      }
+      loadQueue.unshift(idx);
+    } else {
+      if (!loadQueue.includes(idx)) {
+        loadQueue.push(idx);
+      }
+    }
+    processQueue();
+  }
+
+  // Priority 1: Instant load of Frame 1 for immediate first paint
+  loadSingleFrame(0, () => {
+    resizeCanvas();
+  });
+
+  // Priority 2: Pre-buffer initial 25 frames for instant initial scroll smoothness
+  for (let i = 1; i <= Math.min(25, totalFrames - 1); i++) {
+    enqueueFrame(i);
+  }
+
+  // Priority 3: Progressively queue remaining frames in background during idle moments
+  const idleCallback = window.requestIdleCallback || ((cb) => setTimeout(cb, 100));
+  idleCallback(() => {
+    for (let i = 26; i < totalFrames; i++) {
+      enqueueFrame(i);
+    }
+  });
+
+  // Priority 4: Dynamic directional lookahead prefetch based on scroll position & direction
+  let lastProgress = 0;
+  function boostNearbyFrames(targetFrame, currentProgress) {
+    const isScrollingDown = currentProgress >= lastProgress;
+    lastProgress = currentProgress;
+
+    const center = Math.round(targetFrame);
+    const forwardLookahead = isScrollingDown ? 25 : 10;
+    const backwardLookahead = isScrollingDown ? 8 : 20;
+
+    // Prioritize in the direction of motion
+    if (isScrollingDown) {
+      for (let offset = 1; offset <= forwardLookahead; offset++) {
+        if (center + offset < totalFrames) enqueueFrame(center + offset, true);
+      }
+      for (let offset = 1; offset <= backwardLookahead; offset++) {
+        if (center - offset >= 0) enqueueFrame(center - offset, true);
+      }
+    } else {
+      for (let offset = 1; offset <= backwardLookahead; offset++) {
+        if (center - offset >= 0) enqueueFrame(center - offset, true);
+      }
+      for (let offset = 1; offset <= forwardLookahead; offset++) {
+        if (center + offset < totalFrames) enqueueFrame(center + offset, true);
+      }
+    }
+  }
+
+  // DOM elements
+  const heroHeader = document.getElementById("hero-main-header");
+  const heroShadeOverlay = document.getElementById("hero-shade-overlay");
+
+  // Check reduced motion preference
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Set initial state: NO black shade at start, NO text overlay at start (unless user prefers reduced motion)
+  if (heroShadeOverlay) {
+    gsap.set(heroShadeOverlay, { opacity: prefersReducedMotion ? 1 : 0 });
+  }
+  if (heroHeader) {
+    gsap.set(heroHeader, {
+      opacity: prefersReducedMotion ? 1 : 0,
+      y: prefersReducedMotion ? 0 : 35,
+      scale: prefersReducedMotion ? 1 : 0.95,
+      pointerEvents: prefersReducedMotion ? "auto" : "none"
+    });
+  }
+
+  // Detect mobile device
+  const isMobile = window.innerWidth <= 768;
+
   // Master timeline scrubbing through the 400vh hero section
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -158,7 +275,11 @@ document.addEventListener("DOMContentLoaded", () => {
       pin: ".hero-sticky-viewport",
       pinSpacing: true,
       anticipatePin: 1,
-      invalidateOnRefresh: true
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const currentProgressFrame = self.progress * (totalFrames - 1);
+        boostNearbyFrames(currentProgressFrame, self.progress);
+      }
     }
   });
 
@@ -195,8 +316,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", resizeCanvas);
 
   // Fallback initial draw
-  if (images[0].complete) {
+  if (images[0].complete && images[0].naturalWidth > 0) {
     loadedFrames[0] = true;
     resizeCanvas();
   }
 });
+

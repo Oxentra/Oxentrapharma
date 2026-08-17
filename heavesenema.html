@@ -9,11 +9,28 @@
   <meta name="description" content="Explore HEAVE S™ ENEMA by Oxentra Pharma Pvt. Ltd. - Sodium Dihydrogen Phosphate Dihydrate & Disodium Phosphate Enema for rapid bowel evacuation.">
   <meta name="keywords" content="Oxentra Pharma, HEAVE S™ ENEMA, Saline Enema, Sodium Phosphate, Gastroenterology, Bowel Evacuation">
   <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_clean.png">
+  <link rel="apple-touch-icon" href="logo_clean.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://oxentrapharma.com/heavesenema.html">
+
   <!-- Open Graph / Meta -->
   <meta property="og:title" content="HEAVE S™ ENEMA - Rapid Bowel Evacuation. Gentle Colon Emptying.">
   <meta property="og:description" content="Rapid osmotic saline rectal enema engineered for pre-procedure preparation and bowel evacuation.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oxentrapharma.com/heavesenema.html">
+  <meta property="og:image" content="https://oxentrapharma.com/logo_clean.png">
+  <meta property="og:site_name" content="Oxentra Pharma">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HEAVE S™ ENEMA - Saline Laxative Rectal Enema">
+  <meta name="twitter:description" content="Sodium Phosphate Saline Enema by Oxentra Pharma Pvt. Ltd.">
+  <meta name="twitter:image" content="https://oxentrapharma.com/logo_clean.png">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -132,6 +149,22 @@
       50% { transform: translateY(-8px); }
     }
   </style>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Drug",
+  "name": "HEAVE S\u2122 ENEMA",
+  "description": "Sodium Dihydrogen Phosphate Dihydrate & Disodium Phosphate Saline Laxative Rectal Enema.",
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Oxentra Pharma Pvt. Ltd."
+  },
+  "dosageForm": "Rectal Enema",
+  "image": "https://oxentrapharma.com/images/view_product/HEAVE-S.png"
+}
+  </script>
 </head>
 <body class="bg-[#FAFBFC] text-[#0F172A] antialiased font-inter flex flex-col min-h-screen">
 
@@ -141,12 +174,12 @@
   <div id="drawer-overlay" class="oxentra-drawer-overlay hidden lg:hidden"></div>
 
   <!-- Sliding Mobile Drawer -->
-  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden">
+  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
     
     <!-- Drawer Header (Logo Left, Circular Close Button Right) -->
     <div class="oxentra-drawer-header">
       <a href="index.html">
-        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo">
+        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo" decoding="async" loading="lazy" width="456" height="113">
       </a>
       <button id="drawer-close-btn" class="oxentra-drawer-close-btn" aria-label="Close menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -243,7 +276,7 @@
       
       <!-- Left: Logo -->
       <a href="index.html" class="oxentra-logo-link" title="Oxentra Pharma Pvt. Ltd.">
-        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img">
+        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img" decoding="async" loading="eager" fetchpriority="high" width="456" height="113">
       </a>
 
       <!-- Center: Navigation Links Capsule (Desktop) -->
@@ -294,7 +327,7 @@
           </a>
 
           <!-- Hamburger Menu Button -->
-          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu">
+          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
             <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
               <path d="M4 7H20"/>
               <path d="M4 12H20"/>
@@ -387,7 +420,7 @@
         <div class="lg:col-span-6 flex items-center justify-center py-4">
           <div class="hero-circle-backdrop">
             <div class="hero-product-img">
-              <img src="images/view_product/HEAVE-S.png" alt="HEAVE S™ ENEMA Product View" class="h-96 md:h-[440px] w-auto object-contain drop-shadow-2xl">
+              <img src="images/view_product/HEAVE-S.png" alt="HEAVE S™ ENEMA Product View" class="h-96 md:h-[440px] w-auto object-contain drop-shadow-2xl" decoding="async" loading="eager" fetchpriority="high" width="576" height="720">
             </div>
             <div class="pedestal-3d-disc"></div>
           </div>
@@ -550,7 +583,7 @@
       
       <!-- Column 1: Branding & Intro -->
       <div class="space-y-4 overflow-hidden">
-        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
+        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;" decoding="async" loading="lazy" width="842" height="595">
         <p class="text-xs text-slate-400 leading-relaxed">
           Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality, affordable and innovative healthcare solutions across the globe.
         </p>

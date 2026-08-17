@@ -1,0 +1,7 @@
+*.py
+*.pyc
+__pycache__
+test_images.html
+test_*.html
+scratch/
+.system_generated/

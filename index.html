@@ -9,12 +9,32 @@
   <meta name="description" content="Oxentra Pharma Pvt. Ltd. is a global pharmaceutical company producing precision-engineered formulations across Gastroenterology, Neurology, Dermatology, Orthopedics, and Allergy care.">
   <meta name="keywords" content="Oxentra Pharma, pharmaceutical formulations, Glideplus, Nervox Plus, Lxentra, Pxentra DSR, medicine manufacturing">
   <meta name="author" content="Oxentra Pharma Pvt. Ltd.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   
-  <!-- Open Graph / Meta -->
-  <meta property="og:title" content="Oxentra Pharma - Precision Formulations">
-  <meta property="og:description" content="Formulations crafted with precision, backed by science, and driven by care. Explore our quality-tested therapeutic catalog.">
+  <!-- Preload Critical Hero Frame 1 -->
+  <link rel="preload" as="image" href="images/herosection/ezgif-frame-001.jpg" fetchpriority="high">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_clean.png">
+  <link rel="apple-touch-icon" href="logo_clean.png">
+
+  <!-- Canonical & Alternate URLs -->
+  <link rel="canonical" href="https://oxentrapharma.com/index.html">
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="Oxentra Pharma - Formulations Crafted with Precision, Backed by Science">
+  <meta property="og:description" content="Oxentra Pharma Pvt. Ltd. is a global pharmaceutical company producing precision-engineered formulations across Gastroenterology, Neurology, Dermatology, Orthopedics, and Allergy care.">
   <meta property="og:type" content="website">
-  
+  <meta property="og:url" content="https://oxentrapharma.com/index.html">
+  <meta property="og:image" content="https://oxentrapharma.com/logo_clean.png">
+  <meta property="og:site_name" content="Oxentra Pharma">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Oxentra Pharma - Formulations Crafted with Precision">
+  <meta name="twitter:description" content="Delivering high-quality, reliable, and affordable pharmaceutical products designed to support better health outcomes worldwide.">
+  <meta name="twitter:image" content="https://oxentrapharma.com/logo_clean.png">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -42,14 +62,26 @@
   <!-- Google Fonts: Inter & Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-  <!-- Leaflet Map CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Custom Premium Stylesheet -->
   <link rel="stylesheet" href="index.css?v=30">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Oxentra Pharma Pvt. Ltd.",
+  "url": "https://oxentrapharma.com/",
+  "logo": "https://oxentrapharma.com/logo_clean.png",
+  "description": "Oxentra Pharma Pvt. Ltd. is a research-driven pharmaceutical formulations company.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  }
+}
+  </script>
 </head>
 <body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen">
 
@@ -59,12 +91,12 @@
   <div id="drawer-overlay" class="oxentra-drawer-overlay hidden lg:hidden"></div>
 
   <!-- Sliding Mobile Drawer -->
-  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden">
+  <div id="mobile-drawer" class="oxentra-mobile-drawer hidden lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
     
     <!-- Drawer Header (Logo Left, Circular Close Button Right) -->
     <div class="oxentra-drawer-header">
       <a href="index.html">
-        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo">
+        <img src="logo_clean.png" alt="Oxentra Pharma" class="oxentra-drawer-logo" decoding="async" loading="lazy" width="456" height="113">
       </a>
       <button id="drawer-close-btn" class="oxentra-drawer-close-btn" aria-label="Close menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -161,7 +193,7 @@
       
       <!-- Left: Logo -->
       <a href="index.html" class="oxentra-logo-link" title="Oxentra Pharma Pvt. Ltd.">
-        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img">
+        <img src="logo_clean.png" alt="Oxentra Pharma Pvt. Ltd." class="oxentra-logo-img" decoding="async" loading="eager" fetchpriority="high" width="456" height="113">
       </a>
 
       <!-- Center: Navigation Links Capsule (Desktop) -->
@@ -234,7 +266,7 @@
           </a>
 
           <!-- Hamburger Menu Button -->
-          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu">
+          <button id="mobile-menu-btn" class="w-10 h-10 min-w-[40px] min-h-[40px] rounded-[12px] bg-slate-100/90 border border-slate-200/70 text-[#005B82] flex items-center justify-center hover:scale-[1.04] transition-transform shrink-0 shadow-sm" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
             <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
               <path d="M4 7H20"/>
               <path d="M4 12H20"/>
@@ -447,7 +479,7 @@
         <!-- Left: Image Panel -->
         <div class="lg:w-5/12 w-full relative h-64 sm:h-80 md:h-[380px] lg:h-auto min-h-[250px] lg:min-h-auto overflow-hidden">
           <img id="purpose-panel-img" src="hero-globe-care.jpg" alt="Towards A Sustainable Future" 
-               class="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 tab-content-active">
+               class="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 tab-content-active" decoding="async" loading="lazy" width="1024" height="1024">
         </div>
 
         <!-- Right: Content & Tabs Card -->
@@ -558,7 +590,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card glideplus-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/GLIDEPLUS.png" alt="GLIDEPLUS" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/GLIDEPLUS.png" alt="GLIDEPLUS" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="576">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base font-black text-black tracking-wide font-display mt-2">GLIDEPLUS™</h4>
@@ -572,7 +604,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card pxentradsr-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/PXENTRA.png" alt="PXENTRA DSR" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/PXENTRA.png" alt="PXENTRA DSR" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="576">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base tracking-wide mt-2">
@@ -589,7 +621,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card nervoxplus-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/NERVOX.png" alt="NERVOX PLUS" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/NERVOX.png" alt="NERVOX PLUS" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="576">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base tracking-wide mt-2">
@@ -606,7 +638,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card lxentra-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/LXENTRA.png" alt="LXENTRA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/LXENTRA.png" alt="LXENTRA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="409">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base font-black text-black tracking-wide font-display mt-2">LXENTRA™</h4>
@@ -620,7 +652,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card oxentibmr-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/OXENTIB.png" alt="OXENTIB MR" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/OXENTIB.png" alt="OXENTIB MR" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="576">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base tracking-wide mt-2">
@@ -637,7 +669,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card calcintra-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/CALCINTRA.png" alt="CALCINTRA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/CALCINTRA.png" alt="CALCINTRA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="576">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base font-black text-black tracking-wide font-display mt-2">CALCINTRA™</h4>
@@ -651,7 +683,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card oxrizinelc-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/OXRIZINE.png" alt="OXRIZINE LC" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/OXRIZINE.png" alt="OXRIZINE LC" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="625">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base tracking-wide mt-2">
@@ -668,7 +700,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card heaveenema-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/HEAVE ENEMA.png" alt="HEAVE ENEMA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/HEAVE ENEMA.png" alt="HEAVE ENEMA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="720" height="627">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base font-black text-black tracking-wide font-display mt-2">HEAVE™ ENEMA</h4>
@@ -682,7 +714,7 @@
             <div class="w-[82%] sm:w-[48%] lg:w-[calc((100%-3*1.5rem)/4)] min-w-[260px] sm:min-w-[240px] lg:min-w-[0] flex-shrink-0 bg-white rounded-3xl border border-slate-100/90 shadow-sm p-6 flex flex-col justify-between items-center snap-start hover:shadow-md transition-all duration-300 group product-card heavesenema-theme">
               <div class="space-y-4 flex flex-col items-center w-full">
                 <div class="h-32 flex items-center justify-center">
-                  <img src="images/view_product/HEAVE-S.png" alt="HEAVE S ENEMA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg">
+                  <img src="images/view_product/HEAVE-S.png" alt="HEAVE S ENEMA" class="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300 rounded-lg" decoding="async" loading="lazy" width="576" height="720">
                 </div>
                 <div class="text-center space-y-1">
                   <h4 class="text-base tracking-wide mt-2">
@@ -944,11 +976,11 @@
       <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 mt-8">
         <!-- Partner 1: Life Vision Healthcare -->
         <div class="flex items-center justify-center p-6 bg-white/70 backdrop-blur-md border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 w-full sm:w-64 h-28 group">
-          <img src="images/manfacture_logo/lifevision.png" alt="Life Vision Healthcare" class="max-h-20 max-w-full object-contain filter hover:scale-105 transition-transform duration-300">
+          <img src="images/manfacture_logo/lifevision.png" alt="Life Vision Healthcare" class="max-h-20 max-w-full object-contain filter hover:scale-105 transition-transform duration-300" decoding="async" loading="lazy" width="504" height="258">
         </div>
         <!-- Partner 2: Pharma Synth -->
         <div class="flex items-center justify-center p-6 bg-white/70 backdrop-blur-md border border-slate-100 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 w-full sm:w-64 h-28 group">
-          <img src="images/manfacture_logo/pharma_synth.png" alt="Pharma Synth" class="max-h-20 max-w-full object-contain filter hover:scale-105 transition-transform duration-300">
+          <img src="images/manfacture_logo/pharma_synth.png" alt="Pharma Synth" class="max-h-20 max-w-full object-contain filter hover:scale-105 transition-transform duration-300" decoding="async" loading="lazy" width="505" height="160">
         </div>
       </div>
     </section>
@@ -965,7 +997,7 @@
       
       <!-- Column 1: Branding & Intro -->
       <div class="space-y-4 overflow-hidden">
-        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;">
+        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;" decoding="async" loading="lazy" width="842" height="595">
         <p class="text-xs text-slate-400 leading-relaxed">
           Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality, affordable and innovative healthcare solutions across the globe.
         </p>
@@ -1064,7 +1096,7 @@
   <!-- ========================================== -->
   <!-- PRODUCT DETAILS INTERACTIVE MODAL          -->
   <!-- ========================================== -->
-  <div id="product-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div id="product-modal" role="dialog" aria-modal="true" aria-label="Product Details" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
     <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
       <div class="p-6 border-b border-slate-100 flex justify-between items-start">
         <div class="space-y-1">
@@ -1115,10 +1147,9 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Scripts (Deferred for non-blocking browser rendering) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="main.js?v=3" defer></script>
   <script src="hero-animation.js" defer></script>
   <script>
