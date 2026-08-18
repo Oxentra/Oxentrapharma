@@ -211,18 +211,19 @@
       >
         <div class="ox-cc-banner-container">
           <div class="ox-cc-banner-content">
-            <div class="ox-cc-banner-header">
-              <div class="ox-cc-banner-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="m9 12 2 2 4-4"/>
-                </svg>
-              </div>
-              <h2 class="ox-cc-banner-title">Your Privacy</h2>
+            <div class="ox-cc-banner-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
             </div>
-            <p class="ox-cc-banner-desc">
-              We use cookies to provide essential website functionality and improve your browsing experience. You can manage your preferences or accept optional cookies.
-            </p>
+            <div class="ox-cc-banner-text-wrap">
+              <h2 class="ox-cc-banner-title">Your Privacy</h2>
+              <p class="ox-cc-banner-desc">
+                We use cookies to provide essential website functionality and improve your browsing experience. You can manage your preferences or accept optional cookies.
+              </p>
+              <a href="#" id="ox-cc-privacy-link" class="ox-cc-privacy-link">Privacy Policy</a>
+            </div>
           </div>
           <div class="ox-cc-banner-actions">
             <button type="button" id="ox-cc-btn-settings" class="ox-cc-btn ox-cc-btn-subtle">
@@ -488,6 +489,15 @@
     dom.settingsBtn.addEventListener('click', (e) => {
       openSettings(e.currentTarget);
     });
+
+    // Banner "Privacy Policy" link
+    const privacyLink = dom.root.querySelector('#ox-cc-privacy-link');
+    if (privacyLink) {
+      privacyLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        openSettings(e.currentTarget);
+      });
+    }
 
     // Modal Close button
     dom.modalCloseBtn.addEventListener('click', () => {

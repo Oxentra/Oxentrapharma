@@ -1,13 +1,12 @@
 /**
  * Oxentra Pharma — Production Cookie Consent Stylesheet
- * Refined Corporate Pharmaceutical Design (Cipla / Pfizer Standard)
- * Compact, restrained, trustworthy, and fully responsive.
+ * Exact match to Oxentra Corporate Design Reference (Desktop & Mobile)
  */
 
 :root {
   --ox-cc-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --ox-cc-blue: #005B82;
-  --ox-cc-blue-hover: #004663;
+  --ox-cc-blue: #00456c;
+  --ox-cc-blue-hover: #00324f;
   --ox-cc-dark: #002B3E;
   --ox-cc-orange: #F07D00;
   --ox-cc-orange-hover: #d97000;
@@ -22,8 +21,8 @@
   --ox-cc-slate-800: #1e293b;
   --ox-cc-slate-900: #0f172a;
   --ox-cc-z-index: 999990;
-  --ox-cc-bar-border: #e2e8f0;
-  --ox-cc-bar-shadow: 0 -2px 14px rgba(0, 20, 40, 0.06);
+  --ox-cc-bar-border: #e5e7eb;
+  --ox-cc-bar-shadow: 0 -3px 18px rgba(0, 20, 40, 0.06);
   --ox-cc-modal-shadow: 0 20px 40px -10px rgba(0, 43, 62, 0.25), 0 0 0 1px rgba(0, 91, 130, 0.1);
 }
 
@@ -44,7 +43,7 @@ body.ox-cc-modal-open {
 }
 
 /* ==========================================================================
-   COOKIE CONSENT BANNER (Corporate Pharma Standard)
+   COOKIE BANNER CONTAINER (Fixed Bottom Docked)
    ========================================================================== */
 
 .ox-cc-banner {
@@ -74,45 +73,44 @@ body.ox-cc-modal-open {
 }
 
 .ox-cc-banner-container {
-  max-width: 1360px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 14px 28px;
+  padding: 16px 36px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
 }
 
 .ox-cc-banner-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   flex: 1;
   min-width: 0;
 }
 
-.ox-cc-banner-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
 .ox-cc-banner-icon {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
-  background: rgba(0, 91, 130, 0.08);
+  background: #eef6fa;
   color: var(--ox-cc-blue);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2px;
 }
 
 .ox-cc-banner-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+}
+
+.ox-cc-banner-text-wrap {
+  flex: 1;
+  min-width: 0;
 }
 
 .ox-cc-banner-title {
@@ -120,42 +118,63 @@ body.ox-cc-modal-open {
   font-weight: 700;
   color: var(--ox-cc-dark);
   letter-spacing: -0.01em;
-  line-height: 1.2;
-  margin: 0;
-  white-space: nowrap;
+  line-height: 1.25;
+  margin-bottom: 2px;
 }
 
 .ox-cc-banner-desc {
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: var(--ox-cc-slate-600);
-  margin: 0;
+  color: var(--ox-cc-slate-500);
+  margin-bottom: 3px;
 }
+
+.ox-cc-privacy-link {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ox-cc-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.ox-cc-privacy-link:hover {
+  color: var(--ox-cc-blue-hover);
+}
+
+.ox-cc-privacy-link:focus-visible {
+  outline: 2px solid var(--ox-cc-orange);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   BUTTONS (Exact Match to Design Reference)
+   ========================================================================== */
 
 .ox-cc-banner-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
 }
-
-/* ==========================================================================
-   BUTTONS (Corporate, Crisp, Restrained)
-   ========================================================================== */
 
 .ox-cc-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
+  height: 40px;
+  min-height: 40px;
   min-width: 44px;
-  padding: 8px 16px;
+  padding: 0 22px;
   font-size: 0.8125rem;
   font-weight: 600;
-  border-radius: 7px;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   transition: all 0.15s ease-in-out;
   letter-spacing: 0.01em;
   text-align: center;
@@ -167,39 +186,58 @@ body.ox-cc-modal-open {
   outline-offset: 2px;
 }
 
-.ox-cc-btn-primary {
+/* Primary Button (Accept All) */
+.ox-cc-btn-primary,
+.ox-cc-btn-accept,
+#ox-cc-btn-accept-all {
   background: var(--ox-cc-blue);
   color: #ffffff;
   border-color: var(--ox-cc-blue);
+  font-weight: 700;
+  order: 3;
 }
 
-.ox-cc-btn-primary:hover {
+.ox-cc-btn-primary:hover,
+.ox-cc-btn-accept:hover,
+#ox-cc-btn-accept-all:hover {
   background: var(--ox-cc-blue-hover);
   border-color: var(--ox-cc-blue-hover);
 }
 
-.ox-cc-btn-secondary {
+/* Secondary Button (Reject Non-Essential) */
+.ox-cc-btn-secondary,
+.ox-cc-btn-reject,
+#ox-cc-btn-reject {
   background: #ffffff;
-  color: var(--ox-cc-dark);
-  border-color: var(--ox-cc-slate-300);
+  color: var(--ox-cc-blue);
+  border-color: var(--ox-cc-blue);
+  order: 2;
 }
 
-.ox-cc-btn-secondary:hover {
-  background: var(--ox-cc-slate-50);
-  border-color: var(--ox-cc-slate-400);
-  color: #000000;
+.ox-cc-btn-secondary:hover,
+.ox-cc-btn-reject:hover,
+#ox-cc-btn-reject:hover {
+  background: #f0f7fb;
+  border-color: var(--ox-cc-blue-hover);
+  color: var(--ox-cc-blue-hover);
 }
 
-.ox-cc-btn-subtle {
+/* Tertiary Button (Cookie Settings) */
+.ox-cc-btn-subtle,
+.ox-cc-btn-settings,
+#ox-cc-btn-settings {
   background: #ffffff;
-  color: var(--ox-cc-slate-700);
-  border-color: var(--ox-cc-slate-300);
+  color: var(--ox-cc-blue);
+  border-color: var(--ox-cc-blue);
+  order: 1;
 }
 
-.ox-cc-btn-subtle:hover {
-  background: var(--ox-cc-slate-50);
-  border-color: var(--ox-cc-slate-400);
-  color: var(--ox-cc-dark);
+.ox-cc-btn-subtle:hover,
+.ox-cc-btn-settings:hover,
+#ox-cc-btn-settings:hover {
+  background: #f0f7fb;
+  border-color: var(--ox-cc-blue-hover);
+  color: var(--ox-cc-blue-hover);
 }
 
 /* ==========================================================================
@@ -327,7 +365,7 @@ body.ox-cc-modal-open {
 
 .ox-cc-category-card:hover {
   background: #ffffff;
-  border-color: rgba(0, 91, 130, 0.3);
+  border-color: rgba(0, 69, 108, 0.3);
 }
 
 .ox-cc-category-header {
@@ -366,7 +404,7 @@ body.ox-cc-modal-open {
   letter-spacing: 0.04em;
   padding: 3px 8px;
   border-radius: 9999px;
-  background: rgba(0, 91, 130, 0.1);
+  background: rgba(0, 69, 108, 0.1);
   color: var(--ox-cc-blue);
   min-height: 26px;
 }
@@ -461,62 +499,55 @@ body.ox-cc-modal-open {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (Desktop / Tablet / Mobile)
+   RESPONSIVE DESIGN (Desktop / Tablet / Mobile Exact Match)
    ========================================================================== */
 
-/* Tablet (769px - 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
+/* Tablet View (769px - 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
   .ox-cc-banner-container {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    padding: 14px 20px;
-  }
-
-  .ox-cc-banner-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    padding: 16px 24px;
+    gap: 20px;
   }
 
   .ox-cc-banner-actions {
-    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .ox-cc-btn {
+    padding: 0 16px;
+    font-size: 0.8rem;
   }
 }
 
-/* Mobile (<= 768px) */
+/* Mobile View (up to 768px — Exact Match to Mobile Mockup) */
 @media (max-width: 768px) {
   .ox-cc-banner {
-    border-radius: 14px 14px 0 0;
-    box-shadow: 0 -6px 20px rgba(0, 20, 40, 0.09);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.08);
   }
 
   .ox-cc-banner-container {
-    padding: 16px 20px calc(14px + env(safe-area-inset-bottom, 0px)) 20px;
+    padding: 24px 20px calc(20px + env(safe-area-inset-bottom, 0px)) 20px;
     flex-direction: column;
     align-items: stretch;
-    gap: 12px;
+    gap: 16px;
     width: 100%;
   }
 
   .ox-cc-banner-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    width: 100%;
-  }
-
-  .ox-cc-banner-header {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 2px;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
   }
 
   .ox-cc-banner-icon {
     width: 36px;
     height: 36px;
     border-radius: 8px;
+    background: #eef6fa;
+    color: var(--ox-cc-blue);
+    margin-top: 0;
   }
 
   .ox-cc-banner-icon svg {
@@ -525,33 +556,59 @@ body.ox-cc-modal-open {
   }
 
   .ox-cc-banner-title {
-    font-size: 1.45rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--ox-cc-dark);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin-bottom: 4px;
   }
 
   .ox-cc-banner-desc {
-    font-size: 0.875rem;
-    line-height: 1.48;
-    color: var(--ox-cc-slate-600);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--ox-cc-slate-500);
+    margin-bottom: 6px;
   }
 
+  .ox-cc-privacy-link {
+    font-size: 0.78125rem;
+    margin-bottom: 2px;
+  }
+
+  /* Mobile Button Stack: Accept All (Top) -> Reject (Middle) -> Settings (Bottom) */
   .ox-cc-banner-actions {
+    display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 8px;
-    margin-top: 2px;
+    gap: 10px;
   }
 
-  .ox-cc-banner-actions .ox-cc-btn {
+  .ox-cc-btn {
     width: 100%;
-    height: 48px;
-    min-height: 48px;
-    font-size: 0.9rem;
+    height: 44px;
+    min-height: 44px;
+    font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 9px;
+    border-radius: 8px;
+  }
+
+  .ox-cc-btn-primary,
+  .ox-cc-btn-accept,
+  #ox-cc-btn-accept-all {
+    order: 1 !important;
+    font-weight: 700;
+  }
+
+  .ox-cc-btn-secondary,
+  .ox-cc-btn-reject,
+  #ox-cc-btn-reject {
+    order: 2 !important;
+  }
+
+  .ox-cc-btn-subtle,
+  .ox-cc-btn-settings,
+  #ox-cc-btn-settings {
+    order: 3 !important;
   }
 
   .ox-cc-modal {
@@ -579,11 +636,11 @@ body.ox-cc-modal-open {
   }
 }
 
-/* Small mobile devices (320px - 375px) */
-@media (max-width: 375px) {
+/* Extremely Small Mobile Screens (320px - 360px) */
+@media (max-width: 360px) {
   .ox-cc-banner-container {
-    padding: 14px 16px calc(12px + env(safe-area-inset-bottom, 0px)) 16px;
-    gap: 10px;
+    padding: 18px 16px calc(16px + env(safe-area-inset-bottom, 0px)) 16px;
+    gap: 12px;
   }
 
   .ox-cc-banner-icon {
@@ -597,22 +654,21 @@ body.ox-cc-modal-open {
   }
 
   .ox-cc-banner-title {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
   }
 
   .ox-cc-banner-desc {
-    font-size: 0.8125rem;
-    line-height: 1.42;
+    font-size: 0.75rem;
   }
 
   .ox-cc-banner-actions {
-    gap: 7px;
+    gap: 8px;
   }
 
-  .ox-cc-banner-actions .ox-cc-btn {
-    height: 44px;
-    min-height: 44px;
-    font-size: 0.85rem;
+  .ox-cc-btn {
+    height: 42px;
+    min-height: 42px;
+    font-size: 0.8125rem;
   }
 }
 
