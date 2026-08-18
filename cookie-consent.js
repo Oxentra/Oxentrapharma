@@ -220,7 +220,7 @@
             <div class="ox-cc-banner-text">
               <h2 class="ox-cc-banner-title">Your Privacy</h2>
               <p class="ox-cc-banner-desc">
-                We use cookies to improve your experience, analyze website traffic, and provide essential website functionality. You can choose which optional cookies to allow.
+                We use cookies to provide essential website functionality and improve your browsing experience. You can manage your preferences or accept optional cookies.
               </p>
             </div>
           </div>
