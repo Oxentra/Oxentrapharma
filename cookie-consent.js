@@ -1,6 +1,6 @@
 /**
  * Oxentra Pharma — Production Cookie Consent System
- * Version 1.0
+ * Version 1.0 (Enterprise Pharma Standard — Pfizer/Cipla/OneTrust Style)
  * 
  * Standalone, zero-dependency, accessible, and production-ready cookie consent module.
  * Fully protects existing functionality and guarantees zero regressions.
@@ -193,7 +193,7 @@
     marketingSwitch: null
   };
 
-  // Build UI templates
+  // Build UI templates (Pfizer / Cipla / OneTrust standard docked layout)
   function createConsentDOM() {
     if (dom.root) return;
 
@@ -202,41 +202,43 @@
     root.setAttribute('aria-live', 'polite');
 
     root.innerHTML = `
-      <!-- Cookie Banner -->
+      <!-- Standard Bottom Cookie Bar (Pfizer/Cipla Enterprise Pattern) -->
       <aside 
         id="oxentra-cookie-banner" 
         class="ox-cc-banner" 
         role="region" 
         aria-label="Cookie consent banner"
       >
-        <div class="ox-cc-banner-content-wrap">
-          <div class="ox-cc-banner-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="m9 12 2 2 4-4"/>
-            </svg>
+        <div class="ox-cc-banner-container">
+          <div class="ox-cc-banner-content">
+            <div class="ox-cc-banner-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="ox-cc-banner-text">
+              <h2 class="ox-cc-banner-title">Your Privacy</h2>
+              <p class="ox-cc-banner-desc">
+                We use cookies to improve your experience, analyze website traffic, and provide essential website functionality. You can choose which optional cookies to allow.
+              </p>
+            </div>
           </div>
-          <div class="ox-cc-banner-text">
-            <h2 class="ox-cc-banner-title">Your Privacy</h2>
-            <p class="ox-cc-banner-desc">
-              We use cookies to improve your experience, analyze website traffic, and provide essential website functionality. You can choose which optional cookies to allow.
-            </p>
+          <div class="ox-cc-banner-actions">
+            <button type="button" id="ox-cc-btn-settings" class="ox-cc-btn ox-cc-btn-subtle">
+              Cookie Settings
+            </button>
+            <button type="button" id="ox-cc-btn-reject" class="ox-cc-btn ox-cc-btn-secondary">
+              Reject Non-Essential
+            </button>
+            <button type="button" id="ox-cc-btn-accept-all" class="ox-cc-btn ox-cc-btn-primary">
+              Accept All
+            </button>
           </div>
-        </div>
-        <div class="ox-cc-banner-actions">
-          <button type="button" id="ox-cc-btn-settings" class="ox-cc-btn ox-cc-btn-subtle">
-            Cookie Settings
-          </button>
-          <button type="button" id="ox-cc-btn-reject" class="ox-cc-btn ox-cc-btn-secondary">
-            Reject Non-Essential
-          </button>
-          <button type="button" id="ox-cc-btn-accept-all" class="ox-cc-btn ox-cc-btn-primary">
-            Accept All
-          </button>
         </div>
       </aside>
 
-      <!-- Cookie Preferences Modal -->
+      <!-- Cookie Preferences Modal (OneTrust / Pfizer Preference Centre) -->
       <div 
         id="oxentra-cookie-backdrop" 
         class="ox-cc-backdrop" 
@@ -252,7 +254,10 @@
         >
           <!-- Modal Header -->
           <div class="ox-cc-modal-header">
-            <h3 id="ox-cc-modal-title" class="ox-cc-modal-title">Cookie Preferences</h3>
+            <div>
+              <span class="ox-cc-modal-badge">Oxentra Pharma</span>
+              <h3 id="ox-cc-modal-title" class="ox-cc-modal-title">Privacy Preference Centre</h3>
+            </div>
             <button type="button" id="ox-cc-modal-close" class="ox-cc-modal-close-btn" aria-label="Close preferences dialog">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -264,22 +269,22 @@
           <!-- Modal Body -->
           <div class="ox-cc-modal-body">
             <p id="ox-cc-modal-desc" class="ox-cc-modal-lead">
-              Manage your cookie preferences below. Essential cookies are required for site security and functionality and cannot be disabled. Optional cookies help us enhance performance and communication.
+              When you visit our website, it may store or retrieve information on your browser, mostly in the form of cookies. You can choose which categories of cookies you want to allow.
             </p>
 
             <!-- Category: Strictly Necessary -->
             <div class="ox-cc-category-card">
               <div class="ox-cc-category-header">
                 <div class="ox-cc-category-info">
-                  <span class="ox-cc-category-title">Strictly Necessary</span>
+                  <span class="ox-cc-category-title">Strictly Necessary Cookies</span>
                 </div>
                 <span class="ox-cc-badge-always-active" aria-label="Strictly necessary cookies are always enabled">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  Always On
+                  Always Active
                 </span>
               </div>
               <p class="ox-cc-category-desc">
-                Used for core website functionality, security, consent storage, and required session operations. The user cannot disable this category.
+                These cookies are necessary for the website to function securely and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences or navigating secure pages.
               </p>
             </div>
 
@@ -287,7 +292,7 @@
             <div class="ox-cc-category-card">
               <div class="ox-cc-category-header">
                 <label for="ox-cc-switch-analytics" class="ox-cc-category-title" style="cursor: pointer;">
-                  Analytics
+                  Performance & Analytics Cookies
                 </label>
                 <div class="ox-cc-switch-wrap">
                   <button 
@@ -303,7 +308,7 @@
                 </div>
               </div>
               <p class="ox-cc-category-desc">
-                Used for website traffic analytics, performance measurement, and usage statistics. Analytics will not load without your consent.
+                These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us understand which pages are the most and least popular and see how visitors move around the site.
               </p>
             </div>
 
@@ -311,7 +316,7 @@
             <div class="ox-cc-category-card">
               <div class="ox-cc-category-header">
                 <label for="ox-cc-switch-marketing" class="ox-cc-category-title" style="cursor: pointer;">
-                  Marketing
+                  Targeting & Marketing Cookies
                 </label>
                 <div class="ox-cc-switch-wrap">
                   <button 
@@ -327,7 +332,7 @@
                 </div>
               </div>
               <p class="ox-cc-category-desc">
-                Used for advertising, remarketing, campaign measurement, and tracking technologies. Marketing will not load without your consent.
+                These cookies may be set through our site by our advertising and marketing partners. They may be used by those companies to build a profile of your interests and show you relevant content across platforms.
               </p>
             </div>
           </div>
