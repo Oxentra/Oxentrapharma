@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
+  // Configure ScrollTrigger to ignore mobile address bar show/hide resize events
+  ScrollTrigger.config({
+    ignoreMobileResize: true,
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+  });
+
   const heroSection = document.getElementById("hero");
   const canvas = document.getElementById("hero-canvas");
   if (!heroSection || !canvas) return;
@@ -30,6 +36,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Create image instances
   for (let i = 0; i < totalFrames; i++) {
     images[i] = new Image();
+  }
+
+  // Cached gradient for mobile portrait
+  let cachedGradHeight = 0;
+  let cachedTopGrad = null;
+
+  function getMobileTopGrad(height) {
+    if (cachedTopGrad && cachedGradHeight === height) {
+      return cachedTopGrad;
+    }
+    cachedGradHeight = height;
+    cachedTopGrad = ctx.createLinearGradient(0, 0, 0, height);
+    cachedTopGrad.addColorStop(0, "rgba(0, 43, 62, 1)");
+    cachedTopGrad.addColorStop(0.40, "rgba(0, 43, 62, 0.95)");
+    cachedTopGrad.addColorStop(0.75, "rgba(0, 43, 62, 0.60)");
+    cachedTopGrad.addColorStop(1, "rgba(0, 43, 62, 0)");
+    return cachedTopGrad;
   }
 
   // Handle aspect-ratio canvas scaling (cover size centering)
@@ -60,12 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         300
       );
 
-      const topGrad = ctx.createLinearGradient(0, 0, 0, gradientHeight);
-      topGrad.addColorStop(0, "rgba(0, 43, 62, 1)");
-      topGrad.addColorStop(0.40, "rgba(0, 43, 62, 0.95)");
-      topGrad.addColorStop(0.75, "rgba(0, 43, 62, 0.60)");
-      topGrad.addColorStop(1, "rgba(0, 43, 62, 0)");
-
+      const topGrad = getMobileTopGrad(gradientHeight);
       ctx.save();
       ctx.fillStyle = topGrad;
       ctx.fillRect(0, 0, canvas.width, gradientHeight);
@@ -128,7 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // -------------------------------------------------------------
   // Progressive Controlled-Concurrency Frame Preloading & Decoding Queue
   // -------------------------------------------------------------
-  const MAX_CONCURRENT_REQUESTS = 6;
+  const isMobile = window.innerWidth <= 768;
+  const MAX_CONCURRENT_REQUESTS = isMobile ? 4 : 6;
   let activeRequests = 0;
   const loadQueue = [];
 
@@ -262,19 +281,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Detect mobile device
-  const isMobile = window.innerWidth <= 768;
-
   // Master timeline scrubbing through the 400vh hero section
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#hero",
       start: "top top",
       end: "bottom bottom",
-      scrub: isMobile ? 0.05 : 0.25, // Responsive scrub for instant touch performance on mobile
+      scrub: isMobile ? 0.1 : 0.25, // Responsive smooth scrub for touch performance on mobile
       pin: ".hero-sticky-viewport",
       pinSpacing: true,
       anticipatePin: 1,
+      fastScrollEnd: true,
+      preventOverlaps: true,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const currentProgressFrame = self.progress * (totalFrames - 1);
@@ -312,8 +330,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 0.22);
   }
 
-  // Listeners
-  window.addEventListener("resize", resizeCanvas);
+  // Debounced/Guarded Resize handler: Ignores mobile address bar expand/collapse
+  let cachedWidth = window.innerWidth;
+  let cachedHeight = window.innerHeight;
+
+  function handleResize() {
+    const newWidth = window.innerWidth;
+    const newHeight = window.innerHeight;
+    
+    // Only resize canvas if width changed (rotation) or significant height change (orientation)
+    // Ignore minor height changes from mobile URL/address bar showing/hiding
+    if (Math.abs(newWidth - cachedWidth) > 10 || Math.abs(newHeight - cachedHeight) > 120) {
+      cachedWidth = newWidth;
+      cachedHeight = newHeight;
+      resizeCanvas();
+      if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+      }
+    }
+  }
+
+  window.addEventListener("resize", handleResize, { passive: true });
 
   // Fallback initial draw
   if (images[0].complete && images[0].naturalWidth > 0) {
@@ -321,4 +358,3 @@ document.addEventListener("DOMContentLoaded", () => {
     resizeCanvas();
   }
 });
-
