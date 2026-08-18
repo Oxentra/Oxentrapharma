@@ -211,18 +211,18 @@
       >
         <div class="ox-cc-banner-container">
           <div class="ox-cc-banner-content">
-            <div class="ox-cc-banner-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="m9 12 2 2 4-4"/>
-              </svg>
-            </div>
-            <div class="ox-cc-banner-text">
+            <div class="ox-cc-banner-header">
+              <div class="ox-cc-banner-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
               <h2 class="ox-cc-banner-title">Your Privacy</h2>
-              <p class="ox-cc-banner-desc">
-                We use cookies to provide essential website functionality and improve your browsing experience. You can manage your preferences or accept optional cookies.
-              </p>
             </div>
+            <p class="ox-cc-banner-desc">
+              We use cookies to provide essential website functionality and improve your browsing experience. You can manage your preferences or accept optional cookies.
+            </p>
           </div>
           <div class="ox-cc-banner-actions">
             <button type="button" id="ox-cc-btn-settings" class="ox-cc-btn ox-cc-btn-subtle">
