@@ -1,3 +1,45 @@
+/* ==========================================================================
+   GLOBAL BASE RESETS & ESSENTIAL FALLBACKS
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Fallback hiding primitives (native HTML5 attribute) */
+[hidden] {
+  display: none !important;
+}
+
 :root {
   --color-brand-blue: #005B82;
   --color-brand-orange: #F07D00;
@@ -1747,17 +1789,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   fill: currentColor;
 }
 
-@media (max-width: 1024px) {
-  .oxentra-header-wrapper {
-    padding: 12px 12px 0 12px;
-  }
-  .oxentra-navbar-shell {
-    height: 64px;
-    padding: 0 16px;
-  }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .oxentra-header-wrapper {
     padding: 10px 12px 0 12px !important;
   }
@@ -1863,7 +1895,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
 }
 
 /* ==========================================================================
-   MOBILE & IPAD NAVIGATION DRAWER & OVERLAY (Hidden on Desktop View > 1024px)
+   MOBILE & IPAD NAVIGATION DRAWER & OVERLAY (Hidden on Desktop View >= 1024px)
    ========================================================================== */
 
 .oxentra-drawer-overlay,
@@ -1882,7 +1914,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   transform: translate3d(0, 0, 0) !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .oxentra-drawer-overlay {
     display: block !important;
     position: fixed;

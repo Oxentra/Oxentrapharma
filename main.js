@@ -356,52 +356,14 @@ const clinicalBrochures = {
 document.addEventListener("DOMContentLoaded", () => {
   initHeaderScroll();
   initSearchBar();
-  initMobileMenu();
   initRevealOnScroll();
   initPurposeTabs();
   initProductsCarousel();
   initMetricsCounter();
-  // initProductModals();
-  initLeafletMap();
-  initContactForm();
   initBrochureLibrary();
   initImageLazyLoading();
   initWhyUsMobileCarousel();
 });
-
-// Mobile Menu Toggle
-function initMobileMenu() {
-  const menuBtn = document.getElementById("mobile-menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const menuIconOpen = document.getElementById("menu-icon-open");
-  const menuIconClose = document.getElementById("menu-icon-close");
-  
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.contains("hidden");
-      if (isOpen) {
-        mobileMenu.classList.remove("hidden");
-        mobileMenu.classList.add("flex");
-        menuIconOpen.classList.add("hidden");
-        menuIconClose.classList.remove("hidden");
-      } else {
-        mobileMenu.classList.add("hidden");
-        mobileMenu.classList.remove("flex");
-        menuIconOpen.classList.remove("hidden");
-        menuIconClose.classList.add("hidden");
-      }
-    });
-
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-        mobileMenu.classList.remove("flex");
-        menuIconOpen.classList.remove("hidden");
-        menuIconClose.classList.add("hidden");
-      });
-    });
-  }
-}
 
 // Reveal Scroll Observer (Enhanced for Smooth Animations)
 function initRevealOnScroll() {
@@ -492,7 +454,13 @@ function initProductsCarousel() {
   const portNext = document.getElementById("portfolio-next-btn");
 
   if (portContainer && portPrev && portNext) {
-    const scrollAmount = 300;
+    function getScrollAmount() {
+      const firstCard = portContainer.querySelector(".product-card");
+      if (!firstCard) return 300;
+      const style = window.getComputedStyle(portContainer);
+      const gap = parseFloat(style.gap) || 24;
+      return firstCard.getBoundingClientRect().width + gap;
+    }
     
     // Auto-scroll logic with manual override support
     let autoScrollTimer = null;
@@ -502,6 +470,7 @@ function initProductsCarousel() {
       if (autoScrollTimer) return;
       autoScrollTimer = setInterval(() => {
         const maxScrollLeft = portContainer.scrollWidth - portContainer.clientWidth;
+        const scrollAmount = getScrollAmount();
         if (portContainer.scrollLeft >= maxScrollLeft - 15) {
           portContainer.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -539,12 +508,12 @@ function initProductsCarousel() {
     });
 
     portPrev.addEventListener("click", () => {
-      portContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      portContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
       handleUserInteraction();
     });
 
     portNext.addEventListener("click", () => {
-      portContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      portContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
       handleUserInteraction();
     });
 
@@ -603,119 +572,6 @@ function initMetricsCounter() {
       }, step);
     });
   }
-}
-
-// Modals
-function initProductModals() {
-  const modal = document.getElementById("product-modal");
-  const openBtns = document.querySelectorAll(".open-details-btn");
-  const closeBtn = document.getElementById("close-modal-btn");
-
-  if (!modal || !closeBtn) return;
-
-  const title = document.getElementById("modal-title");
-  const subtitle = document.getElementById("modal-subtitle");
-  const tag = document.getElementById("modal-tag");
-  const form = document.getElementById("modal-form");
-  const slogan = document.getElementById("modal-slogan");
-  const composition = document.getElementById("modal-composition");
-  const indications = document.getElementById("modal-indications");
-  const features = document.getElementById("modal-features");
-
-  openBtns.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const key = btn.dataset.product;
-      const data = products[key];
-      if (!data) return;
-
-      if (title) title.innerText = data.name;
-      if (subtitle) subtitle.innerText = data.subtitle;
-      if (tag) {
-        tag.innerText = data.category;
-        tag.className = `inline-block px-3 py-1 bg-blue-50 text-[#005B82] text-xs font-bold rounded-full uppercase tracking-wider`;
-      }
-      if (form) form.innerText = `Packaging: ${data.form}`;
-      if (slogan) slogan.innerText = `"${data.slogan}"`;
-
-      if (composition) {
-        composition.innerHTML = data.composition
-          .map(item => `<li class="flex items-start gap-2 py-1 font-mono text-xs border-b border-slate-100"><span class="text-orange-500">🧪</span><span>${item}</span></li>`)
-          .join("");
-      }
-      if (indications) {
-        indications.innerHTML = data.indications
-          .map(item => `<li class="flex items-start gap-2 text-slate-600 text-sm"><span>•</span><span>${item}</span></li>`)
-          .join("");
-      }
-      if (features) {
-        features.innerHTML = data.features
-          .map(item => `<li class="flex items-start gap-2 text-slate-600 text-sm"><span class="text-emerald-500 font-bold">✓</span><span>${item}</span></li>`)
-          .join("");
-      }
-
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-      document.body.classList.add("modal-open");
-    });
-  });
-
-  const close = () => {
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-    document.body.classList.remove("modal-open");
-  };
-
-  closeBtn.addEventListener("click", close);
-  modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.classList.contains("hidden")) close(); });
-}
-
-// Leaflet Map (Safe Guarded)
-function initLeafletMap() {
-  const el = document.getElementById("location-map");
-  if (!el || typeof L === "undefined") return;
-
-  const coords = [9.998994, 76.302732];
-  try {
-    const map = L.map('location-map', { center: coords, zoom: 14, scrollWheelZoom: false });
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap &copy; CARTO'
-    }).addTo(map);
-    L.marker(coords).addTo(map).bindPopup(`
-      <div class="p-2">
-        <h4 class="font-extrabold text-white">Oxentra Pharma Pvt. Ltd.</h4>
-        <p class="text-xs text-slate-300">Formulations Crafted with Precision.</p>
-      </div>
-    `).openPopup();
-  } catch (e) {
-    console.error("Map initialization failed", e);
-  }
-}
-
-// Contact form
-function initContactForm() {
-  const form = document.getElementById("partner-contact-form");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const btn = form.querySelector("button[type='submit']");
-    const text = btn.innerHTML;
-    btn.disabled = true;
-    btn.innerHTML = "Processing...";
-    setTimeout(() => {
-      btn.innerHTML = "✓ Submitted!";
-      btn.classList.add("bg-emerald-600");
-      alert("Message received! Our team will contact you shortly.");
-      form.reset();
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.innerHTML = text;
-        btn.classList.remove("bg-emerald-600");
-      }, 3000);
-    }, 1200);
-  });
 }
 
 // Clinical Brochure Library interactive logic
@@ -927,7 +783,7 @@ function initHeaderScroll() {
 
 // Global Product Search Functionality
 function initSearchBar() {
-  const searchInputs = document.querySelectorAll(".nav-search-input");
+  const searchInputs = document.querySelectorAll(".oxentra-search-input, .nav-search-input");
   
   searchInputs.forEach(input => {
     // Search on Enter keypress
@@ -947,7 +803,7 @@ function initSearchBar() {
     const urlParams = new URLSearchParams(window.location.search);
     const initialQuery = urlParams.get("search");
     
-    const productSearchInputs = document.querySelectorAll(".nav-search-input");
+    const productSearchInputs = document.querySelectorAll(".oxentra-search-input, .nav-search-input");
     const productCards = document.querySelectorAll(".product-card");
     const filterButtons = document.querySelectorAll(".filter-btn");
 

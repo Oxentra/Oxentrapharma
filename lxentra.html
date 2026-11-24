@@ -32,30 +32,8 @@
   <meta name="twitter:description" content="Luliconazole Cream IP 1% w/w by Oxentra Pharma Pvt. Ltd.">
   <meta name="twitter:image" content="https://oxentrapharma.com/logo_clean.png">
   
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#0F172A',
-              slate: '#64748B',
-              border: '#E7EBF0',
-              bgLight: '#FAFBFC',
-              blue: '#005E8A',
-              cyan: '#3AA9D8'
-            }
-          },
-          fontFamily: {
-            inter: ['"Inter"', '"SF Pro Display"', '"Manrope"', 'system-ui', 'sans-serif'],
-            sans: ['"Inter"', '"SF Pro Display"', '"Manrope"', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="tailwind.css?v=1">
   
   <!-- Google Fonts: Inter & Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -584,7 +562,7 @@
       
       <!-- Column 1: Branding & Intro -->
       <div class="space-y-4 overflow-hidden">
-        <img src="logo.png" alt="Oxentra Pharma" class="w-auto object-contain" style="height: 150px; margin: -61px -49px;" decoding="async" loading="lazy" width="842" height="595">
+        <img src="logo_clean.png" alt="Oxentra Pharma" class="h-10 w-auto object-contain" decoding="async" loading="lazy" width="456" height="113">
         <p class="text-xs text-slate-400 leading-relaxed">
           Oxentra Pharma Pvt. Ltd. is a rapidly growing pharmaceutical company committed to delivering high-quality, affordable and innovative healthcare solutions across the globe.
         </p>
@@ -635,7 +613,7 @@
         <h4 class="text-white font-extrabold text-sm tracking-wide">Contact Us</h4>
         <div class="space-y-3.5 text-xs md:text-sm text-slate-400">
           <div class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             <a href="tel:+919496331824" class="hover:text-white transition-colors leading-relaxed">+91 94963 31824</a>
           </div>
           <div class="flex items-center gap-2.5">
@@ -643,7 +621,7 @@
             <a href="mailto:info@oxentrapharma.com" class="hover:text-white transition-colors">info@oxentrapharma.com</a>
           </div>
           <div class="flex items-start gap-2.5">
-            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <span class="leading-relaxed">
               LR Towers, Ernakulam,<br>Kerala, India - 682025
             </span>
@@ -734,7 +712,7 @@
       });
 
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1023) {
           toggleDrawer(false);
         }
       });
