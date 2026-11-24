@@ -1,0 +1,26 @@
+{
+  "name": "oxentrapharma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./tailwind.css --watch",
+    "build": "npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oxentra/Oxentrapharma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Oxentra/Oxentrapharma/issues"
+  },
+  "homepage": "https://github.com/Oxentra/Oxentrapharma#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
