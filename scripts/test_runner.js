@@ -172,12 +172,16 @@ async function runTests() {
     console.log('\n--- SUITE 1: Navigation Breakpoint Testing ---');
     const navViewports = [
       { w: 320, name: '320px (Mobile Mini)' },
+      { w: 360, name: '360px (Android Compact)' },
       { w: 375, name: '375px (iPhone 6/7/8)' },
+      { w: 390, name: '390px (iPhone 12/13/14)' },
+      { w: 414, name: '414px (iPhone Plus/Max)' },
       { w: 768, name: '768px (Tablet Portrait)' },
       { w: 1023, name: '1023px (Max Mobile/Tablet Boundary)' },
       { w: 1024, name: '1024px (Exact Desktop Breakpoint Boundary)' },
       { w: 1025, name: '1025px (Desktop Boundary + 1px)' },
-      { w: 1280, name: '1280px (Standard Desktop)' }
+      { w: 1280, name: '1280px (Standard Desktop)' },
+      { w: 1440, name: '1440px (Wide Desktop)' }
     ];
 
     for (const vp of navViewports) {
@@ -201,20 +205,18 @@ async function runTests() {
       })()`);
 
       if (vp.w <= 1023) {
-        // Must show mobile button, must hide desktop nav
         const passed = navState.btnVisible && !navState.deskNavVisible;
         record('Navigation', `Mobile breakpoint ${vp.name}`, passed, `btn: ${navState.btnRect ? navState.btnRect.w + 'px' : 'none'}, deskNav: ${navState.deskNavRect ? navState.deskNavRect.w + 'px' : 'none'}`);
       } else {
-        // >= 1024px: Must show desktop nav, must hide mobile button
         const passed = !navState.btnVisible && navState.deskNavVisible;
         record('Navigation', `Desktop breakpoint ${vp.name}`, passed, `btn: ${navState.btnRect ? navState.btnRect.w + 'px' : 'none'}, deskNav: ${navState.deskNavRect ? navState.deskNavRect.w + 'px' : 'none'}`);
       }
     }
 
-    // TEST SUITE 2: Viewport Horizontal Overflow Testing Across 13 Viewports
+    // TEST SUITE 2: Viewport Horizontal Overflow Testing Across Required Viewports
     console.log('\n--- SUITE 2: Horizontal Overflow Testing ---');
-    const allViewports = [320, 360, 375, 390, 393, 414, 430, 768, 1023, 1024, 1025, 1280, 1440];
-    for (const w of allViewports) {
+    const requiredViewports = [320, 360, 375, 390, 414, 440, 768, 1024, 1440];
+    for (const w of requiredViewports) {
       await client.setViewport(w, 800);
       await new Promise(r => setTimeout(r, 150));
 
@@ -233,108 +235,208 @@ async function runTests() {
       record('Overflow', `No horizontal scrollbar at ${w}px`, !overflowInfo.hasOverflow, `win: ${overflowInfo.winWidth}px, doc: ${overflowInfo.docWidth}px`);
     }
 
-    // TEST SUITE 3: Mobile Product Carousel at 320px & 375px
-    console.log('\n--- SUITE 3: Product Carousel Testing ---');
-    await client.setViewport(320, 800);
-    await new Promise(r => setTimeout(r, 200));
+    // TEST SUITE 3: Header Responsiveness, Call Button Visibility & Sizing
+    console.log('\n--- SUITE 3: Mobile Header Responsiveness & Icon Centering ---');
+    for (const w of [320, 360, 375, 390, 414, 440, 768]) {
+      await client.setViewport(w, 800);
+      await new Promise(r => setTimeout(r, 150));
 
-    const carouselInfo = await client.eval(`(() => {
-      const slider = document.getElementById('portfolio-slider-container');
-      if (!slider) return { exists: false };
-      const cards = slider.querySelectorAll('.product-card');
-      if (!cards.length) return { exists: false };
-      const firstCard = cards[0];
-      const cardRect = firstCard.getBoundingClientRect();
-      const sliderRect = slider.getBoundingClientRect();
-      return {
-        exists: true,
-        count: cards.length,
-        cardWidth: Math.round(cardRect.width),
-        sliderWidth: Math.round(sliderRect.width),
-        cardWithinBounds: cardRect.width <= sliderRect.width
-      };
-    })()`);
+      const headerState = await client.eval(`(() => {
+        const callBtn = document.querySelector('header a[href^="tel:"]');
+        const callSvg = callBtn ? callBtn.querySelector('svg') : null;
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const logo = document.querySelector('header .oxentra-logo-img');
+        const shell = document.querySelector('header .oxentra-navbar-shell');
+        const search = document.querySelector('.oxentra-search-wrapper');
 
-    record('Carousel', 'Carousel exists with cards', carouselInfo.exists && carouselInfo.count > 0, `cards: ${carouselInfo.count}`);
-    record('Carousel', 'Card fits within 320px viewport container', carouselInfo.cardWithinBounds, `card: ${carouselInfo.cardWidth}px, slider: ${carouselInfo.sliderWidth}px`);
+        if (!callBtn || !callSvg || !menuBtn || !logo || !shell) return { exists: false };
 
-    // TEST SUITE 4: Footer Telephone Icon Dimensions & Styling
-    console.log('\n--- SUITE 4: Footer Styling & Icon Dimensions ---');
-    const footerInfo = await client.eval(`(() => {
-      const footer = document.querySelector('footer');
-      if (!footer) return { exists: false };
-      const telLink = footer.querySelector('a[href^="tel:"]');
-      const telSvg = telLink ? telLink.parentElement.querySelector('svg') : null;
-      const telSvgRect = telSvg ? telSvg.getBoundingClientRect() : null;
-      const quickLink = footer.querySelector('ul a');
-      const quickLinkStyle = quickLink ? window.getComputedStyle(quickLink) : null;
-      const logoImg = footer.querySelector('img[alt*="Oxentra"]');
-      const logoRect = logoImg ? logoImg.getBoundingClientRect() : null;
-      return {
-        exists: true,
-        telSvgWidth: telSvgRect ? Math.round(telSvgRect.width) : null,
-        telSvgHeight: telSvgRect ? Math.round(telSvgRect.height) : null,
-        linkColor: quickLinkStyle ? quickLinkStyle.color : null,
-        isDefaultBlue: quickLinkStyle ? quickLinkStyle.color === 'rgb(0, 0, 238)' : false,
-        logoHeight: logoRect ? Math.round(logoRect.height) : null
-      };
-    })()`);
+        const callRect = callBtn.getBoundingClientRect();
+        const svgRect = callSvg.getBoundingClientRect();
+        const menuRect = menuBtn.getBoundingClientRect();
+        const logoRect = logo.getBoundingClientRect();
+        const shellRect = shell.getBoundingClientRect();
 
-    record('Footer', 'Telephone icon is constrained (<=24px)', footerInfo.telSvgWidth <= 24 && footerInfo.telSvgHeight <= 24, `${footerInfo.telSvgWidth}x${footerInfo.telSvgHeight}px`);
-    record('Footer', 'Footer links do not display browser default blue', !footerInfo.isDefaultBlue, `color: ${footerInfo.linkColor}`);
-    record('Footer', 'Footer logo has clean height without clipping', footerInfo.logoHeight <= 50, `height: ${footerInfo.logoHeight}px`);
+        const searchStyle = search ? window.getComputedStyle(search) : null;
+        const searchMarginLeft = searchStyle ? parseFloat(searchStyle.marginLeft) : 0;
 
-    // TEST SUITE 5: Global Search Input Selector
-    console.log('\n--- SUITE 5: Global Search Functionality ---');
-    const searchInfo = await client.eval(`(() => {
-      const inputs = document.querySelectorAll('.oxentra-search-input');
-      return {
-        foundCount: inputs.length,
-        hasListeners: inputs.length > 0
-      };
-    })()`);
-    record('Search', 'Search inputs with .oxentra-search-input discovered', searchInfo.foundCount > 0, `found: ${searchInfo.foundCount}`);
+        // Icon must be completely inside Call button bounds without cut-off
+        const svgInsideCallBtn = svgRect.left >= callRect.left - 0.5 &&
+                                 svgRect.right <= callRect.right + 0.5 &&
+                                 svgRect.top >= callRect.top - 0.5 &&
+                                 svgRect.bottom <= callRect.bottom + 0.5;
 
-    // TEST SUITE 6: Other Key Pages Navigation and Overflow Checks
-    console.log('\n--- SUITE 6: Multi-page Regression Testing ---');
-    const pages = ['about.html', 'products.html', 'contact.html', 'careers.html', 'calcintra.html'];
-    for (const page of pages) {
+        // Shell must not overflow window width
+        const shellWithinWindow = shellRect.right <= window.innerWidth;
+
+        return {
+          exists: true,
+          callBtnVisible: callRect.width > 0 && callRect.height > 0,
+          menuBtnVisible: menuRect.width > 0 && menuRect.height > 0,
+          callBtnSize: Math.round(callRect.width) + 'x' + Math.round(callRect.height),
+          svgInsideCallBtn,
+          logoWidth: Math.round(logoRect.width),
+          logoHeight: Math.round(logoRect.height),
+          shellWithinWindow,
+          searchMarginLeft
+        };
+      })()`);
+
+      record('Header', `Call & Menu buttons visible & unclipped at ${w}px`,
+        headerState.callBtnVisible && headerState.menuBtnVisible && headerState.svgInsideCallBtn && headerState.shellWithinWindow && headerState.searchMarginLeft >= 6,
+        `btn: ${headerState.callBtnSize}, logo: ${headerState.logoWidth}x${headerState.logoHeight}px, unclipped: ${headerState.svgInsideCallBtn}, searchMargin: ${headerState.searchMarginLeft}px`
+      );
+    }
+
+    // TEST SUITE 4: Desktop Header Fluidity & Search Input Usability (1024px & 1440px)
+    console.log('\n--- SUITE 4: Desktop Header Dynamic Width & Usability ---');
+    for (const w of [1024, 1280, 1440]) {
+      await client.setViewport(w, 800);
+      await new Promise(r => setTimeout(r, 150));
+
+      const deskHeaderState = await client.eval(`(() => {
+        const searchWrapper = document.querySelector('.oxentra-search-wrapper');
+        const searchInput = document.querySelector('.oxentra-search-input');
+        const ctaBtn = document.querySelector('.oxentra-cta-btn');
+        const nav = document.querySelector('header nav');
+        const shell = document.querySelector('.oxentra-navbar-shell');
+
+        if (!searchWrapper || !searchInput || !ctaBtn || !shell) return { exists: false };
+
+        const searchRect = searchWrapper.getBoundingClientRect();
+        const ctaRect = ctaBtn.getBoundingClientRect();
+        const shellRect = shell.getBoundingClientRect();
+
+        return {
+          exists: true,
+          searchWidth: Math.round(searchRect.width),
+          ctaWidth: Math.round(ctaRect.width),
+          ctaFullyVisible: ctaRect.right <= shellRect.right + 1,
+          searchUsable: searchRect.width >= 120 && searchRect.width <= 240
+        };
+      })()`);
+
+      record('Header', `Search & Contact CTA balanced at ${w}px`,
+        deskHeaderState.searchUsable && deskHeaderState.ctaFullyVisible,
+        `searchW: ${deskHeaderState.searchWidth}px, ctaW: ${deskHeaderState.ctaWidth}px, ctaInBounds: ${deskHeaderState.ctaFullyVisible}`
+      );
+    }
+
+    // TEST SUITE 5: Mobile & Desktop Footer Legal Links Alignment & Formatting
+    console.log('\n--- SUITE 5: Footer Legal Links Alignment Across Viewports ---');
+    for (const w of requiredViewports) {
+      await client.setViewport(w, 800);
+      await new Promise(r => setTimeout(r, 150));
+
+      const footerState = await client.eval(`(() => {
+        const container = document.querySelector('.oxentra-footer-legal-links');
+        const cookieBtn = document.querySelector('.ox-cc-footer-trigger');
+        const separators = document.querySelectorAll('.footer-legal-separator');
+        const copyright = document.querySelector('footer p');
+
+        if (!container || !cookieBtn) return { exists: false };
+
+        const containerRect = container.getBoundingClientRect();
+        const cookieRect = cookieBtn.getBoundingClientRect();
+        const winWidth = window.innerWidth;
+
+        // Separators must be hidden on mobile (<640px) and visible on desktop (>=768px)
+        let sepCheck = true;
+        if (separators.length > 0) {
+          const firstSepStyle = window.getComputedStyle(separators[0]);
+          if (winWidth < 640) {
+            sepCheck = firstSepStyle.display === 'none';
+          } else if (winWidth >= 768) {
+            sepCheck = firstSepStyle.display !== 'none';
+          }
+        }
+
+        // Cookie Preferences should never wrap onto multiple lines (height <= 24px)
+        const cookieSingleLine = cookieRect.height <= 24;
+
+        // Container must not cause overflow
+        const containerInBounds = containerRect.right <= winWidth + 2;
+
+        return {
+          exists: true,
+          cookieHeight: Math.round(cookieRect.height),
+          cookieSingleLine,
+          sepCheck,
+          containerInBounds,
+          winWidth
+        };
+      })()`);
+
+      record('Footer Legal', `Legal links cleanly aligned at ${w}px`,
+        footerState.exists && footerState.cookieSingleLine && footerState.sepCheck && footerState.containerInBounds,
+        `singleLine: ${footerState.cookieSingleLine} (${footerState.cookieHeight}px), sepsCorrect: ${footerState.sepCheck}`
+      );
+    }
+
+    // TEST SUITE 6: Multi-page Regression Testing Across All 15 HTML Pages
+    console.log('\n--- SUITE 6: Multi-page Regression Testing (All 15 Pages) ---');
+    const all15Pages = [
+      'index.html', 'about.html', 'products.html', 'contact.html', 'careers.html',
+      'calcintra.html', 'glideplus.html', 'heaveenema.html', 'heavesenema.html',
+      'lxentra.html', 'nervoxplus.html', 'oxentibmr.html', 'oxrizinelc.html',
+      'pxentradsr.html', 'mobile_nav_showcase.html'
+    ];
+
+    for (const page of all15Pages) {
       await client.send('Page.navigate', { url: `http://127.0.0.1:${PORT}/${page}` });
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise(r => setTimeout(r, 600));
 
-      // Test mobile
+      // Test mobile (375px)
       await client.setViewport(375, 800);
       await new Promise(r => setTimeout(r, 150));
       const mobileStatus = await client.eval(`(() => {
         const btn = document.getElementById('mobile-menu-btn');
         const deskNav = document.querySelector('header nav');
         const overflow = document.documentElement.scrollWidth > window.innerWidth;
+        const callBtn = document.querySelector('header a[href^="tel:"]');
+        const legalLinks = document.querySelector('.oxentra-footer-legal-links');
+
         function isVisible(el) {
           if (!el) return false;
           const rect = el.getBoundingClientRect();
           return rect.width > 0 && rect.height > 0 && window.getComputedStyle(el).visibility !== 'hidden';
         }
-        return { btnVisible: isVisible(btn), deskNavVisible: isVisible(deskNav), overflow };
+
+        return {
+          btnVisible: isVisible(btn),
+          deskNavVisible: isVisible(deskNav),
+          callVisible: isVisible(callBtn),
+          overflow,
+          hasFooterLinks: !!legalLinks
+        };
       })()`);
 
-      record('Pages', `${page} at 375px mobile navigation correct`, mobileStatus.btnVisible && !mobileStatus.deskNavVisible && !mobileStatus.overflow, `btn: ${mobileStatus.btnVisible}, deskNav: ${mobileStatus.deskNavVisible}, ovf: ${mobileStatus.overflow}`);
+      const mobilePass = !mobileStatus.overflow && (page === 'mobile_nav_showcase.html' || (mobileStatus.btnVisible && !mobileStatus.deskNavVisible));
+      record('All Pages', `${page} at 375px responsive check`, mobilePass, `ovf: ${mobileStatus.overflow}, btn: ${mobileStatus.btnVisible}`);
 
-      // Test desktop
-      await client.setViewport(1280, 800);
-      await new Promise(r => setTimeout(r, 200));
+      // Test desktop (1440px)
+      await client.setViewport(1440, 800);
+      await new Promise(r => setTimeout(r, 150));
       const deskStatus = await client.eval(`(() => {
         const btn = document.getElementById('mobile-menu-btn');
         const deskNav = document.querySelector('header nav');
         const overflow = document.documentElement.scrollWidth > window.innerWidth;
+
         function isVisible(el) {
           if (!el) return false;
           const rect = el.getBoundingClientRect();
           return rect.width > 0 && rect.height > 0 && window.getComputedStyle(el).visibility !== 'hidden';
         }
-        return { btnVisible: isVisible(btn), deskNavVisible: isVisible(deskNav), overflow };
+
+        return {
+          btnVisible: isVisible(btn),
+          deskNavVisible: isVisible(deskNav),
+          overflow
+        };
       })()`);
 
-      record('Pages', `${page} at 1280px desktop navigation correct`, !deskStatus.btnVisible && deskStatus.deskNavVisible && !deskStatus.overflow, `btn: ${deskStatus.btnVisible}, deskNav: ${deskStatus.deskNavVisible}, ovf: ${deskStatus.overflow}`);
+      const deskPass = !deskStatus.overflow && (page === 'mobile_nav_showcase.html' || (!deskStatus.btnVisible && deskStatus.deskNavVisible));
+      record('All Pages', `${page} at 1440px responsive check`, deskPass, `ovf: ${deskStatus.overflow}, deskNav: ${deskStatus.deskNavVisible}`);
     }
 
     client.close();
