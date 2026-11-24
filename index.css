@@ -1709,9 +1709,13 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   position: relative;
   display: flex;
   align-items: center;
-  width: 220px;
+  width: 100%;
+  max-width: 220px;
+  min-width: 100px;
   height: 44px;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  margin-left: 8px;
+  transition: all 250ms ease-out;
 }
 
 .oxentra-search-icon {
@@ -1789,6 +1793,25 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   fill: currentColor;
 }
 
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .oxentra-navbar-shell {
+    padding: 0 16px !important;
+    gap: 12px !important;
+  }
+  .oxentra-logo-link {
+    margin-right: 12px !important;
+  }
+  .oxentra-search-wrapper {
+    max-width: 150px !important;
+    flex-shrink: 1 !important;
+  }
+  .oxentra-cta-btn {
+    padding: 0 16px !important;
+    font-size: 14px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
 @media (max-width: 1023px) {
   .oxentra-header-wrapper {
     padding: 10px 12px 0 12px !important;
@@ -1798,7 +1821,9 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     width: 100% !important;
     max-width: 100% !important;
     height: 58px !important;
-    padding: 0 14px !important;
+    padding: 0 12px !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
     border-radius: 999px !important;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 246, 252, 0.92) 100%) !important;
     border: 1px solid rgba(226, 232, 240, 0.85) !important;
@@ -1811,7 +1836,8 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   .oxentra-logo-link {
     height: 24px !important;
     max-height: 24px !important;
-    flex-shrink: 0 !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
     margin-right: 0 !important;
   }
 
@@ -1819,9 +1845,16 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     height: 24px !important;
     max-height: 24px !important;
     width: auto !important;
-    max-width: 115px !important;
-    flex-shrink: 0 !important;
+    max-width: 110px !important;
+    aspect-ratio: 456 / 113;
+    flex-shrink: 1 !important;
     object-fit: contain !important;
+  }
+
+  .oxentra-search-wrapper {
+    margin-left: 8px !important;
+    min-width: 80px !important;
+    flex-shrink: 1 !important;
   }
 
   /* Mobile/iPad Header Action Icon Buttons (Phone Call & Hamburger Menu) */
@@ -1857,11 +1890,11 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     height: 18px !important;
     min-width: 18px !important;
     min-height: 18px !important;
-    margin: 0 !important;
+    margin: auto !important;
     fill: #F97316 !important;
     color: #F97316 !important;
     flex-shrink: 0 !important;
-    transform: translate(-3.5px, -2px) !important;
+    transform: none !important;
   }
 
   header #mobile-menu-btn {
@@ -1891,6 +1924,31 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     stroke: #005B82 !important;
     color: #005B82 !important;
     flex-shrink: 0 !important;
+  }
+
+  @media (max-width: 360px) {
+    .oxentra-header-wrapper {
+      padding: 8px 8px 0 8px !important;
+    }
+    .oxentra-navbar-shell {
+      padding: 0 10px !important;
+      gap: 6px !important;
+    }
+    .oxentra-logo-img {
+      height: 20px !important;
+      max-height: 20px !important;
+      max-width: 88px !important;
+    }
+    header .flex.lg\:hidden {
+      gap: 6px !important;
+    }
+    header a[href^="tel:"],
+    header #mobile-menu-btn {
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+    }
   }
 }
 
@@ -2274,5 +2332,58 @@ textarea:focus-visible {
     transform: none !important;
     filter: none !important;
     transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   FOOTER LEGAL LINKS RESPONSIVE ALIGNMENT (Mobile & Desktop)
+   ========================================================================== */
+.oxentra-footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  line-height: 1.5;
+}
+
+.oxentra-footer-legal-links a,
+.oxentra-footer-legal-links button {
+  white-space: nowrap !important;
+  font-size: 12px;
+  line-height: 1.5;
+  min-height: unset !important;
+  height: auto !important;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer-legal-separator {
+  color: #334155;
+  user-select: none;
+  font-size: 11px;
+}
+
+@media (max-width: 639px) {
+  .footer-legal-separator {
+    display: none !important;
+  }
+
+  .oxentra-footer-legal-links {
+    gap: 8px 18px !important;
+    justify-content: center !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .oxentra-footer-legal-links {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 16px;
   }
 }

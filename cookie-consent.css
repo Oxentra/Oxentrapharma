@@ -482,6 +482,8 @@ body.ox-cc-modal-open {
   font-family: inherit;
   cursor: pointer;
   padding: 0;
+  min-height: unset !important;
+  height: auto !important;
   text-decoration: none;
   transition: color 0.15s ease;
   display: inline-flex;
