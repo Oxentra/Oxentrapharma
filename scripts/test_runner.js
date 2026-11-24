@@ -172,6 +172,7 @@ async function runTests() {
     console.log('\n--- SUITE 1: Navigation Breakpoint Testing ---');
     const navViewports = [
       { w: 320, name: '320px (Mobile Mini)' },
+      { w: 340, name: '340px (Small Mobile)' },
       { w: 360, name: '360px (Android Compact)' },
       { w: 375, name: '375px (iPhone 6/7/8)' },
       { w: 390, name: '390px (iPhone 12/13/14)' },
@@ -215,7 +216,7 @@ async function runTests() {
 
     // TEST SUITE 2: Viewport Horizontal Overflow Testing Across Required Viewports
     console.log('\n--- SUITE 2: Horizontal Overflow Testing ---');
-    const requiredViewports = [320, 360, 375, 390, 414, 440, 768, 1024, 1440];
+    const requiredViewports = [320, 340, 360, 375, 390, 414, 440, 768, 1024, 1440];
     for (const w of requiredViewports) {
       await client.setViewport(w, 800);
       await new Promise(r => setTimeout(r, 150));
@@ -237,7 +238,7 @@ async function runTests() {
 
     // TEST SUITE 3: Header Responsiveness, Call Button Visibility & Sizing
     console.log('\n--- SUITE 3: Mobile Header Responsiveness & Icon Centering ---');
-    for (const w of [320, 360, 375, 390, 414, 440, 768]) {
+    for (const w of [320, 340, 360, 375, 390, 414, 440, 768]) {
       await client.setViewport(w, 800);
       await new Promise(r => setTimeout(r, 150));
 
@@ -256,9 +257,12 @@ async function runTests() {
         const menuRect = menuBtn.getBoundingClientRect();
         const logoRect = logo.getBoundingClientRect();
         const shellRect = shell.getBoundingClientRect();
+        const searchRect = search ? search.getBoundingClientRect() : null;
 
         const searchStyle = search ? window.getComputedStyle(search) : null;
         const searchMarginLeft = searchStyle ? parseFloat(searchStyle.marginLeft) : 0;
+        const gapLogoSearch = searchRect && logoRect ? Math.round(searchRect.left - logoRect.right) : 0;
+        const noOverlap = searchRect && logoRect ? searchRect.left >= logoRect.right : false;
 
         // Icon must be completely inside Call button bounds without cut-off
         const svgInsideCallBtn = svgRect.left >= callRect.left - 0.5 &&
@@ -278,13 +282,15 @@ async function runTests() {
           logoWidth: Math.round(logoRect.width),
           logoHeight: Math.round(logoRect.height),
           shellWithinWindow,
-          searchMarginLeft
+          searchMarginLeft,
+          gapLogoSearch,
+          noOverlap
         };
       })()`);
 
       record('Header', `Call & Menu buttons visible & unclipped at ${w}px`,
-        headerState.callBtnVisible && headerState.menuBtnVisible && headerState.svgInsideCallBtn && headerState.shellWithinWindow && headerState.searchMarginLeft >= 6,
-        `btn: ${headerState.callBtnSize}, logo: ${headerState.logoWidth}x${headerState.logoHeight}px, unclipped: ${headerState.svgInsideCallBtn}, searchMargin: ${headerState.searchMarginLeft}px`
+        headerState.callBtnVisible && headerState.menuBtnVisible && headerState.svgInsideCallBtn && headerState.shellWithinWindow && headerState.searchMarginLeft >= 6 && headerState.noOverlap,
+        `btn: ${headerState.callBtnSize}, logo: ${headerState.logoWidth}x${headerState.logoHeight}px, unclipped: ${headerState.svgInsideCallBtn}, searchMargin: ${headerState.searchMarginLeft}px, gap: ${headerState.gapLogoSearch}px`
       );
     }
 
@@ -384,7 +390,7 @@ async function runTests() {
 
     for (const page of all15Pages) {
       await client.send('Page.navigate', { url: `http://127.0.0.1:${PORT}/${page}` });
-      await new Promise(r => setTimeout(r, 600));
+      await new Promise(r => setTimeout(r, 1200));
 
       // Test mobile (375px)
       await client.setViewport(375, 800);
@@ -437,6 +443,52 @@ async function runTests() {
 
       const deskPass = !deskStatus.overflow && (page === 'mobile_nav_showcase.html' || (!deskStatus.btnVisible && deskStatus.deskNavVisible));
       record('All Pages', `${page} at 1440px responsive check`, deskPass, `ovf: ${deskStatus.overflow}, deskNav: ${deskStatus.deskNavVisible}`);
+    }
+
+    // TEST SUITE 7: Hero to Metrics Section Transition & Stacking Context
+    console.log('\n--- SUITE 7: Hero to Metrics Section Transition & Stacking Context ---');
+    await client.send('Page.navigate', { url: `http://127.0.0.1:${PORT}/index.html` });
+    await new Promise(r => setTimeout(r, 1500));
+    await client.setViewport(440, 956);
+    await new Promise(r => setTimeout(r, 200));
+
+    for (const sy of [2800, 2900, 3000, 3100, 3200]) {
+      await client.eval(`window.scrollTo(0, ${sy})`);
+      await new Promise(r => setTimeout(r, 150));
+
+      const transState = await client.eval(`(() => {
+        const hero = document.getElementById('hero');
+        const pinSpacer = document.querySelector('.pin-spacer');
+        const metrics = document.getElementById('metrics-section');
+        const card = metrics ? metrics.querySelector('.bg-white') : null;
+
+        const hr = hero.getBoundingClientRect();
+        const pr = pinSpacer ? pinSpacer.getBoundingClientRect() : null;
+        const mr = metrics.getBoundingClientRect();
+        const cr = card ? card.getBoundingClientRect() : null;
+        const mStyle = window.getComputedStyle(metrics);
+
+        const pinAligned = !pr || Math.abs(Math.round(hr.bottom) - Math.round(pr.bottom)) <= 1;
+        const metricsFlush = Math.round(mr.top) === Math.round(hr.bottom);
+        const cardGap = cr ? Math.round(cr.top - mr.top) : 0;
+        const bgCorrect = mStyle.backgroundColor === 'rgb(248, 250, 252)';
+        const zIndexCorrect = parseInt(mStyle.zIndex, 10) >= 20;
+
+        return {
+          scrollY: window.scrollY,
+          pinAligned,
+          metricsFlush,
+          cardGap,
+          bgCorrect,
+          zIndexCorrect,
+          details: 'heroBottom: ' + Math.round(hr.bottom) + ', metricsTop: ' + Math.round(mr.top) + ', cardGap: ' + cardGap + 'px, bg: ' + mStyle.backgroundColor
+        };
+      })()`);
+
+      record('Hero Transition', `Hero to metrics transition at scrollY ${sy}`,
+        transState.pinAligned && transState.metricsFlush && transState.cardGap >= 24 && transState.bgCorrect && transState.zIndexCorrect,
+        transState.details
+      );
     }
 
     client.close();

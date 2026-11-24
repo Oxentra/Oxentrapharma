@@ -1208,7 +1208,9 @@ header #mobile-menu-btn {
 
 /* Alternating section shades for homepage background continuity */
 #metrics-section {
-  background-color: transparent !important;
+  background-color: #F8FAFC !important;
+  position: relative;
+  z-index: 20;
 }
 
 #about {
@@ -1836,25 +1838,55 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
   .oxentra-logo-link {
     height: 24px !important;
     max-height: 24px !important;
-    flex-shrink: 1 !important;
+    flex-shrink: 0 !important;
     min-width: 0 !important;
     margin-right: 0 !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
   .oxentra-logo-img {
-    height: 24px !important;
+    height: 22px !important;
     max-height: 24px !important;
     width: auto !important;
-    max-width: 110px !important;
+    max-width: 96px !important;
     aspect-ratio: 456 / 113;
-    flex-shrink: 1 !important;
+    flex-shrink: 0 !important;
     object-fit: contain !important;
   }
 
+  /* Right-hand side group containing Search and Mobile buttons */
+  header .oxentra-navbar-shell > div:last-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+  }
+
   .oxentra-search-wrapper {
-    margin-left: 8px !important;
-    min-width: 80px !important;
-    flex-shrink: 1 !important;
+    margin-left: 6px !important;
+    margin-right: 0 !important;
+    min-width: 60px !important;
+    flex: 1 1 0% !important;
+    max-width: 220px !important;
+    height: 38px !important;
+  }
+
+  .oxentra-search-icon {
+    left: 10px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .oxentra-search-input {
+    min-width: 0 !important;
+    width: 100% !important;
+    height: 38px !important;
+    padding-left: 32px !important;
+    padding-right: 8px !important;
+    font-size: 13px !important;
   }
 
   /* Mobile/iPad Header Action Icon Buttons (Phone Call & Hamburger Menu) */
@@ -1862,7 +1894,7 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
-    margin-left: auto !important;
+    margin-left: 0 !important;
     flex-shrink: 0 !important;
   }
 
@@ -1931,13 +1963,21 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
       padding: 8px 8px 0 8px !important;
     }
     .oxentra-navbar-shell {
-      padding: 0 10px !important;
+      padding: 0 8px !important;
       gap: 6px !important;
     }
     .oxentra-logo-img {
-      height: 20px !important;
-      max-height: 20px !important;
-      max-width: 88px !important;
+      height: 19px !important;
+      max-height: 19px !important;
+      max-width: 80px !important;
+    }
+    header .oxentra-navbar-shell > div:last-child {
+      gap: 6px !important;
+      min-width: 0 !important;
+    }
+    .oxentra-search-wrapper {
+      margin-left: 6px !important;
+      min-width: 48px !important;
     }
     header .flex.lg\:hidden {
       gap: 6px !important;
@@ -1948,6 +1988,21 @@ header nav a[class*="bg-[#0f58a2]"]:active svg {
       height: 36px !important;
       min-width: 36px !important;
       min-height: 36px !important;
+    }
+  }
+
+  @media (max-width: 345px) {
+    .oxentra-search-input::placeholder {
+      color: transparent !important;
+      opacity: 0 !important;
+    }
+    .oxentra-logo-img {
+      height: 18px !important;
+      max-height: 18px !important;
+      max-width: 74px !important;
+    }
+    .oxentra-search-wrapper {
+      min-width: 40px !important;
     }
   }
 }
@@ -2255,13 +2310,13 @@ footer {
     object-fit: contain !important;
   }
 
-  /* Reduce vertical gap between sections on mobile view */
-  main > section:first-of-type {
+  /* Reduce vertical gap between sections on mobile view for product pages */
+  main > section:first-of-type:not(#hero) {
     padding-top: 16px !important;
     padding-bottom: 8px !important;
   }
 
-  main > section:nth-of-type(2) {
+  main > section:nth-of-type(2):not(#metrics-section) {
     padding-top: 4px !important;
     padding-bottom: 20px !important;
   }
@@ -2276,9 +2331,24 @@ footer {
     padding-top: 1.75rem !important;
   }
 
+  /* Hero section and metrics section mobile continuity & pin-spacer alignment */
   #hero {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     background: #002B3E !important;
     isolation: isolate;
+  }
+
+  #hero .pin-spacer {
+    margin: 0 !important;
+  }
+
+  #metrics-section {
+    background-color: #F8FAFC !important;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+    position: relative;
+    z-index: 20;
   }
 
   #hero::before {
